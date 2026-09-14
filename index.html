@@ -1,184 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N65HGBCL');</script>
-    <!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zacton | Executive Structural Audits</title>
-    <meta name="description" content="In-depth B2B structural and operational risk audits for company founders and executives.">
-    
-    <style>
-        :root {
-            --primary: #0f172a; /* Tmavá analytická modrá/bridlicová */
-            --accent: #2563eb; /* Konverzná modrá pre tlačidlá */
-            --text: #334155; 
-            --bg: #f8fafc; 
-        }
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text);
-            background-color: var(--bg);
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .hero {
-            text-align: center;
-            padding: 5rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: #475569;
-        }
-        .pricing {
-            margin: 2rem auto;
-            padding: 2.5rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            border: 1px solid #e2e8f0;
-            max-width: 500px;
-        }
-        .strike {
-            text-decoration: line-through;
-            color: #94a3b8;
-            font-size: 1.1rem;
-        }
-        .price {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 0.5rem 0;
-        }
-        .cta-button {
-            display: block;
-            background-color: var(--accent);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-            margin-top: 1.5rem;
-        }
-        .cta-button:hover {
-            background-color: #1d4ed8;
-        }
-        .features {
-            max-width: 1000px;
-            margin: 0 auto 5rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 1rem;
-        }
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .feature-card h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-        footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            text-align: center;
-            padding: 3rem 2rem;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        footer a:hover {
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zacton | Executive Structural & Operational Risk Audit</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #ffffff;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 60px 24px 80px 24px;
+      flex: 1;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+    .subtitle {
+      font-size: 1.125rem;
+      color: #475569;
+      max-width: 720px;
+      margin: 0 auto 48px auto;
+      line-height: 1.6;
+    }
+    .pricing-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      max-width: 480px;
+      margin: 0 auto 64px auto;
+      padding: 36px 24px;
+      background: #ffffff;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .regular-price {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .regular-price span {
+      text-decoration: line-through;
+    }
+    .price {
+      font-size: 3.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .pricing-note {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 28px;
+    }
+    .cta-button {
+      display: block;
+      width: 100%;
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    .cta-button:hover {
+      background-color: #1d4ed8;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      text-align: left;
+    }
+    .feature-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 24px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+    .feature-desc {
+      font-size: 0.925rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+    footer {
+      background-color: #0b1329;
+      color: #94a3b8;
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .footer-meta {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N65HGBCL"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-    <header>
-        <div class="logo">ZACTON</div>
-        <div style="font-size: 0.9rem; opacity: 0.8; font-weight: 500;">B2B Executive Diagnostics</div>
-    </header>
+  <main class="container">
+    <h1>Structural & Operational Risk Audit</h1>
+    <p class="subtitle">
+      A comprehensive 6-page executive diagnostic report designed for founders and CEOs to identify hidden vulnerabilities and optimize strategic timing.
+    </p>
 
-    <section class="hero">
-        <h1>Structural & Operational Risk Audit</h1>
-        <p class="subtitle">A comprehensive 6-page executive diagnostic report designed for founders and CEOs to identify hidden vulnerabilities and optimize strategic timing.</p>
-        
-        <div class="pricing">
-            <div class="strike">Regular Price: $149</div>
-            <div class="price">$97</div>
-            <div style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">Introductory rate for new B2B clients. One-time payment.</div>
-            
-            <!-- MIESTO PRE VÁŠ STRIPE LINK -->
-            <a href="https://buy.stripe.com/VAS_VYGENEROVANY_LINK" class="cta-button">Order Full Audit Now</a>
-        </div>
+    <section class="pricing-box">
+      <div class="regular-price">Regular Price: <span>$149</span></div>
+      <div class="price">$97</div>
+      <div class="pricing-note">Introductory rate for new B2B clients. One-time payment.</div>
+      <a href="https://buy.stripe.com/test_14k8w54uZ6ug4dc7sA18sk4001" target="_blank" rel="noopener noreferrer" class="cta-button">
+        Order Full Audit Now
+      </a>
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>Vulnerability Identification</h3>
-            <p>Pinpoint structural weaknesses in your organizational setup before they manifest into critical operational crises or financial losses.</p>
+    <section class="features-grid">
+      <div class="feature-card">
+        <div class="feature-title">Vulnerability Identification</div>
+        <div class="feature-desc">
+          Pinpoint structural weaknesses in your organizational setup before they manifest into critical operational crises or financial losses.
         </div>
-        <div class="feature-card">
-            <h3>Strategic Timing Analysis</h3>
-            <p>Data-driven insights for optimal timing of critical business decisions, major product launches, or corporate restructuring.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Strategic Timing Analysis</div>
+        <div class="feature-desc">
+          Data-driven insights for optimal timing of critical business decisions, major product launches, or corporate restructuring.
         </div>
-        <div class="feature-card">
-            <h3>Executive Summary</h3>
-            <p>A strictly professional, 6-page PDF report delivered directly to your inbox within 48 hours. No fluff, just actionable intelligence.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Executive Summary</div>
+        <div class="feature-desc">
+          A strictly professional, 6-page PDF report delivered directly to your inbox within 48 hours. No fluff, just actionable intelligence.
         </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <div style="margin-bottom: 1.5rem;">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </div>
-        <div>
-            &copy; 2026 Zacton. All rights reserved.<br>
-            Operated by Zacton | Peter Haratík, IČO: 46348832 | contact@zacton.com
-        </div>
-    </footer>
+  <footer>
+    <nav>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </nav>
+    <div>&copy; 2026 Zacton. All rights reserved.</div>
+    <div class="footer-meta">
+      Operated by Zacton | Peter Haratík, IČO: 40148032 | contact@zacton.com
+    </div>
+  </footer>
+
 </body>
 </html>
