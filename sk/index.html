@@ -17,14 +17,14 @@
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #333;
+      color: #111;
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      background-color: #fbfbfc;
     }
     .container {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 40px 20px 60px 20px;
     }
@@ -39,9 +39,9 @@
     .lang-switch a {
       color: #64748b;
       text-decoration: none;
-      padding: 5px 10px;
+      padding: 3px 10px;
       border-radius: 4px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #e2e8f0;
       transition: all 0.2s ease;
     }
     .lang-switch a:hover {
@@ -57,182 +57,181 @@
       text-align: center;
     }
     h1 {
-      font-size: 2.4rem;
-      color: #0f172a;
-      margin-bottom: 12px;
+      font-size: 2.3rem;
+      line-height: 1.25;
       font-weight: 800;
       letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #0f172a;
     }
-    .subtitle {
+    p.subtitle {
       font-size: 1.15rem;
-      color: #64748b;
-      max-width: 760px;
+      color: #475569;
+      max-width: 720px;
       margin: 0 auto 40px auto;
     }
     .pricing-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 35px;
-      max-width: 680px;
-      margin: 0 auto 50px auto;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      padding: 36px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
     }
     .pricing-header {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
     .regular-price {
-      text-decoration: line-through;
-      color: #94a3b8;
       font-size: 0.95rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-bottom: 4px;
     }
     .price {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 800;
       color: #0f172a;
       line-height: 1;
-      margin: 10px 0;
+      margin-bottom: 8px;
     }
     .price-note {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #64748b;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     .service-selection {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin: 30px 0;
-      text-align: left;
+      gap: 14px;
+      margin-bottom: 30px;
     }
     .service-option {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 16px;
-      border: 2px solid #e2e8f0;
+      padding: 16px 20px;
+      border: 1.5px solid #e2e8f0;
       border-radius: 8px;
       cursor: pointer;
-      background: #ffffff;
       transition: all 0.2s ease;
+      background: #ffffff;
     }
     .service-option:hover {
       border-color: #94a3b8;
     }
     .service-option.selected {
       border-color: #2563eb;
-      background-color: #f8fafc;
+      background-color: #eff6ff;
     }
     .service-option input[type="radio"] {
-      margin-top: 4px;
-      cursor: pointer;
+      margin-top: 5px;
       accent-color: #2563eb;
-      transform: scale(1.15);
+      cursor: pointer;
     }
     .service-text strong {
       display: block;
-      color: #0f172a;
-      font-size: 1rem;
-      margin-bottom: 3px;
+      font-size: 1.05rem;
+      color: #1e293b;
+      margin-bottom: 4px;
     }
     .service-text span {
-      display: block;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #64748b;
       line-height: 1.4;
     }
     .cta-button {
       display: block;
+      width: 100%;
       background-color: #2563eb;
       color: #ffffff;
-      text-decoration: none;
-      padding: 16px 24px;
-      border-radius: 8px;
+      font-size: 1.15rem;
       font-weight: 700;
-      font-size: 1.1rem;
       text-align: center;
+      padding: 16px;
+      border-radius: 8px;
+      text-decoration: none;
       transition: background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 25px;
     }
     .cta-button:hover {
       background-color: #1d4ed8;
     }
-    .post-cta-note {
-      margin-top: 14px;
-      font-size: 0.82rem;
-      color: #94a3b8;
-      text-align: center;
-    }
-    .process-section {
-      background: #ffffff;
+    .onboarding-steps {
+      background-color: #f8fafc;
+      border-radius: 8px;
+      padding: 20px;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 35px 30px;
-      margin-bottom: 60px;
     }
-    .process-section h2 {
-      font-size: 1.3rem;
-      color: #0f172a;
-      margin-top: 0;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+    .onboarding-steps h4 {
+      margin: 0 0 12px 0;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #475569;
     }
     .step-item {
-      padding: 15px;
-      background: #f8fafc;
-      border-left: 3px solid #2563eb;
-      border-radius: 4px;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #334155;
     }
-    .step-item strong {
-      display: block;
+    .step-item:last-child {
+      margin-bottom: 0;
+    }
+    .step-number {
+      background: #e2e8f0;
       color: #0f172a;
-      margin-bottom: 5px;
-      font-size: 0.95rem;
-    }
-    .step-item p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: #64748b;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-bottom: 60px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
     }
     .card {
       background: #ffffff;
-      padding: 30px;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      border-radius: 8px;
+      padding: 24px;
     }
     .card h3 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       margin-top: 0;
+      margin-bottom: 8px;
       color: #0f172a;
-      margin-bottom: 12px;
     }
     .card p {
-      font-size: 0.92rem;
-      color: #475569;
-      margin-bottom: 0;
-      line-height: 1.55;
+      font-size: 0.9rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
     }
     footer {
       text-align: center;
-      padding: 40px 20px;
       font-size: 0.85rem;
-      background-color: #0b1120;
       color: #94a3b8;
-      border-top: 1px solid #1e293b;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
     }
     footer a {
-      color: #cbd5e1;
+      color: #64748b;
       text-decoration: none;
       margin: 0 8px;
     }
@@ -242,7 +241,18 @@
     .footer-meta {
       margin-top: 15px;
       font-size: 0.8rem;
-      color: #64748b;
+      color: #94a3b8;
+    }
+    @media (max-width: 768px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.85rem;
+      }
+      .pricing-card {
+        padding: 24px;
+      }
     }
   </style>
 </head>
@@ -250,7 +260,6 @@
 
   <div class="container">
     
-    <!-- Jazykový prepínač -->
     <div class="lang-switch">
       <a href="/?lang=en">EN</a>
       <a href="/de/">DE</a>
@@ -259,13 +268,13 @@
 
     <div class="text-center">
       <h1>Výkonnostná a procesná diagnostika e-shopov</h1>
-      <p class="subtitle">Žiadny agentúrny balast ani 50-stranové teórie. Vyberte jednu kľúčovú oblasť. Do 48 hodín dostanete presný diagnostický PDF report s pomenovaním chýb, kde vám uniká marža, a presným postupom nápravy.</p>
+      <p class="subtitle">Žiadna agentúrna vata ani 50-stranová teória. Vyberte si jednu oblasť. Do 48 hodín dostanete vecný PDF report so zoznamom konkrétnych chýb a krokmi k ich náprave.</p>
     </div>
 
     <div class="pricing-card">
       <div class="pricing-header">
-        <div class="regular-price">Bežná cena: 149 &euro;</div>
-        <div class="price">95 &euro;</div>
+        <div class="regular-price">Bežná cena: 149 €</div>
+        <div class="price">95 €</div>
         <div class="price-note">Jednorazový diagnostický audit. Pevný rozsah.</div>
       </div>
 
@@ -273,55 +282,47 @@
         <label class="service-option selected">
           <input type="radio" name="audit_choice" value="google-ads" checked>
           <div class="service-text">
-            <strong>1. Audit úniku rozpočtu v Google Ads & Vyhľadávacie dopyty</strong>
-            <span>Identifikácia plytvania rozpočtom na nerelevantné dopyty, kanibalizácia voľných zhôd (broad match), chybné vylučujúce slová a nesprávne nastavenia automatických ponúk.</span>
+            <strong>1. Google Ads rozpočtové úniky & audit vyhľadávacích dopytov</strong>
+            <span>Identifikácia plytvania rozpočtom na nerelevantné dopyty, kanibalizácia voľnou zhodou, chýbajúce vylučujúce slová a chybné nastavenia Smart Biddingu.</span>
           </div>
         </label>
 
         <label class="service-option">
           <input type="radio" name="audit_choice" value="merchant-center">
           <div class="service-text">
-            <strong>2. Merchant Center & Zdravie produktového feedu</strong>
-            <span>Detailná kontrola zamietnutých položiek, chýbajúcich atribútov (GTIN/EAN, značka), optimalizácia titulkov a štrukturálne chyby znižujúce zobrazenia v Shopping kampaniach.</span>
+            <strong>2. Merchant Center & integrita produktového feedu</strong>
+            <span>Hĺbková kontrola zamietnutých položiek, chýbajúcich GTIN/EAN kódov, optimalizácia produktových titulkov a štrukturálne chyby obmedzujúce zobrazenie v nákupoch.</span>
           </div>
         </label>
 
         <label class="service-option">
           <input type="radio" name="audit_choice" value="ga4-tracking">
           <div class="service-text">
-            <strong>3. Integrita merania v GA4 & E-Commerce trackingu</strong>
-            <span>Audit duplikácie nákupov, strata dát vplyvom Consent Mode, chýbajúce parametre hodnôt v GTM a rozdiely medzi reálnymi tržbami v databáze a analytike.</span>
+            <strong>3. Diagnostika GA4 & e-commerce merania</strong>
+            <span>Audit duplicitných transakcií, výpadkov dát pri Consent Mode v2, chýbajúcich parametrov nákupov v GTM a nezrovnalostí medzi tržbami v analytike a databázou.</span>
           </div>
         </label>
 
         <label class="service-option">
           <input type="radio" name="audit_choice" value="checkout-friction">
           <div class="service-text">
-            <strong>4. Analýza košíka & Úniky v nákupnom procese</strong>
-            <span>UX scan nákupného lievika a košíka, prekážky v mobilnom zobrazení, problematické platobné brány a dopravy spôsobujúce opúšťanie rozpracovaných objednávok.</span>
+            <strong>4. Frikcia košíka & detekcia únikov v nákupnom procese</strong>
+            <span>Prechodová analýza objednávkového procesu, bariéry v mobilnom zobrazení, problematické platobné či dopravné metódy spôsobujúce opustenie košíka.</span>
           </div>
         </label>
       </div>
 
-      <!-- Stripe checkout link s dynamickým parametrom -->
-      <a href="https://buy.stripe.com/test_placeholder_link?client_reference_id=google-ads" id="stripeCheckoutBtn" class="cta-button">Objednať diagnostický audit — 95 &euro;</a>
-      <div class="post-cta-note">Bezpečná platba cez Stripe &rarr; automatické presmerovanie na 3-minútový dotazník.</div>
-    </div>
+      <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" id="cta-button" class="cta-button">Objednať diagnostický audit — 95 €</a>
 
-    <div class="process-section">
-      <h2>Ako diagnostika prebieha</h2>
-      <div class="process-steps">
+      <div class="onboarding-steps">
+        <h4>Čo nasleduje po zaplatení?</h4>
         <div class="step-item">
-          <strong>1. Výber a úhrada</strong>
-          <p id="step1Text">Zvoľte oblasť vyššie a dokončite bezpečnú jednorazovú platbu cez Stripe (95 &euro;).</p>
-        </div>
-        <div class="step-item" style="border-left-color: #0f172a;">
-          <strong>2. Čo od vás potrebujeme</strong>
-          <p id="step2Text">V krátkom formulári po platbe zadáte vaše 10-miestne Google Ads CID a potvrdíte žiadosť o read-only prístup.</p>
+          <div class="step-number">1</div>
+          <div id="step1Text">V krátkom formulári po úhrade zadáte vaše 10-miestne Google Ads CID a potvrdíte žiadosť o prístup iba na čítanie.</div>
         </div>
         <div class="step-item">
-          <strong>3. Doručenie exekutívneho PDF</strong>
-          <p id="step3Text">Do 48 hodín dostanete do e-mailu štruktúrovaný PDF audit: zoznam dier v rozpočte a presný zoznam negatívnych slov na okamžité nasadenie.</p>
+          <div class="step-number">2</div>
+          <div id="step2Text">Do 48 hodín dostanete e-mailom štruktúrovaný PDF report: identifikované úniky rozpočtu a export vylučujúcich kľúčových slov pripravených na nasadenie.</div>
         </div>
       </div>
     </div>
@@ -329,53 +330,54 @@
     <div class="grid-3">
       <div class="card">
         <h3>Žiadna agentúrna vata</h3>
-        <p>Neplatíte za generické 50-stranové PDF plné grafov z bezplatných nástrojov. Zistenia vychádzajú priamo z praxe pri správe reálnych e-commerce účtov.</p>
+        <p>Neplatíte za 50-stranové šablóny s irelevantnými metrikami. Všetky zistenia idú priamo z praxe pri reálnom riadení e-shopov a kampaní.</p>
       </div>
       <div class="card">
-        <h3>Priorita podľa finančného dopadu</h3>
-        <p>Problémy sú zoradené podľa návratnosti: okamžité zastavenie plytvania peniazmi, odblokovanie feedu alebo odstránenie chyby v košíku.</p>
+        <h3>Finančná priorizácia</h3>
+        <p>Problémy radíme striktne podľa vplyvu na vaše tržby a zisk: okamžité zastavenie prepaľovania rozpočtu, oprava feedu či priechodnosti košíka.</p>
       </div>
       <div class="card">
-        <h3>Garantované doručenie do 48 hodín</h3>
-        <p>Žiadne predajné telefonáty ani týždne čakania. Do dvoch pracovných dní máte na stole konkrétne kroky, ktoré zvládne nasadiť váš tím alebo agentúra.</p>
+        <h3>Doručenie do 48 hodín</h3>
+        <p>Žiadne zdĺhavé obchodné telefonáty. Do dvoch pracovných dní dostanete konkrétne zadania, ktoré váš tím alebo správca môže hneď implementovať.</p>
       </div>
     </div>
+
+    <footer>
+      <div>
+        <a href="/sk/privacy.html">Ochrana osobných údajov</a> | 
+        <a href="/sk/terms.html">Obchodné podmienky</a>
+      </div>
+      <div class="footer-meta">
+        &copy; 2026 Zacton. Všetky práva vyhradené.<br>
+        Prevádzkovateľ: Peter Haratík, IČO: 46348832 | E-mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+      </div>
+    </footer>
+
   </div>
 
-  <footer>
-    <div>
-      <a href="/sk/privacy.html">Ochrana osobných údajov</a> |
-      <a href="/sk/terms.html">Všeobecné obchodné podmienky</a>
-    </div>
-    <div class="footer-meta">
-      &copy; 2026 Zacton. Všetky práva vyhradené.<br>
-      Prevádzkovateľ: Peter Haratík, IČO: 46348832 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
-    </div>
-  </footer>
-
   <script>
-    const baseUrl = "https://buy.stripe.com/test_placeholder_link";
-    const options = document.querySelectorAll('.service-option');
-    const ctaBtn = document.getElementById('stripeCheckoutBtn');
+    const baseUrl = "https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02";
+    const ctaButton = document.getElementById('cta-button');
+    const step1Text = document.getElementById('step1Text');
     const step2Text = document.getElementById('step2Text');
-    const step3Text = document.getElementById('step3Text');
+    const options = document.querySelectorAll('.service-option');
 
     const serviceData = {
       'google-ads': {
-        step2: "V krátkom formulári po platbe zadáte vaše 10-miestne Google Ads CID a potvrdíte žiadosť o read-only prístup.",
-        step3: "Do 48 hodín dostanete do e-mailu štruktúrovaný PDF audit: zoznam dier v rozpočte a presný zoznam negatívnych slov na okamžité nasadenie."
+        step1: "V krátkom formulári po úhrade zadáte vaše 10-miestne Google Ads CID a potvrdíte žiadosť o prístup iba na čítanie.",
+        step2: "Do 48 hodín dostanete e-mailom štruktúrovaný PDF report: identifikované úniky rozpočtu a export vylučujúcich kľúčových slov pripravených na nasadenie."
       },
       'merchant-center': {
-        step2: "Zadáte URL adresu e-shopu a odkaz na XML produktový feed, prípadne udelíte read-only prístup do Google Merchant Center.",
-        step3: "Dostanete prehľad zamietnutých SKU, chýbajúcich atribútov (GTIN/EAN) a konkrétne úpravy titulkov pre zvýšenie viditeľnosti."
+        step1: "Zadáte URL vášho e-shopu a odkaz na XML feed, prípadne udelíte prístup iba na čítanie do Google Merchant Center.",
+        step2: "Získate zoznam zamietnutých položiek, chýbajúcich atribútov (GTIN/EAN) a konkrétne návrhy úprav titulkov pre zvýšenie zobrazení."
       },
       'ga4-tracking': {
-        step2: "Zadáte URL webu a udelíte read-only prístup typu Divák (Viewer) do vašej služby Google Analytics 4.",
-        step3: "Získate audit presnosti nákupných udalostí, straty dát cez cookie lištu a nezrovnalostí voči reálnym objednávkam."
+        step1: "Zadáte URL vášho webu a udelíte prístup iba na zobrazenie do služby Google Analytics 4.",
+        step2: "Dostanete audit presnosti nákupných udalostí, strát merania vplyvom cookie lišty a nesúladu dát voči realite v objednávkach."
       },
       'checkout-friction': {
-        step2: "Zadáte URL webu a vyplníte 3-minútový dotazník o používaných platobných bránach, doprave a platforme e-shopu.",
-        step3: "Dostanete audit bariér v košíku, problémov na mobilných zariadeniach a 90-dňový akčný plán na zvýšenie konverzií."
+        step1: "Zadáte URL vášho obchodu a vyplníte 2-minútový dotazník k platobným metódam, dopravcom a e-shopovému riešeniu.",
+        step2: "Dostanete rozbor problematických miest košíka, bariér na mobilných zariadeniach a 48-hodinový akčný plán pre zvýšenie konverzného pomeru."
       }
     };
 
@@ -383,21 +385,19 @@
       option.addEventListener('click', () => {
         options.forEach(opt => opt.classList.remove('selected'));
         option.classList.add('selected');
-        
+
         const radio = option.querySelector('input[type="radio"]');
         radio.checked = true;
-        
-        // Dynamický prepis Stripe URL parametra
-        ctaBtn.href = `${baseUrl}?client_reference_id=${radio.value}`;
 
-        // Dynamický prepis inštrukcií
-        if (serviceData[radio.value]) {
-          step2Text.textContent = serviceData[radio.value].step2;
-          step3Text.textContent = serviceData[radio.value].step3;
+        const val = radio.value;
+        ctaButton.href = `${baseUrl}?client_reference_id=${val}`;
+
+        if (serviceData[val]) {
+          step1Text.textContent = serviceData[val].step1;
+          step2Text.textContent = serviceData[val].step2;
         }
       });
     });
   </script>
-
 </body>
 </html>
