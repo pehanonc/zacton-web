@@ -3,183 +3,401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zacton | Executive Structural & Operational Risk Audit</title>
+  <title>Zacton | E-Commerce Performance & Risk Audits</title>
+  
+  <!-- SEO hreflang -->
+  <link rel="alternate" hreflang="en" href="https://zacton.com/" />
+  <link rel="alternate" hreflang="de" href="https://zacton.com/de/" />
+  <link rel="alternate" hreflang="sk" href="https://zacton.com/sk/" />
+  <link rel="alternate" hreflang="x-default" href="https://zacton.com/" />
+
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     body {
-      background-color: #ffffff;
-      color: #111827;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
     }
     .container {
-      max-width: 1040px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 60px 24px 80px 24px;
-      flex: 1;
+      padding: 40px 20px 60px 20px;
+    }
+    .lang-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .lang-switch a {
+      color: #64748b;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+      transition: all 0.2s ease;
+    }
+    .lang-switch a:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    .lang-switch a.active {
+      background-color: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .text-center {
       text-align: center;
     }
     h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 16px;
-      color: #0f172a;
-    }
-    .subtitle {
-      font-size: 1.125rem;
-      color: #475569;
-      max-width: 720px;
-      margin: 0 auto 48px auto;
-      line-height: 1.6;
-    }
-    .pricing-box {
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      max-width: 480px;
-      margin: 0 auto 64px auto;
-      padding: 36px 24px;
-      background: #ffffff;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-    .regular-price {
-      font-size: 0.875rem;
-      color: #64748b;
-      margin-bottom: 8px;
-    }
-    .regular-price span {
-      text-decoration: line-through;
-    }
-    .price {
-      font-size: 3.25rem;
-      font-weight: 800;
+      font-size: 2.4rem;
       color: #0f172a;
       margin-bottom: 12px;
-      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
-    .pricing-note {
-      font-size: 0.875rem;
+    .subtitle {
+      font-size: 1.15rem;
       color: #64748b;
-      margin-bottom: 28px;
+      max-width: 760px;
+      margin: 0 auto 40px auto;
+    }
+    .pricing-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 35px;
+      max-width: 680px;
+      margin: 0 auto 50px auto;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .regular-price {
+      text-decoration: line-through;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+    .price {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1;
+      margin: 10px 0;
+    }
+    .price-note {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    .service-selection {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 30px 0;
+      text-align: left;
+    }
+    .service-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #ffffff;
+      transition: all 0.2s ease;
+    }
+    .service-option:hover {
+      border-color: #94a3b8;
+    }
+    .service-option.selected {
+      border-color: #2563eb;
+      background-color: #f8fafc;
+    }
+    .service-option input[type="radio"] {
+      margin-top: 4px;
+      cursor: pointer;
+      accent-color: #2563eb;
+      transform: scale(1.15);
+    }
+    .service-text strong {
+      display: block;
+      color: #0f172a;
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+    .service-text span {
+      display: block;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.4;
     }
     .cta-button {
       display: block;
-      width: 100%;
       background-color: #2563eb;
       color: #ffffff;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
       text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
       transition: background-color 0.2s ease;
     }
     .cta-button:hover {
       background-color: #1d4ed8;
     }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      text-align: left;
+    .post-cta-note {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      text-align: center;
     }
-    .feature-card {
+    .process-section {
+      background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 24px;
-      background-color: #ffffff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      padding: 35px 30px;
+      margin-bottom: 60px;
     }
-    .feature-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
+    .process-section h2 {
+      font-size: 1.3rem;
       color: #0f172a;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
     }
-    .feature-desc {
-      font-size: 0.925rem;
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .step-item {
+      padding: 15px;
+      background: #f8fafc;
+      border-left: 3px solid #2563eb;
+      border-radius: 4px;
+    }
+    .step-item strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+    .step-item p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      margin-top: 0;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .card p {
+      font-size: 0.92rem;
       color: #475569;
-      line-height: 1.5;
+      margin-bottom: 0;
+      line-height: 1.55;
     }
     footer {
-      background-color: #0b1329;
-      color: #94a3b8;
-      padding: 32px 24px;
       text-align: center;
-      font-size: 0.8rem;
-      line-height: 1.8;
+      padding: 40px 20px;
+      font-size: 0.85rem;
+      background-color: #0b1120;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
     }
     footer a {
-      color: #94a3b8;
+      color: #cbd5e1;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 8px;
     }
     footer a:hover {
-      color: #ffffff;
       text-decoration: underline;
     }
     .footer-meta {
-      margin-top: 8px;
-      font-size: 0.75rem;
+      margin-top: 15px;
+      font-size: 0.8rem;
       color: #64748b;
     }
   </style>
 </head>
 <body>
 
-  <main class="container">
-    <h1>Structural & Operational Risk Audit</h1>
-    <p class="subtitle">
-      A comprehensive 6-page executive diagnostic report designed for founders and CEOs to identify hidden vulnerabilities and optimize strategic timing.
-    </p>
+  <div class="container">
+    
+    <!-- Language Switcher -->
+    <div class="lang-switch">
+      <a href="/" class="active">EN</a>
+      <a href="/de/">DE</a>
+      <a href="/sk/">SK</a>
+    </div>
 
-    <section class="pricing-box">
-      <div class="regular-price">Regular Price: <span>$149</span></div>
-      <div class="price">$95</div>
-      <div class="pricing-note">Introductory rate for new B2B clients. One-time payment.</div>
-      <a href="https://buy.stripe.com/aFa3co4O2ay7di03RK9ws00"target="_blank" rel="noopener noreferrer" class="cta-button">
-        Order Full Audit Now
-      </a>
-    </section>
+    <div class="text-center">
+      <h1>E-Commerce Performance & Risk Audits</h1>
+      <p class="subtitle">Actionable diagnostic reports for founders and operators. Identify immediate budget leaks, feed errors, and checkout friction. Delivered within 48 hours. No agency retainers.</p>
+    </div>
 
-    <section class="features-grid">
-      <div class="feature-card">
-        <div class="feature-title">Vulnerability Identification</div>
-        <div class="feature-desc">
-          Pinpoint structural weaknesses in your organizational setup before they manifest into critical operational crises or financial losses.
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="regular-price">Regular Fee: &euro;149</div>
+        <div class="price">&euro;95</div>
+        <div class="price-note">One-time diagnostic audit. Fixed scope.</div>
+      </div>
+
+      <div class="service-selection" id="serviceSelection">
+        <label class="service-option selected">
+          <input type="radio" name="audit_choice" value="google-ads" checked>
+          <div class="service-text">
+            <strong>1. Google Ads Budget Bleed & Search Term Audit</strong>
+            <span>Identify wasted ad spend, irrelevant search triggers, loose match keyword cannibalization, and misconfigured automated bidding.</span>
+          </div>
+        </label>
+
+        <label class="service-option">
+          <input type="radio" name="audit_choice" value="merchant-center">
+          <div class="service-text">
+            <strong>2. Merchant Center & Shopping Feed Integrity</strong>
+            <span>Scan for disapproved SKU clusters, missing GTIN/attributes, title optimization gaps, and product feed errors lowering visibility.</span>
+          </div>
+        </label>
+
+        <label class="service-option">
+          <input type="radio" name="audit_choice" value="ga4-tracking">
+          <div class="service-text">
+            <strong>3. GA4 & E-Commerce Tracking Diagnostics</strong>
+            <span>Audit purchase event duplication, Consent Mode data loss, missing conversion parameters, and discrepancy between backend and analytics.</span>
+          </div>
+        </label>
+
+        <label class="service-option">
+          <input type="radio" name="audit_choice" value="checkout-friction">
+          <div class="service-text">
+            <strong>4. Checkout Friction & Funnel Leak Scan</strong>
+            <span>UX barrier analysis in cart and payment flow, desktop/mobile navigation roadblocks, and key issues causing abandoned orders.</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Stripe checkout link -->
+      <a href="https://buy.stripe.com/test_placeholder_link?client_reference_id=google-ads" id="stripeCheckoutBtn" class="cta-button">Order Diagnostic Audit — &euro;95</a>
+      <div class="post-cta-note">Instant Stripe checkout &rarr; automatic redirect to a 3-minute onboarding form.</div>
+    </div>
+
+    <div class="process-section">
+      <h2>How The Diagnostic Works</h2>
+      <div class="process-steps">
+        <div class="step-item">
+          <strong>1. Select & Checkout</strong>
+          <p id="step1Text">Choose the specific diagnostic area above and complete secure checkout via Stripe (&euro;95 one-time).</p>
+        </div>
+        <div class="step-item" style="border-left-color: #0f172a;">
+          <strong>2. What We Need From You</strong>
+          <p id="step2Text">Provide your 10-digit Google Ads CID in the post-checkout form and approve a standard read-only access invite.</p>
+        </div>
+        <div class="step-item">
+          <strong>3. Direct Executive Report</strong>
+          <p id="step3Text">Within 48 hours, receive a concise PDF prioritizing wasted search spend, broad match leaks, and immediate negative keyword fixes.</p>
         </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-title">Strategic Timing Analysis</div>
-        <div class="feature-desc">
-          Data-driven insights for optimal timing of critical business decisions, major product launches, or corporate restructuring.
-        </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Zero Agency Bloat</h3>
+        <p>You won't get a 50-page auto-generated template filled with vanity charts. Every finding is vetted directly from practical e-commerce experience.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-title">Executive Summary</div>
-        <div class="feature-desc">
-          A strictly professional, 6-page PDF report delivered directly to your inbox within 48 hours. No fluff, just actionable intelligence.
-        </div>
+      <div class="card">
+        <h3>Direct Financial Impact</h3>
+        <p>Issues are prioritized strictly by revenue recovery potential: immediate budget waste to cut, feed flags to unblock, or friction to remove today.</p>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>Strict Turnaround</h3>
+        <p>Delivered to your inbox within 48 hours of intake receipt. Self-contained recommendations ready for your internal team or agency to fix.</p>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <nav>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </nav>
-    <div>&copy; 2026 Zacton. All rights reserved.</div>
+    <div>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a>
+    </div>
     <div class="footer-meta">
-      Operated by Zacton | Peter Haratík, IČO: 40148032 | contact@zacton.com
+      &copy; 2026 Zacton. All rights reserved.<br>
+      Operated by Peter Haratik, IČO: 40148032 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
     </div>
   </footer>
+
+  <script>
+    const baseUrl = "https://buy.stripe.com/test_placeholder_link";
+    const options = document.querySelectorAll('.service-option');
+    const ctaBtn = document.getElementById('stripeCheckoutBtn');
+    const step2Text = document.getElementById('step2Text');
+    const step3Text = document.getElementById('step3Text');
+
+    const serviceData = {
+      'google-ads': {
+        step2: "Provide your 10-digit Google Ads CID in the post-checkout form and approve a standard read-only access invite.",
+        step3: "Within 48 hours, receive a concise PDF prioritizing wasted search spend, broad match leaks, and immediate negative keyword fixes."
+      },
+      'merchant-center': {
+        step2: "Provide your store URL and XML feed link, or grant temporary read-only access to your Google Merchant Center.",
+        step3: "Receive a direct breakdown of disapproved SKUs, missing critical attributes (GTIN/brand), and feed title improvements."
+      },
+      'ga4-tracking': {
+        step2: "Submit your website URL and grant read-only viewer access to your Google Analytics 4 property.",
+        step3: "Get an executive diagnostic of purchase event tracking, consent banner data drops, and discrepancies against actual orders."
+      },
+      'checkout-friction': {
+        step2: "Submit your store URL and answer a 3-minute questionnaire about your current tech stack, payment gateways, and shipping options.",
+        step3: "Receive an actionable teardown of cart abandonment points, mobile checkout obstacles, and prioritized recommendations."
+      }
+    };
+
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        options.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+        
+        const radio = option.querySelector('input[type="radio"]');
+        radio.checked = true;
+        
+        // Dynamically update Stripe URL parameter
+        ctaBtn.href = `${baseUrl}?client_reference_id=${radio.value}`;
+
+        // Dynamically update process steps
+        if (serviceData[radio.value]) {
+          step2Text.textContent = serviceData[radio.value].step2;
+          step3Text.textContent = serviceData[radio.value].step3;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
