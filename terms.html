@@ -8,98 +8,126 @@
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
+      color: #1e293b;
+      line-height: 1.65;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      background-color: #f8fafc;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 50px 20px 80px 20px;
-      background: #ffffff;
-      min-height: 100vh;
     }
-    a.back-link {
+    .back-link {
       display: inline-block;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
       color: #2563eb;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
     }
-    a.back-link:hover { text-decoration: underline; }
+    .back-link:hover { text-decoration: underline; }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
     h1 {
       font-size: 2rem;
+      font-weight: 800;
       color: #0f172a;
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 8px;
     }
-    .meta-date {
-      color: #64748b;
+    .meta {
       font-size: 0.85rem;
+      color: #64748b;
       margin-bottom: 30px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
     }
     h2 {
       font-size: 1.25rem;
+      font-weight: 700;
       color: #0f172a;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 6px;
+      margin-top: 32px;
+      margin-bottom: 12px;
     }
-    p, li {
+    p, ul {
       font-size: 0.95rem;
       color: #334155;
+      margin-bottom: 16px;
     }
     ul {
       padding-left: 20px;
-      margin: 10px 0;
     }
-    li { margin-bottom: 6px; }
+    li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-
   <div class="container">
     <a href="/" class="back-link">&larr; Back to Zacton</a>
-    
-    <h1>Terms of Service</h1>
-    <div class="meta-date">Effective Date: September 17, 2026</div>
+    <div class="card">
+      <h1>Terms of Service</h1>
+      <div class="meta">Effective Date: September 1, 2026 | Last Updated: September 2026</div>
 
-    <p>These Terms of Service govern the purchase and delivery of diagnostic e-commerce audit services offered by Zacton, operated by Peter Harat&iacute;k, IČO: 40148032, email: <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+      <p>These Terms of Service govern the purchase and delivery of diagnostic e-commerce audit services offered by Zacton.</p>
 
-    <h2>1. Service Scope & Deliverables</h2>
-    <p>Zacton provides independent, fixed-scope B2B diagnostic audits for e-commerce platforms. Each order entitles the client to one selected audit report delivered in PDF format within 48 hours following the complete submission of required intake credentials and read-only access:</p>
-    <ul>
-      <li><strong>Google Ads Budget Bleed & Search Term Audit:</strong> Analysis of wasted search queries, match-type cannibalization, and negative keyword recommendations.</li>
-      <li><strong>Merchant Center & Feed Integrity:</strong> Inspection of disapproved items, missing attributes, and title feed optimizations.</li>
-      <li><strong>GA4 & E-Commerce Tracking Diagnostics:</strong> Verification of conversion tags, event duplication, and Consent Mode data integrity.</li>
-      <li><strong>Checkout Friction & Funnel Leak Scan:</strong> UX and technical friction assessment across the desktop/mobile checkout funnel.</li>
-    </ul>
+      <p><strong>Service Operator:</strong><br>
+      Peter Haratík<br>
+      Business Address: J. Š. Šikuru 76, 036 01 Martin, Slovak Republic<br>
+      ID (IČO): 46348832<br>
+      Tax ID (DIČ): 1048285249<br>
+      Registered in the Trade Register: District Office Martin, Trade Register No.: 550-23490<br>
+      Email: <a href="mailto:contact@zacton.com">contact@zacton.com</a><br>
+      (Non-VAT registered entity)</p>
 
-    <h2>2. B2B Nature of Service</h2>
-    <p>Services are offered exclusively to commercial entities, entrepreneurs, and business operators (B2B). By placing an order, the client affirms they are acting in their professional or business capacity.</p>
+      <h2>1. Service Scope & Deliverables</h2>
+      <p>Zacton provides specialized, fixed-scope diagnostic audit reports delivered in electronic format (PDF). Customers select one target area per order:</p>
+      <ul>
+        <li><strong>Google Ads Budget Bleed & Search Term Audit:</strong> Analysis of wasteful spend, broad match cannibalization, and negative keyword optimization.</li>
+        <li><strong>Merchant Center & Product Feed Integrity:</strong> Audit of disapproved products, missing GTIN/EAN attributes, and title structure.</li>
+        <li><strong>GA4 & E-Commerce Tracking Diagnostics:</strong> Audit of purchase event triggers, consent drops, and attribution discrepancies.</li>
+        <li><strong>Checkout Friction & Funnel Leak Scan:</strong> End-to-end user experience and drop-off analysis of the checkout funnel.</li>
+      </ul>
 
-    <h2>3. Client Responsibilities & Access Permissions</h2>
-    <ul>
-      <li>The client must provide necessary audit parameters (such as a valid 10-digit Google Ads CID, Merchant Center ID, or GA4 viewer invitation) via the onboarding form.</li>
-      <li>Access granted must strictly be <strong>read-only (viewer)</strong>. Zacton does not require and will not execute changes, campaign adjustments, or code edits directly in client accounts.</li>
-      <li>The delivery window (48 hours) begins only once all necessary read-only permissions and verified URLs are received.</li>
-    </ul>
+      <h2>2. B2B Nature of Service</h2>
+      <p>All services offered on zacton.com are exclusively intended for commercial entities, sole proprietors, and businesses (B2B). By placing an order, the client declares they act in the capacity of a business entity.</p>
 
-    <h2>4. Pricing & Payment Terms</h2>
-    <p>The price for each individual diagnostic audit is fixed at &euro;95 (one-time fee). Payment is processed securely via Stripe upon order placement. Invoices are generated and dispatched electronically following receipt of payment.</p>
+      <h2>3. Client Responsibilities & Access Permissions</h2>
+      <p>Delivery is dependent on timely technical access provided via the post-payment onboarding form or direct email:</p>
+      <ul>
+        <li>Access must strictly be <strong>Read-Only / Viewer</strong> (Google Ads CID MCC link, GA4 Viewer, or Merchant Center Viewer) or direct provision of feed/store URLs.</li>
+        <li>Zacton will never request edit/admin credentials and will not perform direct write changes to client accounts.</li>
+        <li>The <strong>48-hour delivery SLA</strong> begins once valid read-only access or necessary inputs are fully granted and verified.</li>
+      </ul>
 
-    <h2>5. Refund Policy & Service Fulfillment</h2>
-    <p>Due to the bespoke professional nature of the analytical audit, orders cannot be canceled once analysis has commenced. If Zacton is unable to complete the diagnostic report within 5 business days due to our own technical constraints, a full 100% refund will be issued via Stripe.</p>
+      <h2>4. Pricing & Payment</h2>
+      <p>The fee for each single diagnostic audit is <strong>95.00 EUR</strong> (one-time payment, zero VAT). Payment is processed via Stripe Checkout. An invoice/receipt is issued electronically upon payment confirmation.</p>
 
-    <h2>6. Independent Assessment & Limitation of Liability</h2>
-    <p>Diagnostic reports reflect our expert technical assessment based on the data visible during the audit window. Findings represent actionable recommendations; implementation remains entirely at the client’s discretion and operational responsibility. Zacton is not liable for third-party platform policy suspensions, algorithm updates, or broader revenue variances outside our direct control.</p>
+      <h2>5. Refund Policy & Fulfillment</h2>
+      <p>Due to the customized nature of analytical consulting services, analysis begins immediately once access is granted. If Zacton is unable to complete the audit due to internal technical or scheduling constraints within 5 business days, a 100% full refund will be issued.</p>
 
-    <h2>7. Governing Law & Jurisdiction</h2>
-    <p>These terms and all commercial relationships are governed by the laws of the Slovak Republic, with disputes subject to the exclusive jurisdiction of the competent courts in the Slovak Republic.</p>
+      <h2>6. Independent Assessment & Limitation of Liability</h2>
+      <p>Audits represent technical and diagnostic assessments based strictly on data visible during the audit timeframe. All findings constitute recommendations. Final execution, code modifications, or campaign configuration changes remain solely the client's responsibility.</p>
+
+      <h2>7. Governing Law & Jurisdiction</h2>
+      <p>These terms and all commercial agreements are governed by the laws of the Slovak Republic (Commercial Code Act No. 513/1991 Coll.). Any disputes shall be submitted to the competent courts of the Slovak Republic.</p>
+    </div>
+    <footer>
+      &copy; 2026 Zacton. Operator: Peter Haratík | ID: 46348832 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+    </footer>
   </div>
-
 </body>
 </html>
