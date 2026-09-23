@@ -3,104 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zásady ochrany osobných údajov | Zacton</title>
+  <title>Ochrana osobných údajov | Zacton</title>
   <style>
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
+      color: #1e293b;
+      line-height: 1.65;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      background-color: #f8fafc;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 50px 20px 80px 20px;
-      background: #ffffff;
-      min-height: 100vh;
     }
-    a.back-link {
+    .back-link {
       display: inline-block;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
       color: #2563eb;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
     }
-    a.back-link:hover { text-decoration: underline; }
+    .back-link:hover { text-decoration: underline; }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
     h1 {
       font-size: 2rem;
+      font-weight: 800;
       color: #0f172a;
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 8px;
     }
-    .meta-date {
-      color: #64748b;
+    .meta {
       font-size: 0.85rem;
+      color: #64748b;
       margin-bottom: 30px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
     }
     h2 {
       font-size: 1.25rem;
+      font-weight: 700;
       color: #0f172a;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 6px;
+      margin-top: 32px;
+      margin-bottom: 12px;
     }
-    p, li {
+    p, ul {
       font-size: 0.95rem;
       color: #334155;
+      margin-bottom: 16px;
     }
     ul {
       padding-left: 20px;
-      margin: 10px 0;
     }
-    li { margin-bottom: 6px; }
+    li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-
   <div class="container">
     <a href="/sk/" class="back-link">&larr; Späť na Zacton</a>
-    
-    <h1>Zásady ochrany osobných údajov</h1>
-    <div class="meta-date">Účinnosť od: 17. septembra 2026</div>
+    <div class="card">
+      <h1>Zásady ochrany osobných údajov</h1>
+      <div class="meta">Platné od: 1. septembra 2026 | Posledná aktualizácia: september 2026</div>
 
-    <p>Tieto zásady popisujú spracovanie osobných a obchodných údajov v rámci služby Zacton, prevádzkovanej: Peter Haratík, IČO: 40148032, kontakt: <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+      <p>Tieto zásady popisujú spôsob spracovania a ochrany osobných a prevádzkových údajov pri poskytovaní služieb diagnostického auditu na webe Zacton v zmysle Nariadenia EÚ 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov.</p>
 
-    <h2>1. Rozsah služieb</h2>
-    <p>Zacton poskytuje nezávislú B2B technickú a výkonnostnú diagnostiku pre prevádzkovateľov e-commerce platforiem (audit hľadaných výrazov Google Ads, integrita feedov Google Merchant Center, nastavenie merania GA4 a frikcia nákupného košíka).</p>
+      <p><strong>Prevádzkovateľ:</strong><br>
+      Peter Haratík<br>
+      Miesto podnikania: J. Š. Šikuru 76, 036 01 Martin, Slovenská republika<br>
+      IČO: 46348832<br>
+      DIČ: 1048285249<br>
+      Zápis v Živnostenskom registri: Okresný úrad Martin, číslo živnostenského registra: 550-23490<br>
+      E-mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a></p>
 
-    <h2>2. Spracovávané údaje</h2>
-    <p>Pri objednávke a realizácii auditu spracovávame výhradne nevyhnutné prevádzkové údaje:</p>
-    <ul>
-      <li><strong>Fakturačné a kontaktné údaje:</strong> Meno, firemný e-mail, fakturačná adresa a identifikátory platby (spracované zabezpečene cez Stripe; údaje platobných kariet neukladáme na našich serveroch).</li>
-      <li><strong>Parametre auditu:</strong> URL adresa e-shopu, odkaz na XML produktový feed, 10-miestne Google Ads CID číslo účtu a identifikátory Google Analytics.</li>
-      <li><strong>Systémové logy:</strong> IP adresa, typ zariadenia a systémové záznamy zabezpečované sieťovou vrstvou Cloudflare.</li>
-    </ul>
+      <h2>1. Rozsah a účel spracúvaných údajov</h2>
+      <p>Spracúvame výhradne údaje nevyhnutné na vybavenie objednávky, realizáciu diagnostiky a vystavenie daňového dokladu:</p>
+      <ul>
+        <li><strong>Kontaktné a fakturačné údaje:</strong> meno, priezvisko, firemný názov, IČO, DIČ / IČ DPH, fakturačná adresa a kontaktný e-mail (účel: plnenie zmluvy a daňové povinnosti).</li>
+        <li><strong>Technické vstupy pre audit:</strong> URL e-shopu, 10-miestne Google Ads CID, GA4 Property ID alebo odkaz na XML produktový feed (účel: vypracovanie vyžiadanej diagnostiky).</li>
+      </ul>
 
-    <h2>3. Zásada pasívneho prístupu (Read-Only Policy)</h2>
-    <p>Pracujeme výhradne na báze <strong>prístupu na čítanie (viewer / reporter)</strong>. Zákazník poskytuje prístup do účtov Google Ads, GA4 či Merchant Center bez administrátorských alebo editačných práv. Zacton nevykonáva žiadne manuálne zásahy do živých kampaní, rozpočtov ani zdrojového kódu e-shopu klienta.</p>
+      <h2>2. Zásada prístupu iba na čítanie (Read-Only Policy)</h2>
+      <p>V rámci diagnostiky Google Ads, GA4 alebo Merchant Center požadujeme výhradne prístup s oprávnením <strong>Iba na čítanie (Read-Only / Viewer)</strong>. Prevádzkovateľ nevyžaduje administrátorské práva, neupravuje nastavenia kampaní ani nezasahuje do systémov klienta.</p>
 
-    <h2>4. Retencia a mazanie dát</h2>
-    <ul>
-      <li>Udelený prístup do reklamných a analytických účtov odporúčame klientovi odvolať ihneď po odovzdaní PDF auditu. Akékoľvek aktívne prepojenia rušíme z našej strany do 14 dní.</li>
-      <li>Všetky stiahnuté dátové reporty, analytické výstupy a poznámky sú trvalo vymazané do 30 dní od odovzdania výstupu.</li>
-      <li>Fakturačné doklady sú uchovávané v súlade so zákonnými lehotami stanovenými slovenskou legislatívou.</li>
-    </ul>
+      <h2>3. Doba uchovávania a likvidácia dát</h2>
+      <ul>
+        <li>Dáta z diagnostického reportu a analytické exporty uchovávame iba počas prípravy auditu a následne 14 dní po odoslaní reportu zákazníkovi pre prípadné doplňujúce otázky. Následne sú zmazané.</li>
+        <li>Udelené čitateľské prístupy (napr. prepojenie z MCC) sú zo strany Prevádzkovateľa odstránené do 48 hodín po odovzdaní reportu, prípadne ich klient môže kedykoľvek odvolať sám.</li>
+        <li>Účtovné doklady a faktúry archivujeme po dobu stanovenú platnými právnymi a daňovými predpismi Slovenskej republiky.</li>
+      </ul>
 
-    <h2>5. Sprostredkovatelia a infraštruktúra</h2>
-    <p>Dáta spracovávame prostredníctvom overených infraštruktúrnych partnerov:</p>
-    <ul>
-      <li><strong>Stripe, Inc.:</strong> Zabezpečenie platobného procesu a fakturácie.</li>
-      <li><strong>Cloudflare, Inc.:</strong> DNS routing, SSL šifrovanie a ochrana pred útokmi.</li>
-      <li><strong>MailerSend:</strong> Transakčné e-mailové notifikácie.</li>
-    </ul>
+      <h2>4. Sprostredkovatelia a subdodávatelia</h2>
+      <p>Dáta spracúvame s využitím overených poskytovateľov technickej infraštruktúry:</p>
+      <ul>
+        <li><strong>Stripe, Inc.</strong> – spracovanie platieb kartou a fakturačných údajov.</li>
+        <li><strong>Cloudflare, Inc.</strong> – DNS smerovanie a zabezpečenie webu.</li>
+        <li><strong>MailerSend / hosting</strong> – zabezpečenie transakčnej e-mailovej komunikácie.</li>
+      </ul>
 
-    <h2>6. Práva dotknutých osôb</h2>
-    <p>Podľa GDPR máte právo požadovať prístup k svojim údajom, ich opravu alebo trvalé vymazanie. V prípade otázok píšte na <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+      <h2>5. Práva dotknutej osoby</h2>
+      <p>Ako objednávateľ máte právo na prístup k svojim údajom, ich opravu, vymazanie (právo na zabudnutie), obmedzenie spracúvania a právo namietať spracovanie. Žiadosti uplatňujte e-mailom na <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+    </div>
+    <footer>
+      &copy; 2026 Zacton. Prevádzkovateľ: Peter Haratík | IČO: 46348832 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+    </footer>
   </div>
-
 </body>
 </html>
