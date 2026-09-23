@@ -8,99 +8,121 @@
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
+      color: #1e293b;
+      line-height: 1.65;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      background-color: #f8fafc;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 50px 20px 80px 20px;
-      background: #ffffff;
-      min-height: 100vh;
     }
-    a.back-link {
+    .back-link {
       display: inline-block;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
       color: #2563eb;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
     }
-    a.back-link:hover { text-decoration: underline; }
+    .back-link:hover { text-decoration: underline; }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
     h1 {
       font-size: 2rem;
+      font-weight: 800;
       color: #0f172a;
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 8px;
     }
-    .meta-date {
-      color: #64748b;
+    .meta {
       font-size: 0.85rem;
+      color: #64748b;
       margin-bottom: 30px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
     }
     h2 {
       font-size: 1.25rem;
+      font-weight: 700;
       color: #0f172a;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 6px;
+      margin-top: 32px;
+      margin-bottom: 12px;
     }
-    p, li {
+    p, ul {
       font-size: 0.95rem;
       color: #334155;
+      margin-bottom: 16px;
     }
     ul {
       padding-left: 20px;
-      margin: 10px 0;
     }
-    li { margin-bottom: 6px; }
+    li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-
   <div class="container">
     <a href="/" class="back-link">&larr; Back to Zacton</a>
-    
-    <h1>Privacy Policy</h1>
-    <div class="meta-date">Effective Date: September 17, 2026</div>
+    <div class="card">
+      <h1>Privacy Policy</h1>
+      <div class="meta">Effective Date: September 1, 2026 | Last Updated: September 2026</div>
 
-    <p>This Privacy Policy outlines how personal and commercial business data is handled by Zacton, operated by Peter Harat&iacute;k, IČO: 40148032, contact email: <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+      <p>This Privacy Policy describes how Zacton collects, uses, and safeguards information in accordance with Regulation (EU) 2016/679 (GDPR).</p>
 
-    <h2>1. Scope of Service</h2>
-    <p>Zacton provides professional B2B technical diagnostics and performance audits for e-commerce operators, including Google Ads search term reviews, Google Merchant Center integrity checks, GA4 tracking verification, and checkout UX friction analysis.</p>
+      <p><strong>Data Controller:</strong><br>
+      Peter Haratík<br>
+      Business Address: J. Š. Šikuru 76, 036 01 Martin, Slovak Republic<br>
+      ID (IČO): 46348832<br>
+      Tax ID (DIČ): 1048285249<br>
+      Registered in Trade Register: District Office Martin, Reg. No.: 550-23490<br>
+      Email: <a href="mailto:contact@zacton.com">contact@zacton.com</a></p>
 
-    <h2>2. Data Collection & Intake Information</h2>
-    <p>When ordering an audit, we process only the minimum operational information necessary to execute the service:</p>
-    <ul>
-      <li><strong>Contact & Billing Details:</strong> Name, business email, company billing data, and transaction IDs (processed securely via Stripe; payment card details are never stored on our servers).</li>
-      <li><strong>Audit Parameters:</strong> Store URL, XML product feed links, Google Ads 10-digit Customer ID (CID), and Google Analytics account identifiers.</li>
-      <li><strong>System Logs:</strong> IP address, device type, and referral data captured via Cloudflare security and caching layers.</li>
-    </ul>
+      <h2>1. Categories of Processed Data</h2>
+      <p>We process only minimal data necessary to fulfill technical audit contracts and satisfy accounting obligations:</p>
+      <ul>
+        <li><strong>Commercial & Billing Details:</strong> Name, business name, tax identification numbers (VAT/Tax ID), billing address, and contact email.</li>
+        <li><strong>Technical Audit Inputs:</strong> Store URL, 10-digit Google Ads CID, GA4 Property ID, or product feed URL.</li>
+      </ul>
 
-    <h2>3. Access to Client Platforms (Read-Only Policy)</h2>
-    <p>We operate under a strict <strong>read-only / viewer</strong> access standard. Clients are requested to invite Zacton solely with reporting or viewer permissions to Google Ads, Google Analytics 4, or Google Merchant Center accounts. We do not request, nor accept, administrative or operational write access to modify live campaigns, bids, budgets, or shop backends.</p>
+      <h2>2. Read-Only Access Policy</h2>
+      <p>Diagnostic services operate exclusively under <strong>Read-Only / Viewer</strong> credentials. Zacton does not request administrator privileges and does not alter account configurations, budget limits, or production setups.</p>
 
-    <h2>4. Data Retention and Erasure</h2>
-    <ul>
-      <li>Account audit access should be revoked by the client immediately upon report delivery. Any remaining shared permissions are removed from our side within 14 days of order completion.</li>
-      <li>Downloaded reporting extracts, temporary CSV exports, and diagnostic notes are permanently purged within 30 days of report delivery.</li>
-      <li>Invoices and transaction metadata are retained exclusively to meet statutory Slovak accounting and tax retention periods.</li>
-    </ul>
+      <h2>3. Data Retention and Deletion</h2>
+      <ul>
+        <li>Raw analytical exports and temporary audit datasets are permanently deleted within 14 calendar days following report delivery.</li>
+        <li>Read-only MCC connections or viewer permissions are unlinked within 48 hours of report completion. Clients retain full control to revoke permissions immediately at any time.</li>
+        <li>Billing and invoice records are preserved solely in accordance with statutory accounting retention requirements.</li>
+      </ul>
 
-    <h2>5. Third-Party Processors</h2>
-    <p>We work exclusively with compliant infrastructure providers for web delivery, billing, and reporting:</p>
-    <ul>
-      <li><strong>Stripe, Inc.:</strong> Payment gateway and checkout processing.</li>
-      <li><strong>Cloudflare, Inc.:</strong> DNS routing, SSL encryption, and CDN caching.</li>
-      <li><strong>MailerSend:</strong> Transactional email and intake routing.</li>
-    </ul>
+      <h2>4. Third-Party Service Processors</h2>
+      <p>Infrastructure providers acting as data processors include:</p>
+      <ul>
+        <li><strong>Stripe, Inc.</strong> – Secure checkout and payment processing.</li>
+        <li><strong>Cloudflare, Inc.</strong> – DNS, edge caching, and security enforcement.</li>
+        <li><strong>MailerSend</strong> – Transactional email communications.</li>
+      </ul>
 
-    <h2>6. Client Rights</h2>
-    <p>Under GDPR and applicable privacy regulations, clients have the right to request access to, correction of, or complete erasure of any stored contact data. Inquiries should be directed to <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+      <h2>5. Your Rights (GDPR)</h2>
+      <p>You have the right to request access to your personal data, data correction, deletion, restriction of processing, and data portability. Inquiries may be addressed to <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+    </div>
+    <footer>
+      &copy; 2026 Zacton. Operator: Peter Haratík | ID: 46348832 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+    </footer>
   </div>
-
 </body>
 </html>
