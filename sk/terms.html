@@ -8,98 +8,126 @@
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
+      color: #1e293b;
+      line-height: 1.65;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      background-color: #f8fafc;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 50px 20px 80px 20px;
-      background: #ffffff;
-      min-height: 100vh;
     }
-    a.back-link {
+    .back-link {
       display: inline-block;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
       color: #2563eb;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
     }
-    a.back-link:hover { text-decoration: underline; }
+    .back-link:hover { text-decoration: underline; }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
     h1 {
       font-size: 2rem;
+      font-weight: 800;
       color: #0f172a;
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 8px;
     }
-    .meta-date {
-      color: #64748b;
+    .meta {
       font-size: 0.85rem;
+      color: #64748b;
       margin-bottom: 30px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
     }
     h2 {
       font-size: 1.25rem;
+      font-weight: 700;
       color: #0f172a;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 6px;
+      margin-top: 32px;
+      margin-bottom: 12px;
     }
-    p, li {
+    p, ul {
       font-size: 0.95rem;
       color: #334155;
+      margin-bottom: 16px;
     }
     ul {
       padding-left: 20px;
-      margin: 10px 0;
     }
-    li { margin-bottom: 6px; }
+    li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-
   <div class="container">
     <a href="/sk/" class="back-link">&larr; Späť na Zacton</a>
-    
-    <h1>Všeobecné obchodné podmienky</h1>
-    <div class="meta-date">Účinnosť od: 17. septembra 2026</div>
+    <div class="card">
+      <h1>Všeobecné obchodné podmienky</h1>
+      <div class="meta">Platné od: 1. septembra 2026 | Posledná aktualizácia: september 2026</div>
 
-    <p>Tieto obchodné podmienky upravujú nákup a dodanie diagnostických auditov služby Zacton, prevádzkovanej: Peter Haratík, IČO: 40148032, e-mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a>.</p>
+      <p>Tieto Všeobecné obchodné podmienky (ďalej len „VOP“) upravujú práva a povinnosti medzi prevádzkovateľom a objednávateľom pri poskytovaní technických a procesných diagnostických auditov v rámci projektu Zacton.</p>
 
-    <h2>1. Rozsah a predmet plnenia</h2>
-    <p>Predmetom služby je dodanie jednorazovej technickej diagnostickej analýzy vo forme štruktúrovaného PDF reportu do 48 hodín od kompletného dodania vstupných podkladov a schválenia read-only prístupu:</p>
-    <ul>
-      <li><strong>Audit hľadaných výrazov a rozpočtu Google Ads:</strong> Analýza neefektívnych hľadaných výrazov, kanibalizácie voľnej zhody a návrh zoznamu vylučujúcich kľúčových slov.</li>
-      <li><strong>Integrita Google Merchant Center a produktového feedu:</strong> Preverenie zamietnutých položiek, chýbajúcich atribútov (GTIN/EAN) a štruktúry názvov.</li>
-      <li><strong>Diagnostika merania GA4 a e-commerce tracking:</strong> Preverenie odosielania nákupných udalostí, straty dát z dôvodu Consent Mode a nepresností voči objednávkam.</li>
-      <li><strong>Analýza nákupného lievika a nákupného košíka:</strong> Odhalenie konverzných bariér v košíku a na mobilných zariadeniach s prioritizovaným plánom nápravy.</li>
-    </ul>
+      <p><strong>Prevádzkovateľ:</strong><br>
+      Peter Haratík<br>
+      Miesto podnikania: J. Š. Šikuru 76, 036 01 Martin, Slovenská republika<br>
+      IČO: 46348832<br>
+      DIČ: 1048285249<br>
+      Zápis v Živnostenskom registri: Okresný úrad Martin, číslo živnostenského registra: 550-23490<br>
+      E-mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a><br>
+      (Prevádzkovateľ nie je platiteľom DPH)</p>
 
-    <h2>2. B2B charakter služby</h2>
-    <p>Služby sú určené výhradne pre právnické osoby a fyzické osoby – podnikateľov (B2B vzťah). Odoslaním objednávky zákazník potvrdzuje, že koná v rámci svojej podnikateľskej činnosti.</p>
+      <h2>1. Rozsah a predmet plnenia</h2>
+      <p>Predmetom plnenia je vypracovanie a elektronické dodanie jednorazového diagnostického auditu (vo formáte PDF) pre vybranú oblasť e-commerce operácií. Zákazník si pri objednávke volí jeden z nasledujúcich auditov:</p>
+      <ul>
+        <li><strong>Google Ads rozpočtové úniky & audit vyhľadávacích dopytov:</strong> analýza neefektívneho míňania rozpočtu, voľnej zhody a návrh vylučujúcich kľúčových slov.</li>
+        <li><strong>Merchant Center & integrita produktového feedu:</strong> kontrola zamietnutých položiek, chýbajúcich atribútov (GTIN/EAN) a integrity dát.</li>
+        <li><strong>Diagnostika GA4 & e-commerce merania:</strong> kontrola presnosti zaznamenávania nákupov, parametrov a výpadkov Consent Mode v2.</li>
+        <li><strong>Frikcia košíka & detekcia únikov v nákupnom procese:</strong> UX a procesná analýza nákupného lievika a košíka.</li>
+      </ul>
 
-    <h2>3. Súčinnosť zákazníka a prístupové práva</h2>
-    <ul>
-      <li>Zákazník je povinný po úhrade dodať potrebné identifikačné údaje (napr. 10-miestne Google Ads CID, URL feedu alebo schváliť pozvánku do GA4).</li>
-      <li>Prístup musí byť udelený výhradne na úrovni <strong>prezerania (read-only)</strong>. Zacton nevyžaduje ani nevykonáva priame úpravy v účtoch klienta.</li>
-      <li>Lehota dodania 48 hodín začína plynúť až momentom riadneho udelenia požadovaného prístupu a dodania potrebných parametrov.</li>
-    </ul>
+      <h2>2. B2B charakter služby</h2>
+      <p>Služby ponúkané na zacton.com sú určené výhradne pre podnikateľov, právnické a fyzické osoby – podnikateľov (B2B). Odoslaním objednávky zákazník potvrdzuje, že službu objednáva na účely svojho podnikania.</p>
 
-    <h2>4. Cena a platobné podmienky</h2>
-    <p>Cena každého jednotlivého auditu je fixná: 95 &euro; (jednorazová platba). Platba prebieha vopred prostredníctvom platobnej brány Stripe. Daňový doklad je vystavený a zaslaný elektronicky po prijatí platby.</p>
+      <h2>3. Súčinnosť zákazníka a prístupové práva</h2>
+      <p>Pre vypracovanie auditu je nevyhnutná technická súčinnosť zákazníka, ktorú poskytne prostredníctvom formulára po platbe (onboarding) alebo e-mailom:</p>
+      <ul>
+        <li>Udelenie prístupu iba na čítanie (Read-Only / Viewer) do Google Ads MCC, Google Analytics 4 alebo Google Merchant Center, prípadne dodanie odkazu na produktový XML feed či URL e-shopu.</li>
+        <li>Poskytovateľ nevyžaduje ani neprijíma administrátorské prístupy s právom zápisu a na účtoch klienta nevykonáva priame zásahy.</li>
+        <li><strong>Dodacia lehota 48 hodín</strong> začína plynúť v momente riadneho overenia a sprístupnenia potrebných čitateľských prístupov alebo podkladov Poskytovateľovi.</li>
+      </ul>
 
-    <h2>5. Odstúpenie od zmluvy a garancie</h2>
-    <p>Vzhľadom na povahu individuálne spracovávanej odbornej analýzy nie je možné po začatí diagnostických prác od zmluvy odstúpiť. Ak Zacton nedodá správu do 5 pracovných dní z dôvodov na svojej strane, zákazníkovi bude vrátených 100 % zaplatenej sumy cez Stripe.</p>
+      <h2>4. Cena a platobné podmienky</h2>
+      <p>Cena každého jednorazového auditu je <strong>95,00 EUR</strong> (konečná cena; prevádzkovateľ nie je platiteľom DPH). Platba prebieha vopred prostredníctvom platobnej brány Stripe. Daňový doklad (faktúra) je vystavený a doručený elektronicky po prijatí úhrady.</p>
 
-    <h2>6. Zodpovednosť za implementáciu</h2>
-    <p>Audit predstavuje nezávislé odborné odporúčanie založené na stave dát v čase auditu. Implementácia zistení je plne v kompetencii zákazníka. Zacton nezodpovedá za výkyvy výkonnosti, algoritmické zmeny tretích strán ani sankcie reklamných systémov vzniknuté nesprávnou implementáciou odporúčaní.</p>
+      <h2>5. Odstúpenie od zmluvy a garancie</h2>
+      <p>Vzhľadom na povahu poskytovania individuálneho digitálneho obsahu a expertných konzultačných prác na mieru začína plnenie služby okamžite po udelení technických prístupov. Ak z technických alebo kapacitných dôvodov na strane Poskytovateľa nie je možné audit do 5 pracovných dní vyhotoviť, objednávateľovi bude vrátených 100 % zaplatenej čiastky.</p>
 
-    <h2>7. Rozhodné právo</h2>
-    <p>Zmluvné vzťahy sa spravujú právnym poriadkom Slovenskej republiky. Prípadné spory budú riešené príslušnými súdmi Slovenskej republiky.</p>
+      <h2>6. Zodpovednosť a implementácia</h2>
+      <p>Diagnostický audit predstavuje odborné posúdenie stavu na základe dostupných dát v čase auditu. Výstup má charakter analytického odporúčania. Zodpovednosť za zavedenie navrhovaných zmien do praxe, ich otestovanie a nasadenie na vlastnú infraštruktúru nesie výhradne objednávateľ.</p>
+
+      <h2>7. Rozhodné právo</h2>
+      <p>Vzťahy medzi Poskytovateľom a Objednávateľom sa riadia právnym poriadkom Slovenskej republiky, predovšetkým Obchodným zákonníkom (Zákon č. 513/1991 Zb. v platnom znení). Prípadné spory budú riešené príslušným súdom v Slovenskej republike.</p>
+    </div>
+    <footer>
+      &copy; 2026 Zacton. Prevádzkovateľ: Peter Haratík | IČO: 46348832 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+    </footer>
   </div>
-
 </body>
 </html>
