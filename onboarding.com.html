@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation & Next Steps | Zacton</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 20px 60px 20px;
+    }
+    .lang-toggle {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .lang-toggle button {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #475569;
+    }
+    .lang-toggle button.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px 0;
+      color: #0f172a;
+    }
+    p.intro {
+      font-size: 1.05rem;
+      color: #475569;
+      margin: 0 0 28px 0;
+    }
+    .instructions-box {
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 28px;
+    }
+    .instructions-box h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.05rem;
+      color: #1e293b;
+    }
+    .instructions-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #1e293b;
+    }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #0f172a;
+      background: #ffffff;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+    .hint {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    button.submit-btn {
+      display: block;
+      width: 100%;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 28px;
+    }
+    button.submit-btn:hover {
+      background: #1d4ed8;
+    }
+    .direct-email {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    .direct-email a {
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .direct-email a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-toggle">
+      <button type="button" class="active" onclick="setLang('en')">EN</button>
+      <button type="button" onclick="setLang('sk')">SK</button>
+      <button type="button" onclick="setLang('de')">DE</button>
+    </div>
+
+    <div class="card">
+      <span class="badge" id="badgeText">Payment Confirmed</span>
+      <h1 id="titleText">Diagnostic Audit Setup</h1>
+      <p class="intro" id="introText">Thank you for your order. To begin the 48-hour audit window, please submit the technical details below.</p>
+
+      <div class="instructions-box">
+        <h3 id="scopeTitle">Required Access</h3>
+        <p id="scopeDetails">We only require read-only access. You will receive the structured PDF diagnostic report within 48 hours.</p>
+      </div>
+
+      <form id="onboardingForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="auditType" id="labelAuditType">Selected Audit Service</label>
+          <select id="auditType" name="auditType" onchange="updateAuditHelp()">
+            <option value="google-ads">1. Google Ads Budget Bleed & Search Term Audit</option>
+            <option value="merchant-center">2. Merchant Center & Product Feed Integrity</option>
+            <option value="ga4-tracking">3. GA4 & E-Commerce Tracking Diagnostics</option>
+            <option value="checkout-friction">4. Checkout Friction & Funnel Leak Scan</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="email" id="labelEmail">Your Contact Email (for report delivery)</label>
+          <input type="email" id="email" name="email" required placeholder="name@yourcompany.com">
+        </div>
+
+        <div class="form-group">
+          <label for="websiteUrl" id="labelUrl">Store / Website URL</label>
+          <input type="text" id="websiteUrl" name="websiteUrl" required placeholder="https://www.yourshop.com">
+        </div>
+
+        <div class="form-group" id="dynamicInputGroup">
+          <label for="technicalDetail" id="labelDetail">10-Digit Google Ads CID</label>
+          <input type="text" id="technicalDetail" name="technicalDetail" placeholder="123-456-7890">
+          <div class="hint" id="hintDetail">Provide your CID. We will send an official Read-Only link request from our MCC.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes" id="labelNotes">Additional Notes / Priority Areas (Optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Specific problems, recent changes, or target markets..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Send Audit Details</button>
+      </form>
+
+      <div class="direct-email">
+        <span id="altHelpText">Prefer to send via email directly? Write to:</span> 
+        <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 Zacton. Operator: Peter Haratík | contact@zacton.com
+    </footer>
+  </div>
+
+  <script>
+    const i18n = {
+      en: {
+        badge: "Payment Confirmed",
+        title: "Diagnostic Audit Setup",
+        intro: "Thank you for your order. To begin the 48-hour delivery window, please submit the technical details below.",
+        scopeTitle: "Required Information",
+        scopeDetails: "We only require read-only access. You will receive the structured PDF diagnostic report within 48 hours.",
+        labelAuditType: "Selected Audit Service",
+        labelEmail: "Your Contact Email (for report delivery)",
+        labelUrl: "Store / Website URL",
+        labelNotes: "Additional Notes / Specific Concerns (Optional)",
+        submitBtn: "Send Audit Details",
+        altHelpText: "Prefer to send details directly via email? Write to:",
+        hints: {
+          "google-ads": {
+            label: "10-Digit Google Ads CID",
+            placeholder: "123-456-7890",
+            hint: "Provide your CID. We will issue an official Read-Only MCC link request for your approval."
+          },
+          "merchant-center": {
+            label: "Product XML Feed URL or Merchant Center ID",
+            placeholder: "https://www.yourshop.com/feed.xml or MC ID: 123456789",
+            hint: "Provide your feed link or grant Viewer access to contact@zacton.com in Merchant Center."
+          },
+          "ga4-tracking": {
+            label: "GA4 Property ID or Viewer Access Confirmation",
+            placeholder: "GA4 Property ID (e.g. 987654321)",
+            hint: "Grant Viewer (read-only) access to contact@zacton.com in your GA4 property settings."
+          },
+          "checkout-friction": {
+            label: "Key Payment & Shipping Methods / E-shop Platform",
+            placeholder: "e.g. Shopify / WooCommerce, Stripe, PayPal, DHL, Packeta...",
+            hint: "List any specific friction points or platforms you want us to focus on."
+          }
+        }
+      },
+      sk: {
+        badge: "Platba potvrdená",
+        title: "Zadanie podkladov pre diagnostický audit",
+        intro: "Ďakujeme za objednávku. Aby sme mohli začať 48-hodinovú lehotu vypracovania, vyplňte prosím technické údaje nižšie.",
+        scopeTitle: "Požadované údaje",
+        scopeDetails: "Vyžadujeme výhradne prístup iba na čítanie. Štruktúrovaný PDF report dostanete e-mailom do 48 hodín.",
+        labelAuditType: "Zvolený typ auditu",
+        labelEmail: "Váš kontaktný e-mail (pre doručenie reportu)",
+        labelUrl: "URL adresa vášho e-shopu / webu",
+        labelNotes: "Doplňujúce poznámky / priority (voliteľné)",
+        submitBtn: "Odoslať podklady pre audit",
+        altHelpText: "Chcete poslať údaje priamo z vášho e-mailu? Napíšte na:",
+        hints: {
+          "google-ads": {
+            label: "10-miestne Google Ads CID",
+            placeholder: "123-456-7890",
+            hint: "Zadajte vaše CID. Zašleme vám oficiálnu žiadosť o prepojenie iba na čítanie (Read-Only) z nášho MCC."
+          },
+          "merchant-center": {
+            label: "URL adresa XML feedu alebo Merchant Center ID",
+            placeholder: "https://www.vaseshop.sk/feed.xml alebo MC ID: 123456789",
+            hint: "Zadajte odkaz na feed alebo udeľte prístup čitateľa na contact@zacton.com v Merchant Center."
+          },
+          "ga4-tracking": {
+            label: "GA4 Property ID alebo potvrdenie udelenia prístupu",
+            placeholder: "GA4 Property ID (napr. 987654321)",
+            hint: "Udeľte prístup typu Prehliadač (Viewer) pre contact@zacton.com v správe vášho GA4."
+          },
+          "checkout-friction": {
+            label: "Platobné metódy, doprava a platforma e-shopu",
+            placeholder: "napr. Shoptet / WooCommerce, Stripe, Packeta, DPD...",
+            hint: "Uveďte platformu alebo konkrétne miesta, kde vnímate prepad konverzií."
+          }
+        }
+      },
+      de: {
+        badge: "Zahlung bestätigt",
+        title: "Setup Ihres Diagnose-Audits",
+        intro: "Vielen Dank für Ihre Bestellung. Um die 48-Stunden-Frist zu starten, übermitteln Sie bitte die folgenden technischen Details.",
+        scopeTitle: "Benötigte Informationen",
+        scopeDetails: "Wir benötigen ausschließlich Nur-Lese-Zugriff. Sie erhalten den strukturierten PDF-Bericht innerhalb von 48 Stunden per E-Mail.",
+        labelAuditType: "Ausgewählter Audit-Typ",
+        labelEmail: "Ihre Kontakt-E-Mail (für den Berichtversand)",
+        labelUrl: "Shop- / Website-URL",
+        labelNotes: "Zusätzliche Hinweise / Schwerpunkte (Optional)",
+        submitBtn: "Audit-Details absenden",
+        altHelpText: "Möchten Sie die Details lieber direkt per E-Mail senden? Schreiben Sie an:",
+        hints: {
+          "google-ads": {
+            label: "10-stellige Google Ads CID",
+            placeholder: "123-456-7890",
+            hint: "Geben Sie Ihre CID an. Wir senden eine offizielle Anfrage für Nur-Lese-Zugriff aus unserem MCC."
+          },
+          "merchant-center": {
+            label: "XML-Feed-URL oder Merchant Center ID",
+            placeholder: "https://www.ihrshop.de/feed.xml oder MC ID: 123456789",
+            hint: "Geben Sie die Feed-URL an oder erteilen Sie Betrachter-Zugriff an contact@zacton.com."
+          },
+          "ga4-tracking": {
+            label: "GA4 Property-ID oder Bestätigung der Freigabe",
+            placeholder: "GA4 Property-ID (z. B. 987654321)",
+            hint: "Erteilen Sie Betrachter-Zugriff (Viewer) an contact@zacton.com in Google Analytics 4."
+          },
+          "checkout-friction": {
+            label: "Zahlungs- und Versandarten / Shop-System",
+            placeholder: "z. B. Shopify / Shopware, Stripe, PayPal, DHL...",
+            hint: "Nennen Sie spezifische Problemstellen oder Ihr eingesetztes Shopsystem."
+          }
+        }
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-toggle button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+      const data = i18n[lang];
+      document.getElementById('badgeText').textContent = data.badge;
+      document.getElementById('titleText').textContent = data.title;
+      document.getElementById('introText').textContent = data.intro;
+      document.getElementById('scopeTitle').textContent = data.scopeTitle;
+      document.getElementById('scopeDetails').textContent = data.scopeDetails;
+      document.getElementById('labelAuditType').textContent = data.labelAuditType;
+      document.getElementById('labelEmail').textContent = data.labelEmail;
+      document.getElementById('labelUrl').textContent = data.labelUrl;
+      document.getElementById('labelNotes').textContent = data.labelNotes;
+      document.getElementById('submitBtn').textContent = data.submitBtn;
+      document.getElementById('altHelpText').textContent = data.altHelpText;
+      updateAuditHelp();
+    }
+
+    function updateAuditHelp() {
+      const type = document.getElementById('auditType').value;
+      const conf = i18n[currentLang].hints[type] || i18n[currentLang].hints['google-ads'];
+      document.getElementById('labelDetail').textContent = conf.label;
+      document.getElementById('technicalDetail').placeholder = conf.placeholder;
+      document.getElementById('hintDetail').textContent = conf.hint;
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const audit = document.getElementById('auditType').value;
+      const email = document.getElementById('email').value;
+      const url = document.getElementById('websiteUrl').value;
+      const detail = document.getElementById('technicalDetail').value;
+      const notes = document.getElementById('notes').value;
+
+      const subject = encodeURIComponent(`[Zacton Audit Setup] ${audit} - ${url}`);
+      const body = encodeURIComponent(
+        `Audit Type: ${audit}\n` +
+        `Customer Email: ${email}\n` +
+        `Website URL: ${url}\n` +
+        `Technical Detail / CID / Feed: ${detail}\n` +
+        `Notes / Focus Areas:\n${notes}\n`
+      );
+
+      window.location.href = `mailto:contact@zacton.com?subject=${subject}&body=${body}`;
+    }
+
+    // Auto-select audit from URL parameters if redirected
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const serviceParam = params.get('service') || params.get('client_reference_id');
+      if (serviceParam && ['google-ads', 'merchant-center', 'ga4-tracking', 'checkout-friction'].includes(serviceParam)) {
+        document.getElementById('auditType').value = serviceParam;
+      }
+      updateAuditHelp();
+    });
+  </script>
+</body>
+</html>
