@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Diagnostic Report | Google Ads Audit | Zacton</title>
+  <meta name="description" content="Sample 3-page technical audit report: Google Ads budget leaks, search term cannibalization, and negative keyword fixes.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px 80px 20px;
+    }
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .lang-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+    }
+    .lang-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .print-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .print-btn:hover { background: #f1f5f9; }
+    .report-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .report-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    .badge-sample {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 8px 0;
+      line-height: 1.25;
+    }
+    .report-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 16px;
+      background: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 6px;
+    }
+    .report-meta strong { color: #0f172a; display: block; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .summary-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .summary-box.alert {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .summary-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .summary-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .summary-box.alert .summary-val { color: #dc2626; }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 36px 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .finding-card {
+      border-left: 4px solid #ef4444;
+      background: #fafafa;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+    }
+    .finding-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.05rem;
+      color: #0f172a;
+    }
+    .finding-card p {
+      margin: 0 0 8px 0;
+      font-size: 0.92rem;
+      color: #475569;
+    }
+    .finding-card p:last-child { margin-bottom: 0; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.88rem;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .data-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .data-table td.num { text-align: right; }
+    .data-table tr:nth-child(even) { background: #fafafa; }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+    .cta-banner {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta-banner h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+      color: #1e3a8a;
+    }
+    .cta-banner p {
+      margin: 0 0 20px 0;
+      font-size: 0.95rem;
+      color: #3b82f6;
+    }
+    .order-btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .order-btn:hover { background: #1d4ed8; }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+
+    @media print {
+      body { background: #ffffff; }
+      .container { max-width: 100%; padding: 0; }
+      .top-nav, .cta-banner, footer { display: none; }
+      .report-card { border: none; box-shadow: none; padding: 0; }
+    }
+    @media (max-width: 768px) {
+      .report-meta, .summary-grid { grid-template-columns: 1fr; }
+      .report-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="/" class="back-link" id="backLink">&larr; Back to Zacton</a>
+      <div class="nav-actions">
+        <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button type="button" class="lang-btn" onclick="setLang('sk')">SK</button>
+        <button type="button" class="lang-btn" onclick="setLang('de')">DE</button>
+        <button type="button" class="print-btn" onclick="window.print()">🖨 Save PDF</button>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div class="report-header">
+        <span class="badge-sample" id="badgeSample">Sample Audit Report</span>
+        <h1 id="repTitle">Google Ads Budget Bleed & Search Term Audit</h1>
+        <div class="report-meta">
+          <div><span id="lblScope">Scope:</span> <strong id="valScope">Search & PMax Campaigns</strong></div>
+          <div><span id="lblTime">Timeframe:</span> <strong id="valTime">Last 90 Days</strong></div>
+          <div><span id="lblStatus">Target:</span> <strong id="valStatus">B2B / B2C E-Commerce</strong></div>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-box">
+          <div class="summary-label" id="lblSpend">Total Spend Analyzed</div>
+          <div class="summary-val">7,420 €</div>
+        </div>
+        <div class="summary-box alert">
+          <div class="summary-label" id="lblWaste">Verified Budget Waste</div>
+          <div class="summary-val">1,140 € (15.3%)</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-label" id="lblSavings">Est. Annualized Savings</div>
+          <div class="summary-val">4,560 €</div>
+        </div>
+      </div>
+
+      <h2 id="headFindings">1. Primary Budget Leaks Identified</h2>
+
+      <div class="finding-card">
+        <h3 id="leak1Title">Leak A: Uncontrolled Broad Match Cannibalization</h3>
+        <p id="leak1Desc">Broad match keywords matched high-volume informational queries (e.g., "how to repair...", "manual pdf", "free alternatives"). These terms yielded zero conversions while spending 248 € over 312 wasted clicks.</p>
+        <p><strong id="leak1Fix">Recommended Action:</strong> Restrict queries to Phrase match; attach the provided Negative Global List.</p>
+      </div>
+
+      <div class="finding-card">
+        <h3 id="leak2Title">Leak B: Brand Name Cannibalization in Performance Max</h3>
+        <p id="leak2Desc">Performance Max campaigns spent 38% of total budget bidding on the store's own brand terms. This inflated ROAS to an artificial 1,150% while stealing traffic that would convert organically or via low-cost Brand Search.</p>
+        <p><strong id="leak2Fix">Recommended Action:</strong> Apply a Brand Exclusion list directly in PMax settings.</p>
+      </div>
+
+      <div class="finding-card">
+        <h3 id="leak3Title">Leak C: Missing Shared Negative Keyword Library</h3>
+        <p id="leak3Desc">New search ad groups launched without inheriting baseline exclusions. Generic terms such as "login", "forum", and competitor support numbers were actively consuming spend.</p>
+        <p><strong id="leak3Fix">Recommended Action:</strong> Deploy Account-Level Shared Negative Library immediately.</p>
+      </div>
+
+      <h2 id="headData">2. Extract of Wasted Search Terms (Attached in Export)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th id="thTerm">Search Query</th>
+            <th id="thMatch">Match Type</th>
+            <th class="num" id="thClicks">Clicks</th>
+            <th class="num" id="thCost">Cost</th>
+            <th class="num" id="thConv">Conv.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[product category] navod na pouzitie pdf</td>
+            <td>Broad match</td>
+            <td class="num">142</td>
+            <td class="num">118.40 €</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>bazar [brand name] lacno</td>
+            <td>Broad match</td>
+            <td class="num">98</td>
+            <td class="num">74.20 €</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>[competitor name] reklamacie kontakt</td>
+            <td>Broad match</td>
+            <td class="num">72</td>
+            <td class="num">55.40 €</td>
+            <td class="num">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="headPlan">3. 48-Hour Implementation Checklist</h2>
+      <ul class="checklist" id="checklist">
+        <li><strong>Step 1:</strong> Import the attached <code>zacton-negatives-export.csv</code> (contains 45 pre-filtered negative terms).</li>
+        <li><strong>Step 2:</strong> Apply the Negative List to all active generic Search campaigns.</li>
+        <li><strong>Step 3:</strong> Exclude own brand terms in Performance Max campaign settings to reflect genuine incremental revenue.</li>
+      </ul>
+
+      <div class="cta-banner">
+        <h3 id="ctaHead">Need This Exact Diagnostic for Your Store?</h3>
+        <p id="ctaDesc">Get a complete 48-hour audit identifying your store's specific budget leaks and feed errors.</p>
+        <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="order-btn" id="ctaBtn">Order Google Ads Audit — 95 €</a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 Zacton. Operator: Peter Haratík | IČO: 46348832 | <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+    </footer>
+  </div>
+
+  <script>
+    const content = {
+      en: {
+        back: "← Back to Zacton",
+        badge: "Sample Audit Report",
+        title: "Google Ads Budget Bleed & Search Term Audit",
+        scope: "Scope:",
+        scopeVal: "Search & PMax Campaigns",
+        time: "Timeframe:",
+        status: "Target:",
+        spend: "Total Spend Analyzed",
+        waste: "Verified Budget Waste",
+        savings: "Est. Annualized Savings",
+        headFindings: "1. Primary Budget Leaks Identified",
+        leak1T: "Leak A: Uncontrolled Broad Match Cannibalization",
+        leak1D: "Broad match keywords matched high-volume informational queries (e.g., 'how to repair...', 'manual pdf', 'free alternatives'). These terms yielded zero conversions while spending 248 € over 312 wasted clicks.",
+        leak1F: "Recommended Action:",
+        leak2T: "Leak B: Brand Name Cannibalization in Performance Max",
+        leak2D: "Performance Max campaigns spent 38% of total budget bidding on the store's own brand terms. This inflated ROAS to an artificial 1,150% while stealing traffic that would convert organically or via low-cost Brand Search.",
+        leak2F: "Recommended Action:",
+        leak3T: "Leak C: Missing Shared Negative Keyword Library",
+        leak3D: "New search ad groups launched without inheriting baseline exclusions. Generic terms such as 'login', 'forum', and competitor support numbers were actively consuming spend.",
+        leak3F: "Recommended Action:",
+        headData: "2. Extract of Wasted Search Terms (Attached in Export)",
+        thTerm: "Search Query",
+        thMatch: "Match Type",
+        thClicks: "Clicks",
+        thCost: "Cost",
+        thConv: "Conv.",
+        headPlan: "3. 48-Hour Implementation Checklist",
+        step1: "<strong>Step 1:</strong> Import the attached <code>zacton-negatives-export.csv</code> (contains 45 pre-filtered negative terms).",
+        step2: "<strong>Step 2:</strong> Apply the Negative List to all active generic Search campaigns.",
+        step3: "<strong>Step 3:</strong> Exclude own brand terms in Performance Max campaign settings to reflect genuine incremental revenue.",
+        ctaHead: "Need This Exact Diagnostic for Your Store?",
+        ctaDesc: "Get a complete 48-hour audit identifying your store's specific budget leaks and feed errors.",
+        ctaBtn: "Order Google Ads Audit — 95 €"
+      },
+      sk: {
+        back: "← Späť na Zacton",
+        badge: "Vzorový diagnostický audit",
+        title: "Google Ads rozpočtové úniky & audit vyhľadávacích dopytov",
+        scope: "Rozsah:",
+        scopeVal: "Search & Performance Max",
+        time: "Obdobie:",
+        status: "Segment:",
+        spend: "Analyzovaný rozpočet",
+        waste: "Preukázané rozpočtové straty",
+        savings: "Odhadovaná ročná úspora",
+        headFindings: "1. Identifikované primárne úniky rozpočtu",
+        leak1T: "Únik A: Nekontrolovaná voľná zhoda (Broad Match)",
+        leak1D: "Kľúčové slová vo voľnej zhode zachytávali všeobecné informačné dopyty (napr. 'návod na použitie', 'oprava doma', 'bazár'). Tieto dopyty priniesli 0 nákupov, no spálili 248 € pri 312 kliknutiach.",
+        leak1F: "Krok nápravy:",
+        leak2T: "Únik B: Kanibalizácia vlastnej značky v Performance Max",
+        leak2D: "PMax kampaň míňala 38 % rozpočtu na vlastný brand. To umelo nafukovalo ROAS na 1 150 %, hoci išlo o zákazníkov, ktorí by nakúpili cez organiku alebo lacný Brand Search.",
+        leak2F: "Krok nápravy:",
+        leak3T: "Únik C: Chýbajúci globálny zoznam vylučujúcich slov",
+        leak3D: "Nové kampane štartovali bez dedenia základných vylučujúcich výrazov. Dopyty ako 'kontakt', 'reklamácie' či mená irelevantných konkurentov odčerpávali rozpočet.",
+        leak3F: "Krok nápravy:",
+        headData: "2. Ukážka neefektívnych dopytov (súčasť exportu)",
+        thTerm: "Vyhľadávací dopyt",
+        thMatch: "Typ zhody",
+        thClicks: "Kliky",
+        thCost: "Náklady",
+        thConv: "Konv.",
+        headPlan: "3. 48-hodinový akčný plán implementácie",
+        step1: "<strong>Krok 1:</strong> Importovať pripojený súbor <code>zacton-negatives-export.csv</code> (45 filtrovaných vylučujúcich výrazov).",
+        step2: "<strong>Krok 2:</strong> Priradiť zoznam ku všetkým generickým vyhľadávacím kampaniam.",
+        step3: "<strong>Krok 3:</strong> Vylúčiť vlastnú značku (Brand Exclusion) v nastavení Performance Max.",
+        ctaHead: "Chcete rovnakú diagnostiku pre váš e-shop?",
+        ctaDesc: "Získajte kompletný 48-hodinový rozbor vašich kampaní s konkrétnymi exportmi a krokmi.",
+        ctaBtn: "Objednať Google Ads audit — 95 €"
+      },
+      de: {
+        back: "← Zurück zu Zacton",
+        badge: "Muster-Auditbericht",
+        title: "Google Ads Budget-Leckagen & Suchbegriffe-Audit",
+        scope: "Umfang:",
+        scopeVal: "Such- & PMax-Kampagnen",
+        time: "Zeitraum:",
+        status: "Zielgruppe:",
+        spend: "Analysiertes Budget",
+        waste: "Verifizierte Budgetverluste",
+        savings: "Geschätzte Jahresersparnis",
+        headFindings: "1. Primäre Budget-Leckagen",
+        leak1T: "Leck A: Unkontrollierte Broad-Match-Kannibalisierung",
+        leak1D: "Broad-Match-Keywords lösten irrelevante Informationssuchen aus (z. B. 'Anleitung PDF', 'Reparaturtipps'). Diese Klicks brachten null Konversionen bei 248 € verbranntem Budget.",
+        leak1F: "Maßnahme:",
+        leak2T: "Leck B: Marken-Kannibalisierung in Performance Max",
+        leak2D: "PMax-Kampagnen investierten 38 % des Budgets in Suchen nach der eigenen Marke. Dies täuschte einen ROAS von 1.150 % vor, während günstiger Marken-Traffic teuer eingekauft wurde.",
+        leak2F: "Maßnahme:",
+        leak3T: "Leck C: Fehlende globale Ausschlusslisten",
+        leak3D: "Neue Anzeigengruppen erbten keine zentralen Negative-Listen. Suchbegriffe wie 'Login', 'Forum' oder Support-Kontakte von Wettbewerbern verbrauchten kontinuierlich Budget.",
+        leak3F: "Maßnahme:",
+        headData: "2. Auszug unwirtschaftlicher Suchbegriffe (im Export)",
+        thTerm: "Suchbegriff",
+        thMatch: "Passende Zuordnung",
+        thClicks: "Klicks",
+        thCost: "Kosten",
+        thConv: "Konv.",
+        headPlan: "3. 48-Stunden-Umsetzungsplan",
+        step1: "<strong>Schritt 1:</strong> Import der beigefügten <code>zacton-negatives-export.csv</code> (45 gefilterte Ausschluss-Keywords).",
+        step2: "<strong>Schritt 2:</strong> Zuweisung der Ausschlussliste an alle generischen Suchkampagnen.",
+        step3: "<strong>Schritt 3:</strong> Einrichtung von Markenausschlüssen (Brand Exclusion) in Performance Max.",
+        ctaHead: "Benötigen Sie diese Diagnose für Ihren Shop?",
+        ctaDesc: "Erhalten Sie innerhalb von 48 Stunden eine konkrete Fehleranalyse mit umsetzbarem Maßnahmenplan.",
+        ctaBtn: "Google Ads Audit bestellen — 95 €"
+      }
+    };
+
+    function setLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent.toLowerCase() === lang);
+      });
+      const d = content[lang];
+      document.getElementById('backLink').textContent = d.back;
+      document.getElementById('badgeSample').textContent = d.badge;
+      document.getElementById('repTitle').textContent = d.title;
+      document.getElementById('lblScope').textContent = d.scope;
+      document.getElementById('valScope').textContent = d.scopeVal;
+      document.getElementById('lblTime').textContent = d.time;
+      document.getElementById('lblStatus').textContent = d.status;
+      document.getElementById('lblSpend').textContent = d.spend;
+      document.getElementById('lblWaste').textContent = d.waste;
+      document.getElementById('lblSavings').textContent = d.savings;
+      document.getElementById('headFindings').textContent = d.headFindings;
+      document.getElementById('leak1Title').textContent = d.leak1T;
+      document.getElementById('leak1Desc').textContent = d.leak1D;
+      document.getElementById('leak1Fix').textContent = d.leak1F;
+      document.getElementById('leak2Title').textContent = d.leak2T;
+      document.getElementById('leak2Desc').textContent = d.leak2D;
+      document.getElementById('leak2Fix').textContent = d.leak2F;
+      document.getElementById('leak3Title').textContent = d.leak3T;
+      document.getElementById('leak3Desc').textContent = d.leak3D;
+      document.getElementById('leak3Fix').textContent = d.leak3F;
+      document.getElementById('headData').textContent = d.headData;
+      document.getElementById('thTerm').textContent = d.thTerm;
+      document.getElementById('thMatch').textContent = d.thMatch;
+      document.getElementById('thClicks').textContent = d.thClicks;
+      document.getElementById('thCost').textContent = d.thCost;
+      document.getElementById('thConv').textContent = d.thConv;
+      document.getElementById('headPlan').textContent = d.headPlan;
+      document.getElementById('checklist').children[0].innerHTML = d.step1;
+      document.getElementById('checklist').children[1].innerHTML = d.step2;
+      document.getElementById('checklist').children[2].innerHTML = d.step3;
+      document.getElementById('ctaHead').textContent = d.ctaHead;
+      document.getElementById('ctaDesc').textContent = d.ctaDesc;
+      document.getElementById('ctaBtn').textContent = d.ctaBtn;
+    }
+  </script>
+</body>
+</html>
