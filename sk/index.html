@@ -217,6 +217,9 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .project-card h4 {
       margin: 0 0 6px 0;
@@ -233,6 +236,11 @@
       font-size: 0.88rem;
       color: #475569;
       line-height: 1.5;
+    }
+    .project-card .sub-block {
+      margin-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
     }
 
     /* Audit Findings Cases */
@@ -407,13 +415,22 @@
       <p class="intro-p">Za Zactonom nestoja teoretickí konzultanti z agentúr, ale každodenné riadenie reálnych e-commerce operácií a vlastných e-shopových projektov:</p>
       <div class="projects-grid">
         <div class="project-card">
-          <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
-          <p>Omnichannel B2B a B2C distribúcia kancelárskych a hygienických potrieb. Správa tisícok skladových položiek, maržové riadenie a logistika.</p>
-          <p style="margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 10px;"><strong>Vlastné riešenie FEEDEX:</strong> Návrh a vývoj unifikovaného integračného systému pre externých dodávateľov. FEEDEX priamo importuje a transformuje dáta z dodávateľských ERP systémov do e-shopu demro.sk na základe požadovaných atribútov a štruktúry úplne bez zásahu človeka — spracováva rádovo tisíce až desaťtisíce položiek mesačne.</p>
+          <div>
+            <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
+            <p>Omnichannel B2B a B2C distribúcia kancelárskych a hygienických potrieb. Správa tisícok skladových položiek, maržové riadenie a logistika.</p>
+          </div>
+          <div class="sub-block">
+            <p><strong>Vlastné riešenie FEEDEX:</strong> Návrh a vývoj unifikovaného integračného systému pre externých dodávateľov. FEEDEX priamo importuje a transformuje dáta z dodávateľských ERP systémov do e-shopu demro.sk na základe požadovaných atribútov a štruktúry úplne bez zásahu človeka — spracováva rádovo tisíce až desaťtisíce položiek mesačne.</p>
+          </div>
         </div>
         <div class="project-card">
-          <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
-          <p>Špecializovaný e-shop s regeneračnou a rehabilitačnou technikou (Compex). Dôraz na cielené Shopping kampane, vysokú priemernú hodnotu objednávky a technické atribúty produktov.</p>
+          <div>
+            <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
+            <p>Špecializovaný e-shop s regeneračnou a rehabilitačnou technikou (Compex). Dôraz na cielené Shopping kampane, vysokú priemernú hodnotu objednávky a technické atribúty produktov.</p>
+          </div>
+          <div class="sub-block">
+            <p><strong><a href="https://animalsoft.eu" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">animalsoft.eu</a> &nearr; E-E-A-T & AI Search:</strong> Návrh a realizácia obsahovej a SEO architektúry postavenej na hĺbkových odborných témach a E-E-A-T princípoch. Vďaka štruktúrovanému obsahu dokáže web generovať relevantné B2B dopyty priamo z odpovedí AI vyhľadávacích modelov a generatívnych aplikácií.</p>
+          </div>
         </div>
       </div>
     </div>
