@@ -217,6 +217,9 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .project-card h4 {
       margin: 0 0 6px 0;
@@ -233,6 +236,11 @@
       font-size: 0.88rem;
       color: #475569;
       line-height: 1.5;
+    }
+    .project-card .sub-block {
+      margin-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
     }
 
     /* Audit Findings Cases */
@@ -407,13 +415,22 @@
       <p class="intro-p">Zacton is operated by active e-commerce managers with skin in the game, running multi-channel retail infrastructure daily:</p>
       <div class="projects-grid">
         <div class="project-card">
-          <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
-          <p>Omnichannel B2B and B2C distribution of office and hygiene supplies. Direct inventory management, margin control, and multi-tier logistics.</p>
-          <p style="margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 10px;"><strong>Proprietary FEEDEX Architecture:</strong> Designed and deployed an automated feed integration bridge for external suppliers. FEEDEX directly imports and structures data from supplier ERP systems into demro.sk based on strict attribute validation without human intervention — processing tens of thousands of SKUs monthly.</p>
+          <div>
+            <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
+            <p>Omnichannel B2B and B2C distribution of office and hygiene supplies. Direct inventory management, margin control, and multi-tier logistics.</p>
+          </div>
+          <div class="sub-block">
+            <p><strong>Proprietary FEEDEX Architecture:</strong> Engineered an in-house automated feed integration bridge for external suppliers. FEEDEX directly maps, validates, and imports complex supplier ERP data into the demro.sk infrastructure based on strict schema attributes with zero manual touchpoints — parsing tens of thousands of SKUs monthly.</p>
+          </div>
         </div>
         <div class="project-card">
-          <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
-          <p>Specialized e-commerce for medical recovery and sports technology (Compex). High-intent Google Shopping campaigns, technical feed compliance, and conversion rate optimization.</p>
+          <div>
+            <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
+            <p>Specialized e-commerce for medical recovery and sports technology (Compex). High-intent Google Shopping campaigns, technical feed compliance, and conversion rate optimization.</p>
+          </div>
+          <div class="sub-block">
+            <p><strong><a href="https://animalsoft.eu" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">animalsoft.eu</a> &nearr; E-E-A-T & AI Search:</strong> Architecture and execution of an authoritative B2B content hub aligned with E-E-A-T standards. By structuring deep technical articles, the platform generates inbound B2B leads directly from AI-powered search engines and generative answer models.</p>
+          </div>
         </div>
       </div>
     </div>
