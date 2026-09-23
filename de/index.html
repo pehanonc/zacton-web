@@ -217,6 +217,9 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .project-card h4 {
       margin: 0 0 6px 0;
@@ -233,6 +236,11 @@
       font-size: 0.88rem;
       color: #475569;
       line-height: 1.5;
+    }
+    .project-card .sub-block {
+      margin-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
     }
 
     /* Audit Findings Cases */
@@ -407,13 +415,22 @@
       <p class="intro-p">Hinter Zacton stehen keine theoretischen Agenturberater, sondern das tägliche Management aktiver E-Commerce-Infrastrukturen:</p>
       <div class="projects-grid">
         <div class="project-card">
-          <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
-          <p>Omnichannel B2B- und B2C-Distribution von Büro- und Hygieneartikeln. Bestandsmanagement für tausende Artikel, Margensteuerung und automatisierte Logistik.</p>
-          <p style="margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 10px;"><strong>Eigenentwickeltes FEEDEX-System:</strong> Konzeption einer unifizierten Integrationsarchitektur für externe Lieferanten. FEEDEX importiert und transformiert Produktdaten direkt aus Lieferanten-ERPs in das Shopsystem von demro.sk — vollautomatisiert anhand streng definierter Attribute und ohne manuellen Eingriff bei monatlich zehntausenden Datensätzen.</p>
+          <div>
+            <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
+            <p>Omnichannel B2B- und B2C-Distribution von Büro- und Hygieneartikeln. Bestandsmanagement für tausende Artikel, Margensteuerung und automatisierte Logistik.</p>
+          </div>
+          <div class="sub-block">
+            <p><strong>Eigenentwickeltes FEEDEX-System:</strong> Konzeption einer unifizierten Integrationsarchitektur für externe Lieferanten. FEEDEX importiert und transformiert Produktdaten direkt aus Lieferanten-ERPs in das Shopsystem von demro.sk — vollautomatisiert anhand streng definierter Attribute und ohne manuellen Eingriff bei monatlich zehntausenden Datensätzen.</p>
+          </div>
         </div>
         <div class="project-card">
-          <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
-          <p>Fachshop für Regenerationstechnik und Sporttechnologie (Compex). Ausrichtung auf Google Shopping, Attributintegrität und Maximierung der Konversionsrate.</p>
+          <div>
+            <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
+            <p>Fachshop für Regenerationstechnik und Sporttechnologie (Compex). Ausrichtung auf Google Shopping, Attributintegrität und Maximierung der Konversionsrate.</p>
+          </div>
+          <div class="sub-block">
+            <p><strong><a href="https://animalsoft.eu" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">animalsoft.eu</a> &nearr; E-E-A-T & KI-Suche:</strong> Konzeption und Ausführung einer B2B-Inhaltsarchitektur nach E-E-A-T-Standards. Durch strukturierte Fachinhalte generiert die Plattform qualifizierte B2B-Anfragen direkt aus KI-gestützten Suchmodellen und Antwort-Engines.</p>
+          </div>
         </div>
       </div>
     </div>
