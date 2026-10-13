@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zacton | E-Commerce Performance & Diagnostic Audits</title>
-  <meta name="description" content="Technical e-commerce diagnostics within 48 hours for a flat 95 €. Uncover Google Ads budget bleed, Merchant Center feed errors, GA4 tracking gaps, and checkout friction.">
-  <meta name="keywords" content="google ads audit, ecommerce diagnostic, merchant center errors, ga4 tracking audit, checkout friction, ppc budget bleed, product feed optimization">
+  <meta name="description" content="Technical e-commerce diagnostics within 48 hours for a flat 95 €. Free client-side Wasted Spend Scanner to detect Google Ads budget bleed.">
+  <meta name="keywords" content="google ads audit, ecommerce diagnostic, merchant center errors, ga4 tracking audit, checkout friction, ppc budget bleed, product feed optimization, wasted spend scanner">
   <meta name="author" content="Peter Haratik">
   <link rel="canonical" href="https://zacton.com/" />
 
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zacton.com/">
   <meta property="og:title" content="Zacton | E-Commerce Performance & Diagnostic Audits">
-  <meta property="og:description" content="Single-scope technical e-commerce diagnostics for 95 €. Actionable PDF error breakdowns and negative keyword exports in 48 hours.">
+  <meta property="og:description" content="Single-scope technical e-commerce diagnostics for 95 €. Free instant Wasted Spend Scanner and actionable PDF error breakdown in 48 hours.">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
@@ -58,6 +58,21 @@
         }
       },
       {
+        "@type": "WebApplication",
+        "@id": "https://zacton.com/#wasted-spend-scanner",
+        "name": "Google Ads Wasted Spend Scanner",
+        "url": "https://zacton.com/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Runs 100% locally in browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Free client-side tool to instantly detect budget leaks and unprofitable search queries from Google Ads CSV exports without uploading data to servers."
+      },
+      {
         "@type": "Service",
         "@id": "https://zacton.com/#service",
         "name": "E-Commerce Diagnostic Audit (Google Ads, Merchant Center, GA4, Checkout)",
@@ -77,6 +92,14 @@
         "@type": "FAQPage",
         "@id": "https://zacton.com/#faq",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the free Google Ads Wasted Spend Scanner work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply upload your standard Google Ads Search Terms CSV report. The script runs entirely in your browser without sending files to external servers, calculates total spend on terms with zero conversions, and reveals your TOP 5 most expensive wasteful queries."
+            }
+          },
           {
             "@type": "Question",
             "name": "What is included in a Zacton diagnostic audit?",
@@ -375,8 +398,31 @@
       margin-top: 10px;
       line-height: 1.6;
     }
-    .scanner-results { margin-top: 30px; animation: fadeIn 0.4s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Teaser & Results */
+    .scanner-results { margin-top: 20px; }
+    .preview-badge-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+    .preview-badge {
+      background: #e2e8f0;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
     .results-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -688,46 +734,63 @@
       </details>
     </div>
 
-    <!-- Results Block -->
-    <div id="scannerResults" class="scanner-results" style="display: none;">
-      <div class="results-grid">
-        <div class="res-card">
-          <div class="res-label">Total Spend in Report</div>
-          <div class="res-value" id="resTotalSpend">0.00 €</div>
-        </div>
-        <div class="res-card alert">
-          <div class="res-label">Wasted on 0 Conversions</div>
-          <div class="res-value alert" id="resWastedSpend">0.00 €</div>
-          <div class="res-sub" id="resWastedPercent">(0 % of budget)</div>
-        </div>
-        <div class="res-card">
-          <div class="res-label">Unprofitable Search Terms</div>
-          <div class="res-value" id="resWastedCount">0</div>
-        </div>
-      </div>
+    <!-- Collapsible Sample / Teaser block -->
+    <details id="scannerDetails" style="margin-top: 20px;">
+      <summary style="cursor: pointer; color: #2563eb; font-weight: 700; text-align: center; font-size: 0.95rem;">
+        👁️ View sample diagnostic results (Preview) ▾
+      </summary>
 
-      <div class="top-wasted-table">
-        <h4>TOP 5 most expensive queries with 0 purchases:</h4>
-        <div style="overflow-x: auto;">
-          <table id="resTopTable">
-            <thead>
-              <tr>
-                <th>Search Term</th>
-                <th>Clicks</th>
-                <th>Wasted Cost</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+      <div id="scannerResults" class="scanner-results">
+        <div class="preview-badge-bar" id="scannerBadgeBar">
+          <span>👁️ <strong>Sample preview:</strong> Live analysis view after uploading your CSV</span>
+          <span class="preview-badge" id="scannerModeBadge">SAMPLE</span>
+        </div>
+
+        <div class="results-grid">
+          <div class="res-card">
+            <div class="res-label">Total Spend in Report</div>
+            <div class="res-value" id="resTotalSpend">6877.48 €</div>
+          </div>
+          <div class="res-card alert">
+            <div class="res-label">Wasted on 0 Conversions</div>
+            <div class="res-value alert" id="resWastedSpend">546.95 €</div>
+            <div class="res-sub" id="resWastedPercent">(8.0 % of budget)</div>
+          </div>
+          <div class="res-card">
+            <div class="res-label">Unprofitable Search Terms</div>
+            <div class="res-value" id="resWastedCount">501</div>
+          </div>
+        </div>
+
+        <div class="top-wasted-table">
+          <h4>TOP 5 most expensive queries with 0 purchases:</h4>
+          <div style="overflow-x: auto;">
+            <table id="resTopTable">
+              <thead>
+                <tr>
+                  <th>Search Term</th>
+                  <th>Clicks</th>
+                  <th>Wasted Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>home credit</strong></td><td>0</td><td>40.01 €</td></tr>
+                <tr><td><strong>reboots</strong></td><td>0</td><td>26.34 €</td></tr>
+                <tr><td><strong>compex sp 8.0</strong></td><td>0</td><td>20.23 €</td></tr>
+                <tr><td><strong>compex elektrody</strong></td><td>0</td><td>18.54 €</td></tr>
+                <tr><td><strong>compex mini</strong></td><td>0</td><td>13.94 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="scanner-cta">
+          <div class="scanner-cta-title">Stop the budget bleed immediately and reallocate to profitable keywords.</div>
+          <p>Our single-scope audit inspects your complete match-type architecture, identifies search cannibalization, and provides ready-to-import negative keyword lists within 48 hours.</p>
+          <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Order Full Audit for 95 € &rarr;</a>
         </div>
       </div>
-
-      <div class="scanner-cta">
-        <div class="scanner-cta-title">Stop the budget bleed immediately and reallocate to profitable keywords.</div>
-        <p>Our single-scope audit inspects your complete match-type architecture, identifies search cannibalization, and provides ready-to-import negative keyword lists within 48 hours.</p>
-        <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Order Full Audit for 95 € &rarr;</a>
-      </div>
-    </div>
+    </details>
   </div>
 
   <!-- Practice & Authority Section -->
@@ -853,6 +916,8 @@
   const dropzone = document.getElementById('scannerDropzone');
   const fileInput = document.getElementById('scannerFileInput');
   const resultsBox = document.getElementById('scannerResults');
+  const badgeBar = document.getElementById('scannerBadgeBar');
+  const scannerDetails = document.getElementById('scannerDetails');
 
   dropzone.addEventListener('click', () => fileInput.click());
   dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
@@ -947,6 +1012,13 @@
 
     wastedRows.sort((a, b) => b.cost - a.cost);
 
+    if (scannerDetails) scannerDetails.open = true;
+
+    badgeBar.style.background = '#dcfce7';
+    badgeBar.style.borderColor = '#bbf7d0';
+    badgeBar.style.color = '#166534';
+    badgeBar.innerHTML = '<span>✅ <strong>Your live analysis:</strong> Results calculated from your uploaded CSV</span><span class="preview-badge" style="background:#22c55e;color:#fff;">YOUR ACCOUNT</span>';
+
     document.getElementById('resTotalSpend').textContent = totalSpend.toFixed(2) + ' €';
     document.getElementById('resWastedSpend').textContent = wastedSpend.toFixed(2) + ' €';
     const percent = totalSpend > 0 ? ((wastedSpend / totalSpend) * 100).toFixed(1) : 0;
@@ -961,7 +1033,6 @@
       tbody.appendChild(tr);
     });
 
-    resultsBox.style.display = 'block';
     resultsBox.scrollIntoView({ behavior: 'smooth' });
   }
 
