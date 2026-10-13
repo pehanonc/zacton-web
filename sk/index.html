@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zacton | Výkonnostná a procesná diagnostika e-shopov</title>
-  <meta name="description" content="Technická diagnostika e-shopov do 48 hodín za fixných 95 €. Odhalenie rozpočtových únikov v Google Ads, chýb v Merchant Center a výpadkov GA4.">
-  <meta name="keywords" content="audit google ads, diagnostika eshopu, merchant center chyby, ga4 meranie, checkout frikcia, ppc audit slovensko, audit produktoveho feedu">
+  <meta name="description" content="Technická diagnostika e-shopov do 48 hodín za fixných 95 €. Bezplatný Wasted Spend Scanner na odhalenie rozpočtových únikov v Google Ads.">
+  <meta name="keywords" content="audit google ads, diagnostika eshopu, merchant center chyby, ga4 meranie, checkout frikcia, ppc audit slovensko, audit produktoveho feedu, wasted spend scanner">
   <meta name="author" content="Peter Haratik">
   <link rel="canonical" href="https://zacton.com/sk/" />
 
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zacton.com/sk/">
   <meta property="og:title" content="Zacton | Výkonnostná a procesná diagnostika e-shopov">
-  <meta property="og:description" content="Jednorazová technická diagnostika e-shopov za 95 €. Konkrétny PDF rozbor chýb a exportov do 48 hodín.">
+  <meta property="og:description" content="Jednorazová technická diagnostika e-shopov za 95 €. Bezplatný klientsky Wasted Spend Scanner a konkrétny PDF rozbor do 48 hodín.">
   <meta property="og:locale" content="sk_SK">
 
   <!-- Twitter -->
@@ -58,6 +58,21 @@
         }
       },
       {
+        "@type": "WebApplication",
+        "@id": "https://zacton.com/sk/#wasted-spend-scanner",
+        "name": "Google Ads Wasted Spend Scanner",
+        "url": "https://zacton.com/sk/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Runs 100% locally in browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Bezplatný klientsky nástroj na okamžité odhalenie rozpočtových strát a nehospodárnych vyhľadávacích dopytov z Google Ads CSV exportu bez odosielania dát na server."
+      },
+      {
         "@type": "Service",
         "@id": "https://zacton.com/sk/#service",
         "name": "Technická diagnostika e-shopu (Google Ads, Merchant, GA4, Checkout)",
@@ -77,6 +92,14 @@
         "@type": "FAQPage",
         "@id": "https://zacton.com/sk/#faq",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ako funguje bezplatný Google Ads Wasted Spend Scanner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Do nástroja stačí nahrať štandardný CSV export vyhľadávacích dopytov z Google Ads. Skript priamo v prehliadači bez odosielania dát na server spočíta minutý rozpočet na dopytoch s nulovým počtom konverzií a zobrazí TOP 5 najdrahších fráz."
+            }
+          },
           {
             "@type": "Question",
             "name": "Čo obsahuje diagnostický audit e-shopu Zacton?",
@@ -989,7 +1012,6 @@
 
     wastedRows.sort((a, b) => b.cost - a.cost);
 
-    // Automaticky rozbaliť rozbaľovacie okno a prepnúť na živé dáta klienta
     if (scannerDetails) scannerDetails.open = true;
 
     badgeBar.style.background = '#dcfce7';
