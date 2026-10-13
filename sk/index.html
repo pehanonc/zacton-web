@@ -377,7 +377,7 @@
     }
 
     /* Teaser & Results */
-    .scanner-results { margin-top: 30px; }
+    .scanner-results { margin-top: 20px; }
     .preview-badge-bar {
       display: flex;
       justify-content: space-between;
@@ -700,13 +700,6 @@
       🔒 <strong>100% súkromné a bezpečné:</strong> Súbor sa spracováva výhradne lokálne vo vašom prehliadači. Žiadne dáta sa neodosielajú na server.
     </div>
 
-    <!-- Tlačidlo pre rozbalenie modelovej ukážky -->
-    <div style="text-align: center; margin-top: 14px;">
-      <button type="button" id="toggleDemoBtn" style="background:none; border:none; color:#2563eb; font-weight:700; font-size:0.9rem; cursor:pointer; text-decoration:underline; padding:6px 12px;">
-        Zobraziť, ako vyzerá výsledok (Ukážka) ▾
-      </button>
-    </div>
-
     <div class="scanner-instructions">
       <details>
         <summary>Ako stiahnuť správny súbor z Google Ads za 30 sekúnd? ▾</summary>
@@ -718,57 +711,63 @@
       </details>
     </div>
 
-    <!-- Výsledkový blok (predvolene skrytý, aktivuje sa tlačidlom Ukážka alebo nahratím CSV) -->
-    <div id="scannerResults" class="scanner-results" style="display: none;">
-      <div class="preview-badge-bar" id="scannerBadgeBar">
-        <span>👁️ <strong>Modelová ukážka:</strong> Takto vyzerá analýza po vložení CSV</span>
-        <span class="preview-badge" id="scannerModeBadge">UKÁŽKA</span>
-      </div>
+    <!-- Natívny rozbaľovací blok s modelovou ukážkou -->
+    <details id="scannerDetails" style="margin-top: 20px;">
+      <summary style="cursor: pointer; color: #2563eb; font-weight: 700; text-align: center; font-size: 0.95rem;">
+        👁️ Zobraziť, ako vyzerá výsledok (Ukážka) ▾
+      </summary>
 
-      <div class="results-grid">
-        <div class="res-card">
-          <div class="res-label">Celkové výdavky v reporte</div>
-          <div class="res-value" id="resTotalSpend">6877.48 €</div>
+      <div id="scannerResults" class="scanner-results">
+        <div class="preview-badge-bar" id="scannerBadgeBar">
+          <span>👁️ <strong>Modelová ukážka:</strong> Takto vyzerá analýza po vložení CSV</span>
+          <span class="preview-badge" id="scannerModeBadge">UKÁŽKA</span>
         </div>
-        <div class="res-card alert">
-          <div class="res-label">Prepálené na 0 konverziách</div>
-          <div class="res-value alert" id="resWastedSpend">546.95 €</div>
-          <div class="res-sub" id="resWastedPercent">(8.0 % rozpočtu)</div>
-        </div>
-        <div class="res-card">
-          <div class="res-label">Počet nehospodárnych dopytov</div>
-          <div class="res-value" id="resWastedCount">501</div>
-        </div>
-      </div>
 
-      <div class="top-wasted-table">
-        <h4>TOP 5 najdrahších dopytov bez jediného nákupu:</h4>
-        <div style="overflow-x: auto;">
-          <table id="resTopTable">
-            <thead>
-              <tr>
-                <th>Vyhľadávací dopyt</th>
-                <th>Kliknutia</th>
-                <th>Minutá suma</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>home credit</strong></td><td>0</td><td>40.01 €</td></tr>
-              <tr><td><strong>reboots</strong></td><td>0</td><td>26.34 €</td></tr>
-              <tr><td><strong>compex sp 8.0</strong></td><td>0</td><td>20.23 €</td></tr>
-              <tr><td><strong>compex elektrody</strong></td><td>0</td><td>18.54 €</td></tr>
-              <tr><td><strong>compex mini</strong></td><td>0</td><td>13.94 €</td></tr>
-            </tbody>
-          </table>
+        <div class="results-grid">
+          <div class="res-card">
+            <div class="res-label">Celkové výdavky v reporte</div>
+            <div class="res-value" id="resTotalSpend">6877.48 €</div>
+          </div>
+          <div class="res-card alert">
+            <div class="res-label">Prepálené na 0 konverziách</div>
+            <div class="res-value alert" id="resWastedSpend">546.95 €</div>
+            <div class="res-sub" id="resWastedPercent">(8.0 % rozpočtu)</div>
+          </div>
+          <div class="res-card">
+            <div class="res-label">Počet nehospodárnych dopytov</div>
+            <div class="res-value" id="resWastedCount">501</div>
+          </div>
+        </div>
+
+        <div class="top-wasted-table">
+          <h4>TOP 5 najdrahších dopytov bez jediného nákupu:</h4>
+          <div style="overflow-x: auto;">
+            <table id="resTopTable">
+              <thead>
+                <tr>
+                  <th>Vyhľadávací dopyt</th>
+                  <th>Kliknutia</th>
+                  <th>Minutá suma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>home credit</strong></td><td>0</td><td>40.01 €</td></tr>
+                <tr><td><strong>reboots</strong></td><td>0</td><td>26.34 €</td></tr>
+                <tr><td><strong>compex sp 8.0</strong></td><td>0</td><td>20.23 €</td></tr>
+                <tr><td><strong>compex elektrody</strong></td><td>0</td><td>18.54 €</td></tr>
+                <tr><td><strong>compex mini</strong></td><td>0</td><td>13.94 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="scanner-cta">
+          <div class="scanner-cta-title">Tieto peniaze viete okamžite ušetriť a investovať do ziskových fráz.</div>
+          <p>V rámci jednorazového auditu preveríme celú štruktúru zhôd, identifikujeme skrytú kanibalizáciu a pripravíme presný export vylučujúcich slov na okamžitý import.</p>
+          <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Objednať kompletný audit za 95 € &rarr;</a>
         </div>
       </div>
-
-      <div class="scanner-cta">
-        <div class="scanner-cta-title">Tieto peniaze viete okamžite ušetriť a investovať do ziskových fráz.</div>
-        <p>V rámci jednorazového auditu preveríme celú štruktúru zhôd, identifikujeme skrytú kanibalizáciu a pripravíme presný export vylučujúcich slov na okamžitý import.</p>
-        <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Objednať kompletný audit za 95 € &rarr;</a>
-      </div>
-    </div>
+    </details>
   </div>
 
   <!-- Practice & Authority Section -->
@@ -895,19 +894,7 @@
   const fileInput = document.getElementById('scannerFileInput');
   const resultsBox = document.getElementById('scannerResults');
   const badgeBar = document.getElementById('scannerBadgeBar');
-  const toggleDemoBtn = document.getElementById('toggleDemoBtn');
-
-  // Rozbaľovanie ukážky tlačidlom
-  toggleDemoBtn.addEventListener('click', () => {
-    if (resultsBox.style.display === 'none' || resultsBox.style.display === '') {
-      resultsBox.style.display = 'block';
-      toggleDemoBtn.textContent = 'Skryť ukážku výsledku ▴';
-      resultsBox.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      resultsBox.style.display = 'none';
-      toggleDemoBtn.textContent = 'Zobraziť, ako vyzerá výsledok (Ukážka) ▾';
-    }
-  });
+  const scannerDetails = document.getElementById('scannerDetails');
 
   dropzone.addEventListener('click', () => fileInput.click());
   dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
@@ -1002,9 +989,8 @@
 
     wastedRows.sort((a, b) => b.cost - a.cost);
 
-    // Automaticky zobraziť a prepnúť na živé dáta klienta
-    resultsBox.style.display = 'block';
-    toggleDemoBtn.style.display = 'none';
+    // Automaticky rozbaliť rozbaľovacie okno a prepnúť na živé dáta klienta
+    if (scannerDetails) scannerDetails.open = true;
 
     badgeBar.style.background = '#dcfce7';
     badgeBar.style.borderColor = '#bbf7d0';
