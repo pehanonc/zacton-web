@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zacton | E-Commerce Leistungs- und Prozessdiagnostik</title>
-  <meta name="description" content="Technische E-Commerce-Diagnostik innerhalb von 48 Stunden zum Festpreis von 95 €. Identifikation von Budgetverlusten in Google Ads, Merchant-Center-Fehlern und Tracking-Lücken.">
-  <meta name="keywords" content="google ads audit, ecommerce diagnose, merchant center fehler, ga4 tracking audit, checkout reibung, ppc budgetverschwendung, feed optimierung">
-  <meta name="author" content="Peter Haratík">
+  <meta name="description" content="Technische E-Commerce-Diagnostik innerhalb von 48 Stunden zum Festpreis von 95 €. Kostenloser Wasted Spend Scanner zur Aufdeckung von Google Ads Budgetverlusten.">
+  <meta name="keywords" content="google ads audit, ecommerce diagnose, merchant center fehler, ga4 tracking audit, checkout reibung, ppc budgetverschwendung, feed optimierung, wasted spend scanner">
+  <meta name="author" content="Peter Haratik">
   <link rel="canonical" href="https://zacton.com/de/" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zacton.com/de/">
   <meta property="og:title" content="Zacton | E-Commerce Leistungs- und Prozessdiagnostik">
-  <meta property="og:description" content="Gezielte technische E-Commerce-Diagnostik für 95 €. Konkrete PDF-Fehleranalyse und Keyword-Ausschlusslisten in 48 Stunden.">
+  <meta property="og:description" content="Gezielte technische E-Commerce-Diagnostik für 95 €. Kostenloser Wasted Spend Scanner und konkrete PDF-Fehleranalyse in 48 Stunden.">
   <meta property="og:locale" content="de_DE">
 
   <!-- Twitter -->
@@ -39,7 +39,7 @@
         "url": "https://zacton.com",
         "founder": {
           "@type": "Person",
-          "name": "Peter Haratík"
+          "name": "Peter Haratik"
         },
         "address": {
           "@type": "PostalAddress",
@@ -48,7 +48,7 @@
         },
         "identifier": {
           "@type": "PropertyValue",
-          "name": "IČO",
+          "name": "ICO",
           "value": "46348832"
         },
         "contactPoint": {
@@ -56,6 +56,21 @@
           "email": "contact@zacton.com",
           "contactType": "customer service"
         }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://zacton.com/de/#wasted-spend-scanner",
+        "name": "Google Ads Wasted Spend Scanner",
+        "url": "https://zacton.com/de/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Runs 100% locally in browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Kostenloses clientseitiges Tool zur sofortigen Aufdeckung von Budgetverlusten und unrentablen Suchbegriffen aus Google Ads CSV-Exporten ohne Server-Upload."
       },
       {
         "@type": "Service",
@@ -79,10 +94,18 @@
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "Wie funktioniert der kostenlose Google Ads Wasted Spend Scanner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Laden Sie einfach Ihren standardmäßigen Suchbegriffe-CSV-Bericht aus Google Ads hoch. Das Skript läuft vollständig lokal in Ihrem Browser ohne Datenübertragung an Server, berechnet Ausgaben für Suchbegriffe mit 0 Käufen und zeigt Ihre TOP 5 teuersten Budgetfresser an."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Was beinhaltet ein Zacton Diagnose-Audit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Jedes Audit liefert einen präzisen 3-seitigen technischen PDF-Bericht mit identifizierten Budgetlecks, Ursachen und fertigen Exportdateien (z.B. Negative-Keyword-Listen)."
+              "text": "Jedes Audit liefert einen präzisen 3-seitigen technischen PDF-Bericht mit identifizierten Budgetlecks, Ursachen und fertigen Exportdateien (z.B. Negative Keyword-Listen)."
             }
           },
           {
@@ -284,8 +307,6 @@
       flex-shrink: 0;
       margin-top: 2px;
     }
-
-    /* Sample Audit Link */
     .sample-link-wrapper {
       text-align: center;
       margin-top: 18px;
@@ -300,6 +321,159 @@
       gap: 6px;
     }
     .sample-link:hover { text-decoration: underline; }
+
+    /* Wasted Spend Scanner Styles */
+    .scanner-box {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .scanner-header { text-align: center; margin-bottom: 25px; }
+    .scanner-badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .scanner-header h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 10px 0;
+      line-height: 1.3;
+    }
+    .scanner-header p {
+      color: #64748b;
+      font-size: 0.95rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .dropzone {
+      border: 2px dashed #cbd5e1;
+      border-radius: 10px;
+      padding: 35px 20px;
+      text-align: center;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dropzone:hover, .dropzone.dragover {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+    .dropzone-icon { font-size: 2.2rem; margin-bottom: 8px; }
+    .dropzone-text { font-size: 1.05rem; color: #1e293b; }
+    .browse-link { color: #2563eb; text-decoration: underline; font-weight: 600; }
+    .dropzone-note { font-size: 0.8rem; color: #94a3b8; margin-top: 6px; }
+    .scanner-privacy {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 14px;
+    }
+    .scanner-instructions {
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    .scanner-instructions summary {
+      cursor: pointer;
+      color: #2563eb;
+      font-weight: 600;
+      text-align: center;
+    }
+    .scanner-instructions ol {
+      background: #f1f5f9;
+      padding: 15px 20px 15px 35px;
+      border-radius: 8px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Teaser & Results */
+    .scanner-results { margin-top: 20px; }
+    .preview-badge-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+    .preview-badge {
+      background: #e2e8f0;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+    .res-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 18px;
+      text-align: center;
+    }
+    .res-card.alert {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .res-label { font-size: 0.8rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+    .res-value { font-size: 1.8rem; font-weight: 800; color: #0f172a; }
+    .res-value.alert { color: #dc2626; }
+    .res-sub { font-size: 0.85rem; color: #dc2626; font-weight: 700; margin-top: 2px; }
+    .top-wasted-table { margin-bottom: 25px; }
+    .top-wasted-table h4 { font-size: 1rem; color: #1e293b; margin-bottom: 10px; }
+    .top-wasted-table table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .top-wasted-table th, .top-wasted-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .top-wasted-table th { background: #f8fafc; color: #475569; font-weight: 700; }
+    .top-wasted-table td:last-child, .top-wasted-table th:last-child { text-align: right; color: #dc2626; font-weight: 700; }
+    .scanner-cta {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+    }
+    .scanner-cta-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
+    .scanner-cta p { font-size: 0.9rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 18px auto; line-height: 1.5; }
+    .scanner-order-btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .scanner-order-btn:hover { background: #1d4ed8; }
 
     /* Authority & Practice Section */
     .authority-box {
@@ -448,202 +622,449 @@
       color: #94a3b8;
     }
     @media (max-width: 768px) {
-      .projects-grid, .cases-grid, .grid-3 { grid-template-columns: 1fr; }
+      .projects-grid, .cases-grid, .grid-3, .results-grid { grid-template-columns: 1fr; }
       h1 { font-size: 1.85rem; }
-      .pricing-card { padding: 24px; }
+      .pricing-card, .scanner-box { padding: 24px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="lang-switch">
-      <a href="/?lang=en">EN</a>
-      <a href="/de/" class="active">DE</a>
-      <a href="/sk/">SK</a>
-    </div>
-
-    <div class="text-center">
-      <h1>E-Commerce Leistungs- und Prozessdiagnostik</h1>
-      <p class="subtitle">Kein Agentur-Leerlauf, keine 50-seitige Theorie. Wählen Sie einen Schwerpunkt. Innerhalb von 48 Stunden erhalten Sie eine konkrete PDF-Fehleranalyse zur direkten Umsetzung.</p>
-    </div>
-
-    <div class="pricing-card">
-      <div class="pricing-header">
-        <div class="regular-price">Regulärer Preis: 149 €</div>
-        <div class="price">95 €</div>
-        <div class="price-note">Einmaliges Diagnose-Audit. Fester Leistungsumfang.</div>
-      </div>
-
-      <div class="service-selection" id="serviceSelection">
-        <label class="service-option selected">
-          <input type="radio" name="audit_choice" value="google-ads" checked>
-          <div class="service-text">
-            <strong>1. Google Ads Budget-Leckagen & Suchbegriffe-Audit</strong>
-            <span>Aufdeckung von Budgetverschwendung bei irrelevanten Suchbegriffen, Broad-Match-Kannibalisierung, fehlende Ausschlusslisten.</span>
-          </div>
-        </label>
-
-        <label class="service-option">
-          <input type="radio" name="audit_choice" value="merchant-center">
-          <div class="service-text">
-            <strong>2. Merchant Center & Feed-Integritätsprüfung</strong>
-            <span>Detaillierte Analyse abgelehnter Artikel, fehlender GTIN/EAN-Attribute, Titeloptimierung und strukturelle Feed-Fehler.</span>
-          </div>
-        </label>
-
-        <label class="service-option">
-          <input type="radio" name="audit_choice" value="ga4-tracking">
-          <div class="service-text">
-            <strong>3. Merkmale-Integrität in GA4 & E-Commerce-Tracking</strong>
-            <span>Audit von doppelten Transaktionen, Datenverlusten durch falsche Consent-Mode-Implementierung, fehlende Kaufparameter.</span>
-          </div>
-        </label>
-
-        <label class="service-option">
-          <input type="radio" name="audit_choice" value="checkout-friction">
-          <div class="service-text">
-            <strong>4. Checkout-Reibungsanalyse & Funnel-Leck-Scan</strong>
-            <span>UX-Scan des Bestellprozesses auf Reibungsverluste, Barrieren in der mobilen Ansicht, fehlerhafte Zahlungs- oder Versandoptionen.</span>
-          </div>
-        </label>
-      </div>
-
-      <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" id="cta-button" class="cta-button">Diagnostisches Audit bestellen — 95 €</a>
-
-      <div class="onboarding-steps">
-        <h4>Was passiert nach der Zahlung?</h4>
-        <div class="step-item">
-          <div class="step-number">1</div>
-          <div id="step1Text">Geben Sie im kurzen Formular nach der Zahlung Ihre 10-stellige Google Ads CID an und bestätigen Sie die Nur-Lese-Anfrage.</div>
-        </div>
-        <div class="step-item">
-          <div class="step-number">2</div>
-          <div id="step2Text">Innerhalb von 48 Stunden erhalten Sie einen strukturierten PDF-Bericht per E-Mail: Budgetfresser und Keyword-Ausschlusslisten.</div>
-        </div>
-      </div>
-
-      <div class="sample-link-wrapper">
-        <a href="/sample-audit.html" class="sample-link">Muster-Auditbericht ansehen (PDF-Vorschau) &rarr;</a>
-      </div>
-    </div>
-
-    <!-- Practice & Authority Section -->
-    <div class="authority-box">
-      <h3>Diagnostik basierend auf aktiver E-Commerce-Praxis</h3>
-      <p class="intro-p">Hinter Zacton stehen keine theoretischen Agenturberater, sondern das tägliche Management aktiver E-Commerce-Infrastrukturen:</p>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div>
-            <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
-            <p>Omnichannel B2B- und B2C-Distribution von Büro- und Hygieneartikeln. Bestandsmanagement für tausende Artikel, Margensteuerung und automatisierte Logistik.</p>
-          </div>
-          <div class="sub-block">
-            <p><strong>Eigenentwickeltes FEEDEX-System:</strong> Konzeption einer unifizierten Integrationsarchitektur für externe Lieferanten. FEEDEX importiert und transformiert Produktdaten direkt aus Lieferanten-ERPs in das Shopsystem von demro.sk — vollautomatisiert anhand streng definierter Attribute und ohne manuellen Eingriff bei monatlich zehntausenden Datensätzen.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div>
-            <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
-            <p>Fachshop für Regenerationstechnik und Sporttechnologie (Compex). Ausrichtung auf Google Shopping, Attributintegrität und Maximierung der Konversionsrate.</p>
-          </div>
-          <div class="sub-block">
-            <p><strong><a href="https://animalsoft.eu" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">animalsoft.eu</a> &nearr; E-E-A-T & KI-Suche:</strong> Konzeption und Ausführung einer B2B-Inhaltsarchitektur nach E-E-A-T-Standards. Durch strukturierte Fachinhalte generiert die Plattform qualifizierte B2B-Anfragen direkt aus KI-gestützten Suchmodellen und Antwort-Engines.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Real Audit Findings Section -->
-    <h3 class="section-title">Ergebnisse aus Diagnose-Audits</h3>
-    <div class="cases-grid">
-      <div class="case-card">
-        <span class="case-tag">Google Ads</span>
-        <div class="case-impact">-380 € / Monat</div>
-        <p><strong>Befund:</strong> Broad-Match-Kampagnen verbrauchten Budget für irrelevante Info-Suchanfragen ohne Kaufabsicht.</p>
-        <p><strong>Maßnahme:</strong> Einführung präziser Ausschlusslisten und Verlagerung des Budgets auf konversionsstarke Produktsuchen.</p>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">Merchant Center</span>
-        <div class="case-impact">+45 % Impressionen</div>
-        <p><strong>Befund:</strong> Über 30 % der umsatzstarken Produkte wurden wegen fehlender GTINs und fehlerhafter Titel abgewiesen.</p>
-        <p><strong>Maßnahme:</strong> Korrektur des Feed-Mappings und Wiederherstellung der vollen Freigabe des Produktkatalogs in 48 Stunden.</p>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">GA4 Tracking</span>
-        <div class="case-impact">100 % Datenabgleich</div>
-        <p><strong>Befund:</strong> 28 % Diskrepanz zwischen Shop-Backend und GA4 aufgrund fehlerhafter Skriptreihenfolge bei Consent Mode v2.</p>
-        <p><strong>Maßnahme:</strong> Bereinigung der Tag-Ausführung und Wiederherstellung exakter Conversion-Attribution in Google Ads.</p>
-      </div>
-    </div>
-
-    <!-- Core Values -->
-    <div class="grid-3">
-      <div class="card">
-        <h3>Kein Agentur-Leerlauf</h3>
-        <p>Sie zahlen nicht für 50-seitige Vorlagen mit unbrauchbaren Kennzahlen. Alle Erkenntnisse stammen direkt aus praktischer E-Commerce-Erfahrung.</p>
-      </div>
-      <div class="card">
-        <h3>Finanzielle Priorisierung</h3>
-        <p>Gefundene Probleme werden strikt nach Umsatzrelevanz gewichtet: sofortiger Stopp von Budgetverschwendung und Feed-Korrekturen.</p>
-      </div>
-      <div class="card">
-        <h3>Lieferung in 48 Stunden</h3>
-        <p>Keine zeitraubenden Verkaufsgespräche. Innerhalb von zwei Werktagen erhalten Sie konkrete Vorgaben, die Ihr Team sofort umsetzen kann.</p>
-      </div>
-    </div>
-
-    <footer>
-      <div>
-        <a href="/de/privacy.html">Datenschutzerklärung</a> |
-        <a href="/de/terms.html">AGB</a>
-      </div>
-      <div class="footer-meta">
-        &copy; 2026 Zacton. Alle Rechte vorbehalten.<br>
-        Betreiber: Peter Haratík, ID (IČO): 46348832 | E-Mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a>
-      </div>
-    </footer>
+<div class="container">
+  <div class="lang-switch">
+    <a href="/?lang=en">EN</a>
+    <a href="/de/" class="active">DE</a>
+    <a href="/sk/">SK</a>
   </div>
 
-  <script>
-    const baseUrl = "https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02";
-    const ctaButton = document.getElementById('cta-button');
-    const step1Text = document.getElementById('step1Text');
-    const step2Text = document.getElementById('step2Text');
-    const options = document.querySelectorAll('.service-option');
+  <div class="text-center">
+    <h1>E-Commerce Leistungs- und Prozessdiagnostik</h1>
+    <p class="subtitle">Kein Agentur-Leerlauf, keine 50-seitige Theorie. Wählen Sie einen Schwerpunkt. Innerhalb von 48 Stunden erhalten Sie eine konkrete PDF-Fehleranalyse und direkte Maßnahmen zur Budgetoptimierung.</p>
+  </div>
 
-    const serviceData = {
-      'google-ads': {
-        step1: "Geben Sie im kurzen Formular nach der Zahlung Ihre 10-stellige Google Ads CID an und bestätigen Sie die Nur-Lese-Anfrage.",
-        step2: "Innerhalb von 48 Stunden erhalten Sie einen strukturierten PDF-Bericht per E-Mail: Budgetfresser und Keyword-Ausschlusslisten."
-      },
-      'merchant-center': {
-        step1: "Geben Sie Ihre Shop-URL und den XML-Feed-Link an oder erteilen Sie Nur-Lese-Zugriff auf das Google Merchant Center.",
-        step2: "Sie erhalten eine Aufstellung abgelehnter Artikel, fehlender Attribute (GTIN/EAN) sowie Feed-Titelanpassungen."
-      },
-      'ga4-tracking': {
-        step1: "Geben Sie Ihre Web-URL an und gewähren Sie Nur-Lese-Zugriff (Betrachter) auf Ihre Google Analytics 4 Property.",
-        step2: "Sie erhalten ein Audit zur Prüfpräzision von Kauf-Events, Datenverlusten durch Cookie-Banner und Diskrepanzen zum Backend."
-      },
-      'checkout-friction': {
-        step1: "Geben Sie Ihre Shop-URL an und beantworten Sie einen 2-minütigen Fragebogen zu Bezahlsystemen, Versand und Shopsystem.",
-        step2: "Sie erhalten eine Analyse von Kaufabbruchstellen, Problemen auf Mobilgeräten und einen 48-Stunden-Maßnahmenplan."
+  <!-- Pricing Card -->
+  <div class="pricing-card">
+    <div class="pricing-header">
+      <div class="regular-price">Regulärer Preis: 149 €</div>
+      <div class="price">95 €</div>
+      <div class="price-note">Einmaliges Diagnose-Audit. Fester Leistungsumfang.</div>
+    </div>
+
+    <div class="service-selection" id="serviceSelection">
+      <label class="service-option selected">
+        <input type="radio" name="audit_choice" value="google-ads" checked>
+        <div class="service-text">
+          <strong>1. Google Ads Budget-Leckagen & Suchbegriffe-Audit</strong>
+          <span>Aufdeckung von Budgetverschwendung bei irrelevanten Suchbegriffen, Broad-Match-Kannibalisierung, fehlende Ausschlusslisten.</span>
+        </div>
+      </label>
+
+      <label class="service-option">
+        <input type="radio" name="audit_choice" value="merchant-center">
+        <div class="service-text">
+          <strong>2. Merchant Center & Feed-Integritätsprüfung</strong>
+          <span>Detaillierte Analyse abgelehnter Artikel, fehlender GTIN/EAN-Attribute, Titeloptimierung und strukturelle Feed-Fehler.</span>
+        </div>
+      </label>
+
+      <label class="service-option">
+        <input type="radio" name="audit_choice" value="ga4-tracking">
+        <div class="service-text">
+          <strong>3. Merkmale-Integrität in GA4 & E-Commerce-Tracking</strong>
+          <span>Audit von doppelten Transaktionen, Datenverlusten durch falsche Consent-Mode-Implementierung, fehlende Kaufparameter.</span>
+        </div>
+      </label>
+
+      <label class="service-option">
+        <input type="radio" name="audit_choice" value="checkout-friction">
+        <div class="service-text">
+          <strong>4. Checkout-Reibungsanalyse & Funnel-Leck-Scan</strong>
+          <span>UX-Scan des Bestellprozesses auf Reibungsverluste, Barrieren in der mobilen Ansicht, fehlerhafte Zahlungs- oder Versandoptionen.</span>
+        </div>
+      </label>
+    </div>
+
+    <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" id="cta-button" class="cta-button">Diagnostisches Audit bestellen 95 €</a>
+
+    <div class="onboarding-steps">
+      <h4>Was passiert nach der Zahlung?</h4>
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div id="step1Text">Geben Sie im kurzen Formular nach der Zahlung Ihre 10-stellige Google Ads CID an und bestätigen Sie die Nur-Lese-Anfrage.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div id="step2Text">Innerhalb von 48 Stunden erhalten Sie einen strukturierten PDF-Bericht per E-Mail: Budgetfresser und Keyword-Ausschlusslisten.</div>
+      </div>
+    </div>
+
+    <div class="sample-link-wrapper">
+      <a href="/sample-audit.html" class="sample-link">Muster-Auditbericht ansehen (PDF-Vorschau) &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Interactive Wasted Spend Scanner -->
+  <div class="scanner-box">
+    <div class="scanner-header">
+      <span class="scanner-badge">Sofortige kostenlose Diagnose</span>
+      <h2>Wie viel Budget verschwendet Google Ads gerade?</h2>
+      <p>Laden Sie Ihren standardmäßigen Suchbegriffe-CSV-Export hoch. Das Skript berechnet sofort verlorenes Budget für Suchbegriffe mit null Käufen.</p>
+    </div>
+
+    <div class="dropzone" id="scannerDropzone">
+      <div class="dropzone-icon">📁</div>
+      <div class="dropzone-text">
+        <strong>Ziehen Sie die CSV-Datei hierher</strong> oder <span class="browse-link">Dateien auswählen</span>
+      </div>
+      <div class="dropzone-note">Format: Google Ads Suchbegriffe-Bericht (.csv)</div>
+      <input type="file" id="scannerFileInput" accept=".csv" style="display: none;">
+    </div>
+
+    <div class="scanner-privacy">
+      🔒 <strong>100% vertraulich & sicher:</strong> Die Verarbeitung erfolgt ausschließlich lokal im Browser. Es werden keine Daten an Server übertragen.
+    </div>
+
+    <div class="scanner-instructions">
+      <details>
+        <summary>Wie exportieren Sie die richtige Datei aus Google Ads in 30 Sekunden? ▾</summary>
+        <ol>
+          <li>Melden Sie sich bei <strong>Google Ads</strong> an und wählen Sie den Zeitraum (z. B. letzte 30 Tage).</li>
+          <li>Navigieren Sie im linken Menü zu <strong>Kampagnen</strong> &rarr; <strong>Statistiken und Berichte</strong> &rarr; <strong>Suchbegriffe</strong>.</li>
+          <li>Klicken Sie rechts über der Tabelle auf <strong>Herunterladen</strong> &rarr; wählen Sie <strong>.csv</strong>.</li>
+        </ol>
+      </details>
+    </div>
+
+    <!-- Collapsible Sample / Teaser block -->
+    <details id="scannerDetails" style="margin-top: 20px;">
+      <summary style="cursor: pointer; color: #2563eb; font-weight: 700; text-align: center; font-size: 0.95rem;">
+        👁️ Muster-Diagnoseergebnis ansehen (Vorschau) ▾
+      </summary>
+
+      <div id="scannerResults" class="scanner-results">
+        <div class="preview-badge-bar" id="scannerBadgeBar">
+          <span>👁️ <strong>Muster-Vorschau:</strong> Live-Analyseansicht nach dem Hochladen Ihrer CSV</span>
+          <span class="preview-badge" id="scannerModeBadge">MUSTER</span>
+        </div>
+
+        <div class="results-grid">
+          <div class="res-card">
+            <div class="res-label">Gesamtausgaben im Bericht</div>
+            <div class="res-value" id="resTotalSpend">6877.48 €</div>
+          </div>
+          <div class="res-card alert">
+            <div class="res-label">Verloren bei 0 Conversions</div>
+            <div class="res-value alert" id="resWastedSpend">546.95 €</div>
+            <div class="res-sub" id="resWastedPercent">(8.0 % des Budgets)</div>
+          </div>
+          <div class="res-card">
+            <div class="res-label">Unrentable Suchbegriffe</div>
+            <div class="res-value" id="resWastedCount">501</div>
+          </div>
+        </div>
+
+        <div class="top-wasted-table">
+          <h4>TOP 5 teuerste Suchanfragen ohne Käufe:</h4>
+          <div style="overflow-x: auto;">
+            <table id="resTopTable">
+              <thead>
+                <tr>
+                  <th>Suchbegriff</th>
+                  <th>Klicks</th>
+                  <th>Verlorene Kosten</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>home credit</strong></td><td>0</td><td>40.01 €</td></tr>
+                <tr><td><strong>reboots</strong></td><td>0</td><td>26.34 €</td></tr>
+                <tr><td><strong>compex sp 8.0</strong></td><td>0</td><td>20.23 €</td></tr>
+                <tr><td><strong>compex elektrody</strong></td><td>0</td><td>18.54 €</td></tr>
+                <tr><td><strong>compex mini</strong></td><td>0</td><td>13.94 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="scanner-cta">
+          <div class="scanner-cta-title">Stoppen Sie die Budgetverschwendung sofort und investieren Sie in rentable Keywords.</div>
+          <p>In unserem Einzelfokus-Audit analysieren wir Ihre Match-Type-Architektur, beseitigen Suchkannibalisierung und liefern einsatzbereite Ausschlusslisten innerhalb von 48 Stunden.</p>
+          <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Komplettes Audit für 95 € bestellen &rarr;</a>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Practice & Authority Section -->
+  <div class="authority-box">
+    <h3>Diagnostik basierend auf aktiver E-Commerce-Praxis</h3>
+    <p class="intro-p">Hinter Zacton stehen keine theoretischen Agenturberater, sondern das tägliche Management aktiver E-Commerce-Infrastrukturen:</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div>
+          <h4><a href="https://demro.sk" target="_blank" rel="noopener">demro.sk</a> &nearr;</h4>
+          <p>Omnichannel B2B- und B2C-Distribution von Büro- und Hygieneartikeln. Bestandsmanagement für tausende Artikel, Margensteuerung und automatisierte Logistik.</p>
+        </div>
+        <div class="sub-block">
+          <p><strong>Eigenentwickeltes FEEDEX-System:</strong> Konzeption einer unifizierten Integrationsarchitektur für externe Lieferanten. FEEDEX importiert und transformiert Lieferantenkataloge direkt ohne Abhängigkeit von fehleranfälligen Plugins.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div>
+          <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
+          <p>Fachshop für Regenerationstechnik und Sporttechnologie (Compex). Ausrichtung auf Google Shopping, Attributintegrität und Maximierung der Konversionsrate.</p>
+        </div>
+        <div class="sub-block">
+          <p><strong><a href="https://animalsoft.eu" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">animalsoft.eu</a> &nearr;</strong> E-E-A-T & KI-gestützte Content-Strategie für B2B-Software.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Audit Findings Section -->
+  <h3 class="section-title">Ergebnisse aus Diagnose-Audits</h3>
+  <div class="cases-grid">
+    <div class="case-card">
+      <span class="case-tag">Google Ads</span>
+      <div class="case-impact">-380 € / Monat</div>
+      <p><strong>Befund:</strong> Broad-Match-Kampagnen verbrauchten Budget für irrelevante Info-Suchanfragen ohne Kaufabsicht.</p>
+      <p><strong>Maßnahme:</strong> Einführung präziser Ausschlusslisten und Verlagerung des Budgets auf konversionsstarke Produktsuchen.</p>
+    </div>
+    <div class="case-card">
+      <span class="case-tag">Merchant Center</span>
+      <div class="case-impact">+45% Impressionen</div>
+      <p><strong>Befund:</strong> Über 30% der umsatzstarken Produkte wurden wegen fehlender GTINs und fehlerhafter Titel abgewiesen.</p>
+      <p><strong>Maßnahme:</strong> Korrektur des Feed-Mappings und Wiederherstellung der vollen Freigabe des Produktkatalogs in 48 Stunden.</p>
+    </div>
+    <div class="case-card">
+      <span class="case-tag">GA4 Tracking</span>
+      <div class="case-impact">100% Datenabgleich</div>
+      <p><strong>Befund:</strong> 28% Diskrepanz zwischen Shop-Backend und GA4 aufgrund fehlerhafter Skriptreihenfolge bei Consent Mode v2.</p>
+      <p><strong>Maßnahme:</strong> Bereinigung der Tag-Ausführung und Wiederherstellung exakter Conversion-Attribution in Google Ads.</p>
+    </div>
+  </div>
+
+  <!-- Core Values -->
+  <div class="grid-3">
+    <div class="card">
+      <h3>Kein Agentur-Leerlauf</h3>
+      <p>Sie zahlen nicht für 50-seitige Vorlagen mit unbrauchbaren Kennzahlen. Alle Erkenntnisse stammen direkt aus praktischer E-Commerce-Erfahrung.</p>
+    </div>
+    <div class="card">
+      <h3>Finanzielle Priorisierung</h3>
+      <p>Gefundene Probleme werden strikt nach Umsatzrelevanz gewichtet: sofortiger Stopp von Budgetverschwendung und Feed-Korrekturen.</p>
+    </div>
+    <div class="card">
+      <h3>Lieferung in 48 Stunden</h3>
+      <p>Keine zeitraubenden Verkaufsgespräche. Innerhalb von zwei Werktagen erhalten Sie konkrete Vorgaben, die Ihr Team sofort umsetzen kann.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="/de/privacy.html">Datenschutzerklärung</a> | 
+      <a href="/de/terms.html">AGB</a>
+    </div>
+    <div class="footer-meta">
+      &copy; 2026 Zacton. Alle Rechte vorbehalten. <br>
+      Betreiber: Peter Haratik, ID (ICO): 46348832 | E-Mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Service selection logic
+  const baseUrl = "https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02";
+  const ctaButton = document.getElementById('cta-button');
+  const step1Text = document.getElementById('step1Text');
+  const step2Text = document.getElementById('step2Text');
+  const options = document.querySelectorAll('.service-option');
+
+  const serviceData = {
+    'google-ads': {
+      step1: "Geben Sie im kurzen Formular nach der Zahlung Ihre 10-stellige Google Ads CID an und bestätigen Sie die Nur-Lese-Anfrage.",
+      step2: "Innerhalb von 48 Stunden erhalten Sie einen strukturierten PDF-Bericht per E-Mail: Budgetfresser und Keyword-Ausschlusslisten."
+    },
+    'merchant-center': {
+      step1: "Geben Sie Ihre Shop-URL und den XML-Feed-Link an oder erteilen Sie Nur-Lese-Zugriff auf das Google Merchant Center.",
+      step2: "Sie erhalten eine Aufstellung abgelehnter Artikel, fehlender Attribute (GTIN/EAN) sowie Feed-Titelanpassungen."
+    },
+    'ga4-tracking': {
+      step1: "Geben Sie Ihre Web-URL an und gewähren Sie Nur-Lese-Zugriff (Betrachter) auf Ihre Google Analytics 4 Property.",
+      step2: "Sie erhalten ein Audit zur Prüfpräzision von Kauf-Events, Datenverlusten durch Cookie-Banner und Diskrepanzen zum Backend."
+    },
+    'checkout-friction': {
+      step1: "Geben Sie Ihre Shop-URL an und beantworten Sie einen 2-minütigen Fragebogen zu Bezahlsystemen, Versand und Shopsystem.",
+      step2: "Sie erhalten eine Analyse von Kaufabbruchstellen, Problemen auf Mobilgeräten und einen 48-Stunden-Maßnahmenplan."
+    }
+  };
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      options.forEach(opt => opt.classList.remove('selected'));
+      option.classList.add('selected');
+      const radio = option.querySelector('input[type="radio"]');
+      radio.checked = true;
+      const val = radio.value;
+      ctaButton.href = `${baseUrl}?client_reference_id=${val}`;
+      if (serviceData[val]) {
+        step1Text.textContent = serviceData[val].step1;
+        step2Text.textContent = serviceData[val].step2;
       }
-    };
-
-    options.forEach(option => {
-      option.addEventListener('click', () => {
-        options.forEach(opt => opt.classList.remove('selected'));
-        option.classList.add('selected');
-        const radio = option.querySelector('input[type="radio"]');
-        radio.checked = true;
-        const val = radio.value;
-        ctaButton.href = `${baseUrl}?client_reference_id=${val}`;
-        if (serviceData[val]) {
-          step1Text.textContent = serviceData[val].step1;
-          step2Text.textContent = serviceData[val].step2;
-        }
-      });
     });
-  </script>
+  });
+
+  // --- Google Ads Wasted Spend Scanner Engine ---
+  const dropzone = document.getElementById('scannerDropzone');
+  const fileInput = document.getElementById('scannerFileInput');
+  const resultsBox = document.getElementById('scannerResults');
+  const badgeBar = document.getElementById('scannerBadgeBar');
+  const scannerDetails = document.getElementById('scannerDetails');
+
+  dropzone.addEventListener('click', () => fileInput.click());
+  dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+  dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length) handleFile(e.target.files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.name.toLowerCase().endsWith('.csv')) {
+      alert('Bitte laden Sie eine .csv Datei hoch, die aus Google Ads exportiert wurde.');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      parseGoogleAdsCsv(e.target.result);
+    };
+    reader.readAsText(file);
+  }
+
+  function parseGoogleAdsCsv(text) {
+    const lines = text.split(/\r\n|\n/);
+    let headerIndex = -1;
+    let headers = [];
+    let delimiter = ',';
+
+    for (let i = 0; i < Math.min(lines.length, 10); i++) {
+      const line = lines[i];
+      if (line.includes(';') && (line.toLowerCase().includes('suchbegriff') || line.toLowerCase().includes('kosten') || line.toLowerCase().includes('search term') || line.toLowerCase().includes('cost'))) {
+        delimiter = ';';
+        headers = parseCsvLine(line, delimiter);
+        headerIndex = i;
+        break;
+      } else if (line.includes(',') && (line.toLowerCase().includes('suchbegriff') || line.toLowerCase().includes('kosten') || line.toLowerCase().includes('search term') || line.toLowerCase().includes('cost'))) {
+        delimiter = ',';
+        headers = parseCsvLine(line, delimiter);
+        headerIndex = i;
+        break;
+      }
+    }
+
+    if (headerIndex === -1) {
+      alert('Standard-Kopfzeile der Google Ads Suchbegriffe nicht gefunden. Bitte stellen Sie sicher, dass es sich um einen CSV-Export aus dem Suchbegriffe-Bericht handelt.');
+      return;
+    }
+
+    let termIdx = -1, costIdx = -1, convIdx = -1, clicksIdx = -1;
+    headers.forEach((h, idx) => {
+      const col = h.trim().toLowerCase();
+      if (col.includes('suchbegriff') || col.includes('search term') || col.includes('vyhľadávací dopyt')) termIdx = idx;
+      if (col === 'kosten' || col === 'cost' || col === 'cena') costIdx = idx;
+      if (col === 'conversions' || col === 'konverzie' || col === 'konv.') convIdx = idx;
+      if (col === 'klicks' || col === 'clicks' || col === 'kliknutia') clicksIdx = idx;
+    });
+
+    if (termIdx === -1 || costIdx === -1) {
+      alert('In der CSV-Datei fehlen die Spalten für Suchbegriffe oder Kosten.');
+      return;
+    }
+
+    let totalSpend = 0;
+    let wastedSpend = 0;
+    let wastedCount = 0;
+    let wastedRows = [];
+
+    for (let i = headerIndex + 1; i < lines.length; i++) {
+      const rawLine = lines[i].trim();
+      if (!rawLine || rawLine.startsWith('--') || rawLine.toLowerCase().startsWith('gesamt') || rawLine.toLowerCase().startsWith('total')) continue;
+      const cols = parseCsvLine(rawLine, delimiter);
+      if (cols.length <= costIdx || cols.length <= termIdx) continue;
+
+      const term = cols[termIdx].trim();
+      if (!term) continue;
+
+      const cost = cleanNumber(cols[costIdx]);
+      const conv = convIdx !== -1 ? cleanNumber(cols[convIdx]) : 0;
+      const clicks = clicksIdx !== -1 ? parseInt(cleanNumber(cols[clicksIdx])) : 0;
+
+      totalSpend += cost;
+
+      if (cost > 0 && conv === 0) {
+        wastedSpend += cost;
+        wastedCount++;
+        wastedRows.push({ term, cost, clicks });
+      }
+    }
+
+    wastedRows.sort((a, b) => b.cost - a.cost);
+
+    if (scannerDetails) scannerDetails.open = true;
+
+    badgeBar.style.background = '#dcfce7';
+    badgeBar.style.borderColor = '#bbf7d0';
+    badgeBar.style.color = '#166534';
+    badgeBar.innerHTML = '<span>✅ <strong>Ihre Live-Analyse:</strong> Ergebnisse direkt aus Ihrer CSV berechnet</span><span class="preview-badge" style="background:#22c55e;color:#fff;">IHR KONTO</span>';
+
+    document.getElementById('resTotalSpend').textContent = totalSpend.toFixed(2) + ' €';
+    document.getElementById('resWastedSpend').textContent = wastedSpend.toFixed(2) + ' €';
+    const percent = totalSpend > 0 ? ((wastedSpend / totalSpend) * 100).toFixed(1) : 0;
+    document.getElementById('resWastedPercent').textContent = `(${percent} % des Budgets)`;
+    document.getElementById('resWastedCount').textContent = wastedCount;
+
+    const tbody = document.querySelector('#resTopTable tbody');
+    tbody.innerHTML = '';
+    wastedRows.slice(0, 5).forEach(r => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><strong>${escapeHtml(r.term)}</strong></td><td>${r.clicks}</td><td>${r.cost.toFixed(2)} €</td>`;
+      tbody.appendChild(tr);
+    });
+
+    resultsBox.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function parseCsvLine(line, delimiter) {
+    const values = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      if (char === '"' || char === "'") {
+        inQuotes = !inQuotes;
+      } else if (char === delimiter && !inQuotes) {
+        values.push(current);
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    values.push(current);
+    return values.map(v => v.replace(/^["']|["']$/g, '').trim());
+  }
+
+  function cleanNumber(val) {
+    if (!val) return 0;
+    const cleaned = val.replace(/[€$£\s]/g, '').replace(',', '.');
+    const num = parseFloat(cleaned);
+    return isNaN(num) ? 0 : num;
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+</script>
 </body>
 </html>
