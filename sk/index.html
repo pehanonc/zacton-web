@@ -700,6 +700,13 @@
       🔒 <strong>100% súkromné a bezpečné:</strong> Súbor sa spracováva výhradne lokálne vo vašom prehliadači. Žiadne dáta sa neodosielajú na server.
     </div>
 
+    <!-- Tlačidlo pre rozbalenie modelovej ukážky -->
+    <div style="text-align: center; margin-top: 14px;">
+      <button type="button" id="toggleDemoBtn" style="background:none; border:none; color:#2563eb; font-weight:700; font-size:0.9rem; cursor:pointer; text-decoration:underline; padding:6px 12px;">
+        Zobraziť, ako vyzerá výsledok (Ukážka) ▾
+      </button>
+    </div>
+
     <div class="scanner-instructions">
       <details>
         <summary>Ako stiahnuť správny súbor z Google Ads za 30 sekúnd? ▾</summary>
@@ -711,10 +718,10 @@
       </details>
     </div>
 
-    <!-- Výsledkový blok s predvoleným modelovým náhľadom (Teaser) -->
-    <div id="scannerResults" class="scanner-results">
+    <!-- Výsledkový blok (predvolene skrytý, aktivuje sa tlačidlom Ukážka alebo nahratím CSV) -->
+    <div id="scannerResults" class="scanner-results" style="display: none;">
       <div class="preview-badge-bar" id="scannerBadgeBar">
-        <span>👁️ <strong>Modelová ukážka:</strong> Takto vyzerá okamžitá analýza po vložení CSV</span>
+        <span>👁️ <strong>Modelová ukážka:</strong> Takto vyzerá analýza po vložení CSV</span>
         <span class="preview-badge" id="scannerModeBadge">UKÁŽKA</span>
       </div>
 
@@ -757,7 +764,7 @@
       </div>
 
       <div class="scanner-cta">
-        <div class="scanner-cta-title" id="scannerCtaTitle">Tieto peniaze viete okamžite ušetriť a investovať do ziskových fráz.</div>
+        <div class="scanner-cta-title">Tieto peniaze viete okamžite ušetriť a investovať do ziskových fráz.</div>
         <p>V rámci jednorazového auditu preveríme celú štruktúru zhôd, identifikujeme skrytú kanibalizáciu a pripravíme presný export vylučujúcich slov na okamžitý import.</p>
         <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Objednať kompletný audit za 95 € &rarr;</a>
       </div>
@@ -888,7 +895,19 @@
   const fileInput = document.getElementById('scannerFileInput');
   const resultsBox = document.getElementById('scannerResults');
   const badgeBar = document.getElementById('scannerBadgeBar');
-  const modeBadge = document.getElementById('scannerModeBadge');
+  const toggleDemoBtn = document.getElementById('toggleDemoBtn');
+
+  // Rozbaľovanie ukážky tlačidlom
+  toggleDemoBtn.addEventListener('click', () => {
+    if (resultsBox.style.display === 'none' || resultsBox.style.display === '') {
+      resultsBox.style.display = 'block';
+      toggleDemoBtn.textContent = 'Skryť ukážku výsledku ▴';
+      resultsBox.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      resultsBox.style.display = 'none';
+      toggleDemoBtn.textContent = 'Zobraziť, ako vyzerá výsledok (Ukážka) ▾';
+    }
+  });
 
   dropzone.addEventListener('click', () => fileInput.click());
   dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
@@ -983,11 +1002,14 @@
 
     wastedRows.sort((a, b) => b.cost - a.cost);
 
-    // Prepnúť z ukážky na živé dáta klienta
+    // Automaticky zobraziť a prepnúť na živé dáta klienta
+    resultsBox.style.display = 'block';
+    toggleDemoBtn.style.display = 'none';
+
     badgeBar.style.background = '#dcfce7';
     badgeBar.style.borderColor = '#bbf7d0';
     badgeBar.style.color = '#166534';
-    badgeBar.innerHTML = '<span>✅ <strong>Vaša živá analýza:</strong> Výsledky vypočítané priamo z nahratého súboru</span><span class="preview-badge" style="background:#22c55e;color:#fff;">VÁŠ ÚČET</span>';
+    badgeBar.innerHTML = '<span>✅ <strong>Vaša živá analýza:</strong> Výsledky vypočítané priamo z vášho CSV</span><span class="preview-badge" style="background:#22c55e;color:#fff;">VÁŠ ÚČET</span>';
 
     document.getElementById('resTotalSpend').textContent = totalSpend.toFixed(2) + ' €';
     document.getElementById('resWastedSpend').textContent = wastedSpend.toFixed(2) + ' €';
