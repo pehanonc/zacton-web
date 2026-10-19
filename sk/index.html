@@ -700,7 +700,7 @@ footer a:hover { text-decoration: underline; }
 <p>Nahrajte štandardný CSV export vyhľadávacích dopytov. Skript okamžite spočíta výdavky na frázy, ktoré nepriniesli konverzie.</p>
 </div>
 <div class="dropzone" id="scannerDropzone">
-<div class="dropzone-icon">&#128196;</div>
+<div class="dropzone-icon">📁</div>
 <div class="dropzone-text">
 <strong>Pretiahnite sem CSV súbor</strong> alebo <span class="browse-link">vyberte z disku</span>
 </div>
@@ -708,11 +708,11 @@ footer a:hover { text-decoration: underline; }
 <input type="file" id="scannerFileInput" accept=".csv" style="display: none;">
 </div>
 <div class="scanner-privacy">
-<strong>100% súkromné a bezpečné:</strong> Súbor sa spracováva výhradne lokálne vo vašom prehliadači. Žiadne dáta sa neukladajú ani neodosielajú na server.
+🔒 <strong>100% súkromné a bezpečné:</strong> Súbor sa spracováva výhradne lokálne vo vašom prehliadači. Žiadne dáta sa neukladajú ani neodosielajú na server.
 </div>
 <div class="scanner-instructions">
 <details>
-<summary>Ako stiahnuť správny súbor z Google Ads za 30 sekúnd? &#9662;</summary>
+<summary>Ako stiahnuť správny súbor z Google Ads za 30 sekúnd? ▾</summary>
 <ol>
 <li>Prihláste sa do <strong>Google Ads</strong> a vyberte obdobie (napr. posledných 30 dní).</li>
 <li>V ľavom menu kliknite na <strong>Kampane</strong> &rarr; <strong>Štatistiky a prehľady</strong> &rarr; <strong>Vyhľadávacie dopyty</strong>.</li>
@@ -723,11 +723,11 @@ footer a:hover { text-decoration: underline; }
 <!-- Natívny rozbaľovací blok s modelovou ukážkou -->
 <details id="scannerDetails" style="margin-top: 20px;">
 <summary style="cursor: pointer; color: #2563eb; font-weight: 700; text-align: center; font-size: 0.95rem;">
-Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
+👁️ Zobraziť, ako vyzerá výsledok (Ukážka) ▾
 </summary>
 <div id="scannerResults" class="scanner-results">
 <div class="preview-badge-bar" id="scannerBadgeBar">
-<span>&#9432; <strong>Modelová ukážka:</strong> Takto vyzerá analýza po vložení CSV</span>
+<span>📊 <strong>Modelová ukážka:</strong> Takto vyzerá analýza po vložení CSV</span>
 <span class="preview-badge" id="scannerModeBadge">UKÁŽKA</span>
 </div>
 <div class="results-grid">
@@ -979,7 +979,7 @@ function parseGoogleAdsCsv(text) {
   badgeBar.style.background = '#dcfce7';
   badgeBar.style.borderColor = '#bbf7d0';
   badgeBar.style.color = '#166534';
-  badgeBar.innerHTML = '<span>&#9989; <strong>Vaša živá analýza:</strong> Výsledky vypočítané priamo z vášho CSV</span>';
+  badgeBar.innerHTML = '<span>✅ <strong>Vaša živá analýza:</strong> Výsledky vypočítané priamo z vášho CSV</span>';
   document.getElementById('resTotalSpend').textContent = totalSpend.toFixed(2) + ' €';
   document.getElementById('resWastedSpend').textContent = wastedSpend.toFixed(2) + ' €';
   const percent = totalSpend > 0 ? ((wastedSpend / totalSpend) * 100).toFixed(1) : 0;
