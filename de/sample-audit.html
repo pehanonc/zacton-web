@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muster-Auditbericht Google Ads | Zacton</title>
+<meta name="description" content="Vorschau eines realen 3-seitigen Google Ads Diagnoseberichts für Online-Shops. Genaue Befundstruktur, finanzielle Priorisierung und Maßnahmenliste.">
+<meta name="author" content="Peter Haratik">
+<link rel="canonical" href="https://zacton.com/de/sample-audit.html" />
+
+<!-- SEO hreflang -->
+<link rel="alternate" hreflang="en" href="https://zacton.com/sample-audit.html" />
+<link rel="alternate" hreflang="de" href="https://zacton.com/de/sample-audit.html" />
+<link rel="alternate" hreflang="sk" href="https://zacton.com/sk/sample-audit.html" />
+<link rel="alternate" hreflang="x-default" href="https://zacton.com/sample-audit.html" />
+
+<!-- Open Graph / Meta -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zacton.com/de/sample-audit.html">
+<meta property="og:title" content="Muster-Auditbericht Google Ads | Zacton">
+<meta property="og:description" content="So sieht ein fundierter 3-seitiger E-Commerce Diagnosebericht für feste 95 € aus.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://zacton.com/og-image.png">
+
+<style>
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background-color: #f1f5f9;
+  line-height: 1.55;
+  margin: 0;
+  padding: 30px 15px;
+}
+.nav-bar {
+  max-width: 860px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.back-link:hover { text-decoration: underline; }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.lang-switch a {
+  color: #64748b;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+.lang-switch a.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+.btn-print {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+.btn-print:hover { background: #f8fafc; border-color: #94a3b8; }
+
+/* A4 Sheet Simulation */
+.audit-container {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 45px 50px;
+}
+.page-break-indicator {
+  border-top: 2px dashed #e2e8f0;
+  margin: 45px -50px;
+  text-align: center;
+  position: relative;
+}
+.page-break-indicator span {
+  position: absolute;
+  top: -11px;
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 10px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Header */
+.audit-header {
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 18px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.audit-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+.audit-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+.audit-meta-right {
+  text-align: right;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+.audit-scope-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 25px;
+  font-size: 0.85rem;
+}
+.scope-item strong { display: block; font-size: 0.72rem; color: #64748b; text-transform: uppercase; }
+.scope-item span { color: #0f172a; font-weight: 700; }
+
+/* Financial Cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.metric-box {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  background: #ffffff;
+}
+.metric-box.alert {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.metric-box.positive {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.metric-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+.metric-val {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #0f172a;
+}
+.metric-box.alert .metric-val { color: #dc2626; }
+.metric-box.positive .metric-val { color: #166534; }
+.metric-sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.metric-box.alert .metric-sub { color: #991b1b; }
+.metric-box.positive .metric-sub { color: #166534; }
+
+/* Sections & Findings */
+h2.section-header {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 25px 0 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.finding-card {
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #dc2626;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  background: #ffffff;
+}
+.finding-card.warning { border-left-color: #f59e0b; }
+.finding-card.info { border-left-color: #2563eb; }
+.finding-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.finding-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.finding-impact {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.finding-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+.finding-action {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #1e293b;
+}
+.finding-action strong { color: #2563eb; }
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 25px 0;
+  font-size: 0.85rem;
+}
+.data-table th, .data-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+.data-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.data-table td.cost { color: #dc2626; font-weight: 700; text-align: right; }
+.data-table th:last-child { text-align: right; }
+.data-table tr:hover { background: #fbfbfc; }
+
+/* Checklist */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #f8fafc;
+  font-size: 0.88rem;
+}
+.task-priority {
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.task-priority.med { background: #f59e0b; }
+.task-priority.low { background: #2563eb; }
+.task-content strong { color: #0f172a; display: block; margin-bottom: 2px; }
+.task-content span { color: #64748b; font-size: 0.82rem; line-height: 1.4; }
+
+/* Footer CTA */
+.audit-cta {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 28px;
+  text-align: center;
+  margin-top: 35px;
+}
+.audit-cta h3 { margin: 0 0 8px 0; font-size: 1.25rem; font-weight: 800; }
+.audit-cta p { color: #94a3b8; font-size: 0.9rem; max-width: 620px; margin: 0 auto 20px auto; }
+.cta-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.cta-btn:hover { background: #1d4ed8; }
+
+@media print {
+  body { background: #ffffff; padding: 0; }
+  .nav-bar, .audit-cta { display: none; }
+  .audit-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+  .page-break { page-break-before: always; break-before: page; padding-top: 25px; }
+  .page-break-indicator { display: none; }
+}
+
+@media (max-width: 768px) {
+  .audit-container { padding: 25px 20px; }
+  .audit-scope-bar, .metrics-grid { grid-template-columns: 1fr; gap: 10px; }
+  .audit-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .audit-meta-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="/de/" class="back-link">&larr; Zurück zu Zacton.com</a>
+  <div class="nav-actions">
+    <div class="lang-switch">
+      <a href="/sample-audit.html">EN</a>
+      <a href="/de/sample-audit.html" class="active">DE</a>
+      <a href="/sk/sample-audit.html">SK</a>
+    </div>
+    <button class="btn-print" onclick="window.print()">Als PDF speichern</button>
+  </div>
+</div>
+
+<div class="audit-container">
+
+  <!-- ================= SEITE 1 ================= -->
+  <div class="audit-header">
+    <div>
+      <div class="audit-badge">Muster-Diagnosebericht E-Commerce · DEMO-REPORT</div>
+      <h1 class="audit-title">Google Ads Budget-Leckagen & Suchbegriffe-Audit</h1>
+    </div>
+    <div class="audit-meta-right">
+      <strong>Zacton Diagnostic Service</strong><br>
+      Audit-ID: ZAC-2026-09DE<br>
+      Prüfdatum: 22. Oktober 2026
+    </div>
+  </div>
+
+  <div class="audit-scope-bar">
+    <div class="scope-item">
+      <strong>Prüfbereich</strong>
+      <span>Search & PMax Kampagnen</span>
+    </div>
+    <div class="scope-item">
+      <strong>Analysierter Zeitraum</strong>
+      <span>Letzte 30 Tage</span>
+    </div>
+    <div class="scope-item">
+      <strong>Shop-Kategorie</strong>
+      <span>B2B & B2C Distribution</span>
+    </div>
+    <div class="scope-item">
+      <strong>Lieferformat</strong>
+      <span>PDF + Negativlisten (.csv)</span>
+    </div>
+  </div>
+
+  <h2 class="section-header">1. Management-Zusammenfassung & Finanzbilanz des Kontos</h2>
+  <div class="metrics-grid">
+    <div class="metric-box">
+      <div class="metric-label">Gesamtausgaben im Bericht</div>
+      <div class="metric-val">3.480 €</div>
+      <div class="metric-sub" style="color: #64748b;">911 aktive Suchbegriffe</div>
+    </div>
+    <div class="metric-box alert">
+      <div class="metric-label">Identifizierte Budgetverschwendung</div>
+      <div class="metric-val">528 €</div>
+      <div class="metric-sub">15,2% Ausgaben ohne Conversion</div>
+    </div>
+    <div class="metric-box positive">
+      <div class="metric-label">Sofortige Jahresersparnis</div>
+      <div class="metric-val">6.336 €</div>
+      <div class="metric-sub">Nach Einsatz der Negativlisten</div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.9rem; color: #334155; margin-bottom: 25px;">
+    <strong>Zentrales Diagnoseergebnis:</strong> Das Konto erzielt solide Conversion-Raten bei transaktionsorientierten Produktsuchanfragen. Allerdings fließen <strong>15,2% des monatlichen Werbebudgets</strong> in unrentable Informationsanfragen ab (PDF-Gebrauchsanleitungen, Forendiskussionen, Inhaltsstoffvergleiche, Gebrauchtmarkt-Suchen und Servicekontakte). Die Ursache liegt in unkontrollierter Broad-Match-Ausspielung, fehlenden kontoübergreifenden Ausschlusslisten und verdeckter Brand-Kannibalisierung in Performance Max.
+  </p>
+
+  <h2 class="section-header">2. Auswirkungen auf zentrale Leistungskennzahlen (KPIs)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Konto-Kennzahl</th>
+        <th>Aktueller Ist-Zustand</th>
+        <th>Zustand nach Bereinigung</th>
+        <th>Netto-Geschäftsvorteil</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Effektive Kosten pro Akquisition (CPA)</strong></td>
+        <td>18,40 €</td>
+        <td>15,60 €</td>
+        <td style="color: #166534; font-weight: 700;">-15,2% günstigere Bestellungen</td>
+      </tr>
+      <tr>
+        <td><strong>Return on Ad Spend (ROAS)</strong></td>
+        <td>410%</td>
+        <td>484%</td>
+        <td style="color: #166534; font-weight: 700;">+74 Prozentpunkte Zuwachs</td>
+      </tr>
+      <tr>
+        <td><strong>Anteil unrentabler Klicks</strong></td>
+        <td>22,4% aller Klicks</td>
+        <td>&lt; 3,5%</td>
+        <td style="color: #166534; font-weight: 700;">Budget vor Streuverlusten geschützt</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SEITENTRENNUNG 1 ZU 2 -->
+  <div class="page-break-indicator"><span>Ende Seite 1 · Technische Befundanalyse</span></div>
+  <div class="page-break"></div>
+
+  <!-- ================= SEITE 2 ================= -->
+  <h2 class="section-header">3. Detaillierte technische Diagnose der Budget-Leckagen</h2>
+
+  <div class="finding-card">
+    <div class="finding-head">
+      <span class="finding-title">Leck A: Unkontrollierte Broad-Match-Streuung bei Kategorien</span>
+      <span class="finding-impact">Monatlicher Verlust: 246,80 €</span>
+    </div>
+    <div class="finding-desc">
+      Allgemeine Kategoriebegriffe im Broad Match erfassen ohne hinreichende Smart-Bidding-Restriktionen ein breites Spektrum an nicht-kommerziellen Anfragen. Anzeigen werden Nutzern ausgespielt, die nach PDF-Anleitungen, wissenschaftlichen Wirkungsstudien oder Erfahrungsberichten suchen. Diese Anfragen erzeugen hohe Klickkosten bei 0% Kaufabschlüssen.
+    </div>
+    <div class="finding-action">
+      <strong>Sofortmaßnahme:</strong> Umstellung allgemeiner Kategorie-Keywords auf Phrase Match ("Passende Wortgruppe") und Import der beigefügten Ausschlussliste für Informationsbegriffe (Anleitung, PDF, Testbericht, Forum, Dosierung).
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-head">
+      <span class="finding-title">Leck B: Verdeckte Marken-Kannibalisierung in Performance Max</span>
+      <span class="finding-impact" style="background:#fef3c7; color:#92400e;">ROAS-Verzerrung: ~38%</span>
+    </div>
+    <div class="finding-desc">
+      Die Performance Max Kampagne läuft ohne hinterlegte <em>Markenausschlussliste (Brand Exclusion List)</em>. Der Algorithmus bietet aggressiv auf den exakten Eigennamen des Online-Shops und greift Kunden ab, die ohnehin kostenlos über die organische Suche gekauft hätten. Dies verzerrt den gemeldeten ROAS, generiert jedoch keinen zusätzlichen inkrementellen Umsatz.
+    </div>
+    <div class="finding-action">
+      <strong>Sofortmaßnahme:</strong> Markenausschlussliste in den Kontoeinstellungen erstellen und direkt als Ausschluss in der PMax-Kampagne hinterlegen.
+    </div>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-head">
+      <span class="finding-title">Leck C: Fehlende geteilte Ausschlusslisten auf Kontoebene</span>
+      <span class="finding-impact" style="background:#dbeafe; color:#1e40af;">Monatlicher Verlust: 162,40 €</span>
+    </div>
+    <div class="finding-desc">
+      Dem Konto fehlt eine zentralisierte Ausschluss-Bibliothek auf Kontoebene. Neu gestartete Anzeigengruppen zahlen wiederholt für bekannte Negativ-Klicks (Namen von Mitbewerbern, deren Marken der Shop nicht führt, Login-Portale, Gebrauchtwarenportale oder Reklamationskontakte).
+    </div>
+    <div class="finding-action">
+      <strong>Sofortmaßnahme:</strong> Import der zentralen Master-Negativliste direkt in die geteilte Bibliothek auf Kontoebene.
+    </div>
+  </div>
+
+  <h2 class="section-header">4. Auszug teuerster Suchbegriffe ohne Käufe (Reale Stichprobe)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Suchbegriff (Search Term)</th>
+        <th>Match-Typ</th>
+        <th>Klicks</th>
+        <th>Ø CPC</th>
+        <th>Verlorenes Budget</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>inca collagen rabatt apotheke</strong></td>
+        <td>Broad</td>
+        <td>14</td>
+        <td>0,62 €</td>
+        <td class="cost">8,68 €</td>
+      </tr>
+      <tr>
+        <td><strong>welches kollagen ist das beste für die haut test</strong></td>
+        <td>Broad</td>
+        <td>18</td>
+        <td>0,58 €</td>
+        <td class="cost">10,44 €</td>
+      </tr>
+      <tr>
+        <td><strong>meereskollagen gelenkschmerzen diskussionsforum</strong></td>
+        <td>Broad</td>
+        <td>12</td>
+        <td>0,65 €</td>
+        <td class="cost">7,80 €</td>
+      </tr>
+      <tr>
+        <td><strong>ebay kleinanzeigen gebraucht günstig</strong></td>
+        <td>Broad</td>
+        <td>22</td>
+        <td>0,48 €</td>
+        <td class="cost">10,56 €</td>
+      </tr>
+      <tr>
+        <td><strong>gebrauchsanleitung dosierung pdf download</strong></td>
+        <td>Broad</td>
+        <td>16</td>
+        <td>0,52 €</td>
+        <td class="cost">8,32 €</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SEITENTRENNUNG 2 ZU 3 -->
+  <div class="page-break-indicator"><span>Ende Seite 2 · Maßnahmenplan & Umsetzung</span></div>
+  <div class="page-break"></div>
+
+  <!-- ================= SEITE 3 ================= -->
+  <h2 class="section-header">5. Priorisierter technischer Maßnahmenplan</h2>
+  <p style="font-size: 0.88rem; color: #475569; margin-bottom: 18px;">
+    Diese Aufgaben sind so strukturiert, dass sie direkt an Ihre betreuende PPC-Agentur oder Ihren internen Kampagnenmanager übergeben werden können. Zeitaufwand: unter 45 Minuten.
+  </p>
+
+  <ul class="task-list">
+    <li class="task-item">
+      <span class="task-priority">Hoch</span>
+      <div class="task-content">
+        <strong>1. Master-Ausschlussliste "Zacton_Master_Negatives.csv" importieren</strong>
+        <span>Unter <em>Tools und Einstellungen &rarr; Geteilte Bibliothek &rarr; Listen mit auszuschließenden Keywords</em> die beigefügte Datei mit 85 vorgefilterten Begriffen hochladen und auf alle Search-Kampagnen anwenden.</span>
+      </div>
+    </li>
+    <li class="task-item">
+      <span class="task-priority">Hoch</span>
+      <div class="task-content">
+        <strong>2. Markenausschluss in Performance Max Kampagnen aktivieren</strong>
+        <span>In den Einstellungen der PMax-Kampagne unter <em>Markenausschlüsse</em> eine neue Markenliste für den Shop-Eigennamen anlegen und verknüpfen, um echten Neukundenzuwachs zu erzwingen.</span>
+      </div>
+    </li>
+    <li class="task-item">
+      <span class="task-priority med">Mittel</span>
+      <div class="task-content">
+        <strong>3. Kategorie-Keywords von Broad Match auf Phrase Match umstellen</strong>
+        <span>Generische Produkt-Keywords in Anzeigengruppen auf Wortgruppe setzen (z. B. von <code>kollagen</code> auf <code>"kollagen"</code>). Weitgehend passend nur bei soliden Smart-Bidding-Datenbeständen beibehalten.</span>
+      </div>
+    </li>
+    <li class="task-item">
+      <span class="task-priority low">Niedrig</span>
+      <div class="task-content">
+        <strong>4. Automatische wöchentliche Prüfregel für Suchanfragen einrichten</strong>
+        <span>Automatisierte Benachrichtigung für Suchbegriffe konfigurieren, die in einem 14-Tage-Fenster mehr als 10 Klicks bei 0 Conversions anhäufen, um neue Budgetlecks frühzeitig zu stoppen.</span>
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="section-header">6. Dem Kunden übergebene Audit-Anhänge</h2>
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px 18px; font-size: 0.85rem; color: #334155;">
+    ✔ <strong>Zacton_Master_Negatives.csv:</strong> 85 vorgefilterte negative Keywords, formatiert für den sofortigen Google Ads Import.<br>
+    ✔ <strong>Wasted_Search_Terms_Export.csv:</strong> Vollständige Liste der 32 identifizierten Suchbegriffe mit 5+ Klicks ohne Conversion.<br>
+    ✔ <strong>PMax_Brand_Guide.pdf:</strong> Kompakte Schritt-für-Schritt-Anleitung zur richtigen Konfiguration von Markenausschlüssen.
+  </div>
+
+  <div class="audit-cta">
+    <h3>Benötigen Sie exakt dieses technische Audit für Ihren Shop?</h3>
+    <p>Wählen Sie einen Schwerpunkt (Google Ads, Merchant Center, GA4 oder Checkout). Innerhalb von 2 Werktagen erhalten Sie einen 3-seitigen technischen Prüfbericht direkt aus der E-Commerce-Praxis.</p>
+    <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="cta-btn">Technisches Audit für feste 95 € buchen</a>
+  </div>
+
+</div>
+
+</body>
+</html>
