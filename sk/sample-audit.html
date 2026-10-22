@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vzorový technický audit Google Ads | Zacton</title>
+<meta name="description" content="Ukážka reálneho výstupného diagnostického reportu Google Ads pre e-shop. Presná štruktúra nálezov, finančná priorizácia a zoznam úloh.">
+<meta name="author" content="Peter Haratík">
+<link rel="canonical" href="https://zacton.com/sk/sample-audit.html" />
+
+<!-- SEO hreflang -->
+<link rel="alternate" hreflang="en" href="https://zacton.com/sample-audit.html" />
+<link rel="alternate" hreflang="de" href="https://zacton.com/de/sample-audit.html" />
+<link rel="alternate" hreflang="sk" href="https://zacton.com/sk/sample-audit.html" />
+<link rel="alternate" hreflang="x-default" href="https://zacton.com/sample-audit.html" />
+
+<!-- Open Graph / Meta -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zacton.com/sk/sample-audit.html">
+<meta property="og:title" content="Vzorový technický audit Google Ads | Zacton">
+<meta property="og:description" content="Pozrite sa, ako vyzerá reálny 3-stranový výstupný diagnostický audit e-shopu za 95 €.">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:image" content="https://zacton.com/og-image.png">
+
+<style>
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background-color: #f1f5f9;
+  line-height: 1.55;
+  margin: 0;
+  padding: 30px 15px;
+}
+.nav-bar {
+  max-width: 860px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.back-link:hover { text-decoration: underline; }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.lang-switch a {
+  color: #64748b;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+.lang-switch a.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+.btn-print {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+.btn-print:hover { background: #f8fafc; border-color: #94a3b8; }
+
+/* A4 Sheet Simulation */
+.audit-container {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 45px 50px;
+}
+.page-break-indicator {
+  border-top: 2px dashed #e2e8f0;
+  margin: 45px -50px;
+  text-align: center;
+  position: relative;
+}
+.page-break-indicator span {
+  position: absolute;
+  top: -11px;
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 10px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Header */
+.audit-header {
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 18px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.audit-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+.audit-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+.audit-meta-right {
+  text-align: right;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+.audit-scope-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 25px;
+  font-size: 0.85rem;
+}
+.scope-item strong { display: block; font-size: 0.72rem; color: #64748b; text-transform: uppercase; }
+.scope-item span { color: #0f172a; font-weight: 700; }
+
+/* Financial Cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.metric-box {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  background: #ffffff;
+}
+.metric-box.alert {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.metric-box.positive {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.metric-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+.metric-val {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #0f172a;
+}
+.metric-box.alert .metric-val { color: #dc2626; }
+.metric-box.positive .metric-val { color: #166534; }
+.metric-sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.metric-box.alert .metric-sub { color: #991b1b; }
+.metric-box.positive .metric-sub { color: #166534; }
+
+/* Sections & Findings */
+h2.section-header {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 25px 0 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.finding-card {
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #dc2626;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  background: #ffffff;
+}
+.finding-card.warning { border-left-color: #f59e0b; }
+.finding-card.info { border-left-color: #2563eb; }
+.finding-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.finding-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.finding-impact {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.finding-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+.finding-action {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #1e293b;
+}
+.finding-action strong { color: #2563eb; }
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 25px 0;
+  font-size: 0.85rem;
+}
+.data-table th, .data-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+.data-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.data-table td.cost { color: #dc2626; font-weight: 700; text-align: right; }
+.data-table th:last-child { text-align: right; }
+.data-table tr:hover { background: #fbfbfc; }
+
+/* Checklist */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #f8fafc;
+  font-size: 0.88rem;
+}
+.task-priority {
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.task-priority.med { background: #f59e0b; }
+.task-priority.low { background: #2563eb; }
+.task-content strong { color: #0f172a; display: block; margin-bottom: 2px; }
+.task-content span { color: #64748b; font-size: 0.82rem; line-height: 1.4; }
+
+/* Footer CTA */
+.audit-cta {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 28px;
+  text-align: center;
+  margin-top: 35px;
+}
+.audit-cta h3 { margin: 0 0 8px 0; font-size: 1.25rem; font-weight: 800; }
+.audit-cta p { color: #94a3b8; font-size: 0.9rem; max-width: 620px; margin: 0 auto 20px auto; }
+.cta-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.cta-btn:hover { background: #1d4ed8; }
+
+@media print {
+  body { background: #ffffff; padding: 0; }
+  .nav-bar, .audit-cta { display: none; }
+  .audit-container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+  .page-break { page-break-before: always; break-before: page; padding-top: 25px; }
+  .page-break-indicator { display: none; }
+}
+
+@media (max-width: 768px) {
+  .audit-container { padding: 25px 20px; }
+  .audit-scope-bar, .metrics-grid { grid-template-columns: 1fr; gap: 10px; }
+  .audit-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .audit-meta-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="/sk/" class="back-link">&larr; Späť na Zacton.com</a>
+  <div class="nav-actions">
+    <div class="lang-switch">
+      <a href="/sample-audit.html">EN</a>
+      <a href="/de/sample-audit.html">DE</a>
+      <a href="/sk/sample-audit.html" class="active">SK</a>
+    </div>
+    <button class="btn-print" onclick="window.print()">Uložiť ako PDF</button>
+  </div>
+</div>
+
+<div class="audit-container">
+
+  <!-- ================= STRANA 1 ================= -->
+  <div class="audit-header">
+    <div>
+      <div class="audit-badge">Vzorový diagnostický audit e-shopu · DEMO REPORT</div>
+      <h1 class="audit-title">Google Ads rozpočtové úniky & audit vyhľadávacích dopytov</h1>
+    </div>
+    <div class="audit-meta-right">
+      <strong>Zacton Diagnostic Service</strong><br>
+      ID auditu: ZAC-2026-09SK<br>
+      Dátum vyhotovenia: 22. október 2026
+    </div>
+  </div>
+
+  <div class="audit-scope-bar">
+    <div class="scope-item">
+      <strong>Predmet analýzy</strong>
+      <span>Search & PMax kampane</span>
+    </div>
+    <div class="scope-item">
+      <strong>Analyzované obdobie</strong>
+      <span>Posledných 30 dní</span>
+    </div>
+    <div class="scope-item">
+      <strong>Segment e-shopu</strong>
+      <span>B2B & B2C distribúcia</span>
+    </div>
+    <div class="scope-item">
+      <strong>Formát dodania</strong>
+      <span>PDF + Negative Lists (.csv)</span>
+    </div>
+  </div>
+
+  <h2 class="section-header">1. Manažérske zhrnutie a finančná bilancia účtu</h2>
+  <div class="metrics-grid">
+    <div class="metric-box">
+      <div class="metric-label">Celkový rozpočet v reporte</div>
+      <div class="metric-val">3 480 €</div>
+      <div class="metric-sub" style="color: #64748b;">911 aktívnych dopytov</div>
+    </div>
+    <div class="metric-box alert">
+      <div class="metric-label">Identifikované plytvanie rozpočtom</div>
+      <div class="metric-val">528 €</div>
+      <div class="metric-sub">15,2% minutých bez konverzie</div>
+    </div>
+    <div class="metric-box positive">
+      <div class="metric-label">Okamžitá ročná úspora</div>
+      <div class="metric-val">6 336 €</div>
+      <div class="metric-sub">Po aplikácii negatívnych zoznamov</div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.9rem; color: #334155; margin-bottom: 25px;">
+    <strong>Kľúčové zistenie diagnostiky:</strong> Účet vykazuje stabilnú mieru konverzie pri presných produktových dopytoch, avšak <strong>15,2% mesačného rozpočtu</strong> odteká na dopyty bez nákupného zámeru (návody, zloženia, porovnania, bazárové hľadania a servisné požiadavky). Dôvodom je nekontrolovaná voľná zhoda (Broad Match) bez globálneho zoznamu vylučujúcich slov a kanibalizácia organického brandu v Performance Max kampaniach.
+  </p>
+
+  <h2 class="section-header">2. Vyčíslenie vplyvu na výkonnostné ukazovatele (KPIs)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Metrika účtu</th>
+        <th>Súčasný stav</th>
+        <th>Stav po odstránení únikov</th>
+        <th>Čistý prínos úprav</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Efektívna cena za akvizíciu (CPA)</strong></td>
+        <td>18,40 €</td>
+        <td>15,60 €</td>
+        <td style="color: #166534; font-weight: 700;">-15,2% zlacnenie objednávky</td>
+      </tr>
+      <tr>
+        <td><strong>Návratnosť investícií do reklamy (ROAS)</strong></td>
+        <td>410%</td>
+        <td>484%</td>
+        <td style="color: #166534; font-weight: 700;">+74 percentuálnych bodov</td>
+      </tr>
+      <tr>
+        <td><strong>Podiel neefektívnych kliknutí</strong></td>
+        <td>22,4% všetkých kliknutí</td>
+        <td>&lt; 3,5%</td>
+        <td style="color: #166534; font-weight: 700;">Ochrana rozpočtu pred botmi a infodopytmi</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- DELIACA ČIARA STRANY 1 A 2 -->
+  <div class="page-break-indicator"><span>Koniec 1. strany · Technický rozbor nálezov</span></div>
+  <div class="page-break"></div>
+
+  <!-- ================= STRANA 2 ================= -->
+  <h2 class="section-header">3. Hĺbková technická diagnostika identifikovaných únikov</h2>
+
+  <div class="finding-card">
+    <div class="finding-head">
+      <span class="finding-title">Únik A: Nekontrolovaná voľná zhoda (Broad Match) pri kategóriách</span>
+      <span class="finding-impact">Mesačná strata: 246,80 €</span>
+    </div>
+    <div class="finding-desc">
+      Všeobecné kľúčové slová vo voľnej zhode bez dostatočne prísneho Smart Biddingu zachytávajú široké spektrum nepredajných dopytov. Reklamy sa zobrazujú používateľom hľadajúcim recepty, návody na použitie PDF, recenzie alebo diskusné fóra. Tieto dopyty generujú vysoký počet preklikov, ale nulové nákupy.
+    </div>
+    <div class="finding-action">
+      <strong>Okamžitá náprava:</strong> Prepnúť generické kategóriové výrazy do frázovej zhody (Phrase Match) a nasadiť priložený negatívny zoznam informačných modifikátorov (návod, recenzia, fórum, zloženie).
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-head">
+      <span class="finding-title">Únik B: Skrytá kanibalizácia vlastného brandu v Performance Max</span>
+      <span class="finding-impact" style="background:#fef3c7; color:#92400e;">Skreslenie ROAS: cca 38%</span>
+    </div>
+    <div class="finding-desc">
+      Kampaň Performance Max nemá aktivovaný <em>Brand Exclusion List</em>. Systém míňa rozpočet na prihadzovanie na vlastný názov e-shopu, ktorý by zákazníci preklikli prirodzene cez organické vyhľadávanie zadarmo. Kampaň tým umelo vykazuje vysoké ROAS, no neprináša reálny inkrementálny zisk.
+    </div>
+    <div class="finding-action">
+      <strong>Okamžitá náprava:</strong> Vytvoriť zoznam značiek (Brand List) a aplikovať ho ako vylúčenie v nastaveniach kampane PMax.
+    </div>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-head">
+      <span class="finding-title">Únik C: Absencia centrálnej knižnice vylučujúcich kľúčových slov</span>
+      <span class="finding-impact" style="background:#dbeafe; color:#1e40af;">Mesačná strata: 162,40 €</span>
+    </div>
+    <div class="finding-desc">
+      V účte chýbajú zdieľané negatívne zoznamy na úrovni účtu (Account-Level Negative Keywords). Pri vytvorení novej kampane alebo zostavy dochádza k opakovanému spaľovaniu rozpočtu na dopyty typu „bazoš“, „kontakt na servis“, „prihlásenie do účtu“ či názvy priamych konkurentov, ktorých tovar e-shop vôbec nepredáva.
+    </div>
+    <div class="finding-action">
+      <strong>Okamžitá náprava:</strong> Importovať centralizovanú knižnicu negatívnych slov na úrovni celého účtu.
+    </div>
+  </div>
+
+  <h2 class="section-header">4. Ukážka najnákladnejších dopytov bez konverzie (Reálny extrakt)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Vyhľadávací dopyt (Search Term)</th>
+        <th>Typ zhody</th>
+        <th>Kliknutia</th>
+        <th>Priem. CPC</th>
+        <th>Minutý rozpočet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>inca collagen akcia lekaren</strong></td>
+        <td>Voľná (Broad)</td>
+        <td>14</td>
+        <td>0,62 €</td>
+        <td class="cost">8,68 €</td>
+      </tr>
+      <tr>
+        <td><strong>ktory kolagen je najlepsi na pleť recenzie</strong></td>
+        <td>Voľná (Broad)</td>
+        <td>18</td>
+        <td>0,58 €</td>
+        <td class="cost">10,44 €</td>
+      </tr>
+      <tr>
+        <td><strong>morský kolagén na kĺby diskusné fórum</strong></td>
+        <td>Voľná (Broad)</td>
+        <td>12</td>
+        <td>0,65 €</td>
+        <td class="cost">7,80 €</td>
+      </tr>
+      <tr>
+        <td><strong>bazoš predaj použitého tovaru</strong></td>
+        <td>Voľná (Broad)</td>
+        <td>22</td>
+        <td>0,48 €</td>
+        <td class="cost">10,56 €</td>
+      </tr>
+      <tr>
+        <td><strong>návod na dávkovanie pdf stiahnuť</strong></td>
+        <td>Voľná (Broad)</td>
+        <td>16</td>
+        <td>0,52 €</td>
+        <td class="cost">8,32 €</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- DELIACA ČIARA STRANY 2 A 3 -->
+  <div class="page-break-indicator"><span>Koniec 2. strany · Akčný plán a implementácia</span></div>
+  <div class="page-break"></div>
+
+  <!-- ================= STRANA 3 ================= -->
+  <h2 class="section-header">5. Akčný plán úloh na okamžité nasadenie (Implementačný hárok)</h2>
+  <p style="font-size: 0.88rem; color: #475569; margin-bottom: 18px;">
+    Úlohy sú pripravené na priame odovzdanie vášmu PPC špecialistovi alebo internému správcovi. Ich nasadenie zaberie menej ako 45 minút.
+  </p>
+
+  <ul class="task-list">
+    <li class="task-item">
+      <span class="task-priority">Vysoká</span>
+      <div class="task-content">
+        <strong>1. Importovať globálny negatívny zoznam „Zacton_Master_Negatives.csv“</strong>
+        <span>V sekcii <em>Nástroje a nastavenia &rarr; Zdieľaná knižnica &rarr; Zoznamy vylučujúcich kľúčových slov</em> nahrajte priložený súbor obsahujúci 85 overených informačných a nepredajných výrazov. Aplikujte zoznam na všetky Search kampane.</span>
+      </div>
+    </li>
+    <li class="task-item">
+      <span class="task-priority">Vysoká</span>
+      <div class="task-content">
+        <strong>2. Aktivovať vylúčenie vlastnej značky (Brand Exclusion) v Performance Max</strong>
+        <span>V nastaveniach PMax kampaní prejdite do sekcie <em>Vylúčenia značiek</em>. Vytvorte zoznam s vaším brandom a priraďte ho ku kampani. Tým donútite PMax hľadať skutočne nových zákazníkov namiesto parazitovania na organike.</span>
+      </div>
+    </li>
+    <li class="task-item">
+      <span class="task-priority med">Stredná</span>
+      <div class="task-content">
+        <strong>3. Reštrukturalizácia kategóriových voľných zhôd na frázovú zhodu</strong>
+        <span>V zostavách s generickými kľúčovými slovami zmeňte zhodu z Broad na Phrase (napr. z <code>kolagen</code> na <code>"kolagen"</code>). Voľnú zhodu ponechajte iba pri kampaniach s overeným tCPA/tROAS biddovaním a vysokou historickou konverznou zásobou.</span>
+      </div>
+    </li>
+    <li class="task-item">
+      <span class="task-priority low">Nízka</span>
+      <div class="task-content">
+        <strong>4. Nastavenie týždenného automatického pravidla na kontrolu dopytov</strong>
+        <span>Vytvorte automatické upozornenie na dopyty, ktoré prekročia 10 kliknutí s nulovým počtom konverzií za posledných 14 dní, aby sa zamedzilo vzniku nových rozpočtových dier.</span>
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="section-header">6. Prílohy k auditu odovzdané klientovi</h2>
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px 18px; font-size: 0.85rem; color: #334155;">
+    ✔ <strong>Zacton_Master_Negatives.csv:</strong> 85 predfiltrovaných vylučujúcich kľúčových slov v presnej a frázovej zhode.<br>
+    ✔ <strong>Wasted_Search_Terms_Export.csv:</strong> Kompletný zoznam 32 dopytov s viac ako 5 klikmi bez konverzie za posledných 30 dní.<br>
+    ✔ <strong>PMax_Brand_Guide.pdf:</strong> Jednostranový obrázkový návod na správne nastavenie Brand Exclusion v rozhraní Google Ads.
+  </div>
+
+  <div class="audit-cta">
+    <h3>Potrebujete presne takúto diagnostiku pre váš e-shop?</h3>
+    <p>Vyberte si jednu oblasť (Google Ads, Merchant Center, GA4 alebo Košík). Do 2 pracovných dní dostanete kompletný 3-stranový technický audit priamo z praxe.</p>
+    <a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="cta-btn">Objednať technický audit za fixných 95 €</a>
+  </div>
+
+</div>
+
+</body>
+</html>
