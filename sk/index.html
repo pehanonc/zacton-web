@@ -137,6 +137,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .lang-switch a:hover { border-color: #2563eb; color: #2563eb; }
 .lang-switch a.active { background-color: #2563eb; color: #ffffff; border-color: #2563eb; }
 .text-center { text-align: center; }
+h1, h2, h3 { text-wrap: balance; }
+p.subtitle { text-wrap: balance; }
 h1 { font-size: 2.3rem; line-height: 1.25; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; color: #0f172a; }
 p.subtitle { font-size: 1.15rem; color: #475569; max-width: 720px; margin: 0 auto 30px auto; }
 
@@ -166,7 +168,6 @@ p.subtitle { font-size: 1.15rem; color: #475569; max-width: 720px; margin: 0 aut
 /* Pricing Card */
 .pricing-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 36px; box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.05); margin-bottom: 40px; }
 .pricing-header { text-align: center; margin-bottom: 30px; }
-.regular-price { font-size: 0.95rem; color: #94a3b8; text-decoration: line-through; margin-bottom: 4px; }
 .price { font-size: 3rem; font-weight: 800; color: #0f172a; line-height: 1; margin-bottom: 8px; }
 .price-note { font-size: 0.85rem; color: #64748b; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
 .service-selection { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
@@ -242,16 +243,18 @@ footer a:hover { text-decoration: underline; }
 
 <!-- Microsoft Clarity (Cookieless) -->
 <script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "z0awzpofhw");
-window.clarity('consent', false);
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z8wcpofhw");
+    window.clarity('consent', false);
 </script>
 </head>
 <body>
+
 <div class="container">
+
 <div class="lang-switch">
 <a href="/?lang=en">EN</a>
 <a href="/de/">DE</a>
@@ -259,14 +262,13 @@ window.clarity('consent', false);
 </div>
 
 <div class="text-center">
-<h1 style="text-wrap: balance;">Výkonnostná, SEO a procesná diagnostika e‑shopov</h1>
-<p class="subtitle" style="text-wrap: balance;">Žiadna agentúrna vata ani 50‑stranová teória. Vyberte si jednu kľúčovú oblasť. Do 48 hodín dostanete akčný plán.</p>
-</div>
+<h1>Výkonnostná, SEO a procesná diagnostika e‑shopov</h1>
+<p class="subtitle">Žiadna agentúrna vata ani 50‑stranová teória. Vyberte si jednu kľúčovú oblasť. Do 48 hodín dostanete akčný plán.</p>
 </div>
 
 <!-- Personal Bio Box -->
 <div class="bio-box">
-<p>Som majiteľ e-shopov, ktorý roky platil reklamné agentúry a na vlastnej koži zažil, aké to je nerozumieť ich reportom a odborným výrazom. Po 30 rokoch v obchode a 15 rokoch v e-commerce som založil Zacton, aby som majiteľom firiem dával čisté dáta bez agentúrneho balastu. Nechcem vám predávať správy kampaní ani vývoj webu – mojou jedinou úlohou je nezávisle preveriť, kde vám utekajú peniaze. <a href="https://www.linkedin.com/in/peter-harat%C3%ADk/" target="_blank" rel="noopener">Pozrite si môj profil na LinkedIn prepojený s reálnou praxou &rarr;</a></p>
+<p>Som majiteľ e‑shopov, ktorý roky platil reklamné agentúry a na vlastnej koži zažil, aké to je nerozumieť ich reportom a odborným výrazom. Po 30 rochok v obchode a 15 rochok v e‑commerce som založil Zacton, aby som majiteľom firiem dával čisté dáta bez agentúrneho balastu. Nechcem vám predávať správy kampaní ani vývoj webu – mojou jedinou úlohou je nezávisle preveriť, kde vám utekajú peniaze. <a href="https://www.linkedin.com/in/peter-harat%C3%ADk/" target="_blank" rel="noopener">Pozrite si môj profil na LinkedIn prepojený s reálnou praxou &rarr;</a></p>
 </div>
 
 <!-- Interactive Wasted Spend Scanner -->
@@ -276,81 +278,74 @@ window.clarity('consent', false);
 <h2>Koľko rozpočtu vám práve teraz prepaľuje Google Ads?</h2>
 <p>Nahrajte štandardný CSV export vyhľadávacích dopytov. Skript okamžite spočíta výdavky na frázy, ktoré nepriniesli konverzie.</p>
 </div>
+
 <div class="dropzone" id="scannerDropzone">
-<div class="dropzone-icon">&#128196;</div>
+<div class="dropzone-icon">&#128156;</div>
 <div class="dropzone-text">
 <strong>Pretiahnite sem CSV súbor</strong> alebo <span class="browse-link">vyberte z disku</span>
 </div>
 <div class="dropzone-note">Formát: Google Ads CSV (Vyhľadávacie dopyty / Search terms)</div>
 <input type="file" id="scannerFileInput" accept=".csv" style="display: none;">
 </div>
+
 <div class="scanner-privacy">
 <strong>100% súkromné a bezpečné:</strong> Súbor sa spracováva výhradne lokálne vo vašom prehliadači. Žiadne dáta sa neukladajú.
 </div>
+
 <div class="scanner-instructions">
 <details>
-<summary>Ako stiahnuť správny súbor z Google Ads za 30 sekúnd? &#9662;</summary>
+<summary>Ako stiahnuť správny súbor z Google Ads za 10 sekúnd? &blacktriangledown;</summary>
 <ol>
-<li>Prihláste sa do <strong>Google Ads</strong> a vyberte obdobie (napr. posledných 30 dní).</li>
-<li>V ľavom menu kliknite na <strong>Kampane</strong> &rarr; <strong>Štatistiky a prehľady</strong> &rarr; <strong>Vyhľadávacie dopyty</strong>.</li>
-<li>Vpravo hore nad tabuľkou kliknite na ikonu <strong>Stiahnuť</strong> &rarr; zvoľte formát <strong>.csv</strong>.</li>
+<li>V Google Ads otvorte sekciu <strong>Kampane &rarr; Vyhľadávacie dopyty (Search terms)</strong>.</li>
+<li>Nastavte časové obdobie (napr. posledných 30 alebo 90 dní).</li>
+<li>Vpravo hore kliknite na <strong>Stiahnuť &rarr; .csv</strong>.</li>
+<li>Stiahnutý súbor pretiahnite do políčka vyššie.</li>
 </ol>
 </details>
 </div>
 
-<!-- Modelová ukážka / Teaser -->
-<details id="scannerDetails" style="margin-top: 20px;">
-<summary style="cursor: pointer; color: #2563eb; font-weight: 700; text-align: center; font-size: 0.95rem;">
-Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
-</summary>
-<div id="scannerResults" class="scanner-results">
-<div class="preview-badge-bar" id="scannerBadgeBar">
-<span>&#9432; <strong>Modelová ukážka:</strong> Takto vyzerá analýza po vložení CSV</span>
-<span class="preview-badge" id="scannerModeBadge">UKÁŽKA</span>
+<div id="scannerResults" class="scanner-results" style="display: none;">
+<div class="preview-badge-bar">
+<span class="preview-badge">Ukážkový výsledok</span>
+<span id="resFilename" style="font-weight: 600;">export_search_terms.csv</span>
 </div>
 <div class="results-grid">
 <div class="res-card">
-<div class="res-label">Celkové výdavky v reporte</div>
-<div class="res-value" id="resTotalSpend">6877.48 €</div>
+<div class="res-label">Analýza dopytov</div>
+<div class="res-value" id="resTotalTerms">0</div>
 </div>
 <div class="res-card alert">
-<div class="res-label">Prepálené na 0 konverziách</div>
-<div class="res-value alert" id="resWastedSpend">546.95 €</div>
-<div class="res-sub" id="resWastedPercent">(8.0% rozpočtu)</div>
+<div class="res-label">Nulové konverzie</div>
+<div class="res-value alert" id="resZeroConvTerms">0</div>
+<div class="res-sub" id="resZeroConvPct">0% dopytov</div>
 </div>
-<div class="res-card">
-<div class="res-label">Počet nehospodárnych dopytov</div>
-<div class="res-value" id="resWastedCount">501</div>
+<div class="res-card alert">
+<div class="res-label">Preplytvaný rozpočet</div>
+<div class="res-value alert" id="resWastedSpend">0,00 €</div>
 </div>
 </div>
+
 <div class="top-wasted-table">
-<h4>TOP 5 najdrahších dopytov bez jediného nákupu:</h4>
-<div style="overflow-x: auto;">
-<table id="resTopTable">
+<h4>Top 5 najdrahších nerelevantných výrazov</h4>
+<table>
 <thead>
 <tr>
 <th>Vyhľadávací dopyt</th>
 <th>Kliknutia</th>
-<th>Minutá suma</th>
+<th>Minuté peniaze</th>
 </tr>
 </thead>
-<tbody>
-<tr><td><strong>home credit</strong></td><td>0</td><td>40.01 €</td></tr>
-<tr><td><strong>reboots</strong></td><td>0</td><td>26.34 €</td></tr>
-<tr><td><strong>compex sp 8.0</strong></td><td>0</td><td>20.23 €</td></tr>
-<tr><td><strong>compex elektrody</strong></td><td>0</td><td>18.54 €</td></tr>
-<tr><td><strong>compex mini</strong></td><td>0</td><td>13.94 €</td></tr>
+<tbody id="resTopWastedBody">
 </tbody>
 </table>
 </div>
-</div>
+
 <div class="scanner-cta">
 <div class="scanner-cta-title">Tieto peniaze viete okamžite ušetriť a investovať do ziskových fráz.</div>
 <p>V rámci jednorazového auditu preveríme celú štruktúru zhôd, identifikujeme skrytú kanibalizáciu a pripravíme export vylučujúcich kľúčových slov.</p>
-<a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" class="scanner-order-btn">Začať audit Google Ads za 95 €</a>
+<a href="https://buy.stripe.com/5kQ3ca2FU28fgnag85ws02?client_reference_id=google-ads" class="scanner-order-btn">Začať audit Google Ads za 95 €</a>
 </div>
 </div>
-</details>
 </div>
 
 <!-- Pricing Card -->
@@ -359,14 +354,16 @@ Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
 <div class="price">95 €</div>
 <div class="price-note">Jednorazový diagnostický audit. Pevný rozsah.</div>
 </div>
+
 <div class="service-selection" id="serviceSelection">
 <label class="service-option selected">
 <input type="radio" name="audit_choice" value="google-ads" checked>
 <div class="service-text">
 <strong>1. Kde zbytočne strácate peniaze v Google Ads (rozpočtové úniky)</strong>
-<span>Zistite, za aké nerelevantné vyhľadávania platíte a ktoré výrazy treba okamžite zablokovať (vylučujúce kľúčové slová).</span>
+<span>Zistíte, za aké nerelevantné vyhľadávania platíte a ktoré výrazy treba okamžite zablokovať (vylučujúce kľúčové slová).</span>
 </div>
 </label>
+
 <label class="service-option">
 <input type="radio" name="audit_choice" value="merchant-center">
 <div class="service-text">
@@ -374,6 +371,7 @@ Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
 <span>Kontrola zamietnutých položiek, chýbajúcich EAN/GTIN kódov a slabých názvov produktov (integrita produktového feedu).</span>
 </div>
 </label>
+
 <label class="service-option">
 <input type="radio" name="audit_choice" value="ga4-tracking">
 <div class="service-text">
@@ -381,33 +379,38 @@ Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
 <span>Overenie duplicitných objednávok, výpadkov dát po cookie lište (Consent Mode v2) a súladu tržieb voči backendu.</span>
 </div>
 </label>
+
 <label class="service-option">
 <input type="radio" name="audit_choice" value="checkout-friction">
 <div class="service-text">
 <strong>4. Kde zákazníci odchádzajú z košíka (nákupný proces)</strong>
-<span>Odhalenie technických chýb a zdržaní v objednávke, najmä na mobile, pri doprave a platbe (priechodová analýza, bariéry v košíku).</span>
+<span>Odhalenie technických chýb a prekážok v košíku – na mobile, pri doprave a platbe (priechodnosť analýza, bariéry v košíku).</span>
 </div>
 </label>
+
 <label class="service-option">
-<input type="radio" name="audit_choice" value="seo-technical">
+<input type="radio" name="audit_choice" value="seo-aeo">
 <div class="service-text">
 <strong>5. Prečo vás zákazníci a AI vyhľadávače nenájdu (SEO & AEO audit)</strong>
-<span>Technická a obsahová diagnostika webu. Zistíte, prečo neprichádza organická návštevnosť, kde máte chyby v štruktúre a získate výstup v reči, ktorej ako majiteľ porozumiete.</span>
+<span>Technická a obsahová diagnostika webu. Zistíte, prečo neprichádza organická návštevnosť, kde máte chyby v štruktúre a získate výstup s vecami, ktoré treba okamžite opraviť.</span>
 </div>
 </label>
 </div>
-<a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02?client_reference_id=google-ads" id="cta-button" class="cta-button">Objednať diagnostický audit (95 €)</a>
+
+<button id="checkoutBtn" class="cta-button">Objednať diagnostický audit (95 €)</button>
+
 <div class="onboarding-steps">
 <h4>Čo nasleduje po zaplatení?</h4>
 <div class="step-item">
 <div class="step-number">1</div>
-<div id="step1Text">V krátkom formulári po úhrade zadáte vaše 10-miestne Google Ads CID a potvrdíte žiadosť o prístup iba na čítanie.</div>
+<div id="step1Text">V krátkom formulári po úhrade zadáte vaše 10-miestne Google Ads ID a potvrdíte žiadosť o prístup na čítanie.</div>
 </div>
 <div class="step-item">
 <div class="step-number">2</div>
 <div id="step2Text">Do 48 hodín dostanete e-mailom štruktúrovaný PDF report: identifikované úniky rozpočtu a export vylučujúcich kľúčových slov.</div>
 </div>
 </div>
+
 <div class="sample-link-wrapper">
 <a href="/sample-audit.html" class="sample-link">Pozrieť vzorový report z auditu (PDF ukážka) &rarr;</a>
 </div>
@@ -415,8 +418,9 @@ Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
 
 <!-- Practice & Authority Section -->
 <div class="authority-box">
-<h3>Diagnostika postavená na reálnej prevádzke e-shopov</h3>
-<p class="intro-p">Za Zactonom nestoja teoretickí konzultanti z agentúr, ale každodenné riadenie reálnych e-commerce projektov.</p>
+<h3>Diagnostika postavená na reálnej prevádzke e‑shopov</h3>
+<p class="intro-p">Za Zactonom nestoja teoretickí konzultanti z agentúr, ale každodenné riadenie reálnych e‑commerce projektov.</p>
+
 <div class="projects-grid">
 <div class="project-card">
 <div>
@@ -424,240 +428,262 @@ Zobraziť, ako vyzerá výsledok (Ukážka) &#9662;
 <p>Omnichannel B2B a B2C distribúcia kancelárskych a hygienických potrieb. Správa tisícok skladových položiek, maržová segmentácia a Google Ads.</p>
 </div>
 <div class="sub-block">
-<p><strong>Vlastné riešenie FEEDEX:</strong> Návrh a vývoj unifikovaného integračného systému pre externých dodávateľské feedy.</p>
+<p><strong>Vlastné riešenie FEEDEX:</strong> Návrh a vývoj unifikovaného integračného systému pre externé dodávateľské feedy.</p>
 </div>
 </div>
+
 <div class="project-card">
 <div>
 <h4><a href="https://regesport.eu" target="_blank" rel="noopener">regesport.eu</a> &nearr;</h4>
-<p>Špecializovaný e-shop s regeneračnou a rehabilitačnou technikou (Compex). Dôraz na cielené Shopping kampane, atribúciu a reálnu maržu.</p>
+<p>Špecializovaný e‑shop s regeneračnou a rehabilitačnou technikou (Compex). Dôraz na cielené Shopping kampane, atribúciu a reálnu maržu.</p>
+</div>
 </div>
 </div>
 </div>
 
-<!-- Core Values -->
+<!-- Grid 3 Core Values -->
 <div class="grid-3">
 <div class="card">
 <h3>Žiadna agentúrna vata</h3>
-<p>Neplatíte za 50-stranové šablóny s irerelevantnými metrikami. Všetky zistenia idú priamo z praxe pri reálnom riadení firiem.</p>
+<p>Neplatíte za 50-stranové šablóny s irelevantnými grafmi. Všetky zistenia idú priamo k veci priamo v reálnom riadení firiem.</p>
 </div>
 <div class="card">
 <h3>Finančná priorizácia</h3>
-<p>Problémy radíme striktne podľa vplyvu na vaše tržby a zisk: okamžité zastavenie prepaľovania rozpočtu a oprava chýb v meraní.</p>
+<p>Problémy radíme striktne podľa vplyvu na vaše tržby, a nie podľa toho, čo sa najľahšie vykazuje v týždennom reporte.</p>
 </div>
 <div class="card">
 <h3>Doručenie do 48 hodín</h3>
-<p>Žiadne zdĺhavé obchodné telefonáty. Do dvoch pracovných dní dostanete konkrétne zadania, ktoré váš tím okamžite nasadí.</p>
+<p>Žiadne dlhé úvodné telefonáty. Do dvoch pracovných dní dostanete konkrétne zadania, ktoré váš tím okamžite nasadí.</p>
 </div>
 </div>
 
 <footer>
 <div>
-<a href="/sk/privacy.html">Ochrana osobných údajov</a> |
-<a href="/sk/terms.html">Obchodné podmienky</a>
+<a href="/privacy.html">Ochrana osobných údajov</a> | <a href="/terms.html">Obchodné podmienky</a>
 </div>
 <div class="footer-meta">
-&copy; 2026 Zacton. Všetky práva vyhradené. <br>
-Prevádzkovateľ: Peter Haratík, IČO: 46348832 | E-mail: <a href="mailto:contact@zacton.com">contact@zacton.com</a>
+&copy; 2026 Zacton. Všetky práva vyhradené.<br>
+Prevádzkovateľ: Peter Haratík, IČO: 46348832, DIČ: 1048285249 | contact@zacton.com
 </div>
 </footer>
-</div>
+
+</div><!-- /container -->
 
 <script>
-// Service selection logic
-const baseUrl = "https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02";
-const ctaButton = document.getElementById('cta-button');
-const step1Text = document.getElementById('step1Text');
-const step2Text = document.getElementById('step2Text');
-const options = document.querySelectorAll('.service-option');
+// Stripe Payment Routing
+const stripeLinks = {
+  'google-ads': 'https://buy.stripe.com/5kQ3ca2FU28fgnag85ws02?client_reference_id=google-ads',
+  'merchant-center': 'https://buy.stripe.com/28E142esSdcXgnag85ws03?client_reference_id=merchant-center',
+  'ga4-tracking': 'https://buy.stripe.com/bIY9ACboG007ab6093ws04?client_reference_id=ga4-tracking',
+  'checkout-friction': 'https://buy.stripe.com/00gbIK2FU14b972g85ws05?client_reference_id=checkout-friction',
+  'seo-aeo': 'https://buy.stripe.com/9AQcMMfwW7sz83S7brws06?client_reference_id=seo-aeo'
+};
 
-const serviceData = {
+const onboardingSteps = {
   'google-ads': {
-    step1: "V krátkom formulári po úhrade zadáte vaše 10-miestne Google Ads CID a potvrdíte žiadosť o prístup iba na čítanie.",
-    step2: "Do 48 hodín dostanete e-mailom štruktúrovaný PDF report: identifikované úniky rozpočtu a export vylučujúcich kľúčových slov."
+    step1: 'V krátkom formulári po úhrade zadáte vaše 10-miestne Google Ads ID a potvrdíte žiadosť o prístup na čítanie.',
+    step2: 'Do 48 hodín dostanete e-mailom štruktúrovaný PDF report: identifikované úniky rozpočtu a export vylučujúcich kľúčových slov.'
   },
   'merchant-center': {
-    step1: "Zadáte URL vášho e-shopu a odkaz na XML feed, prípadne udelíte prístup iba na čítanie do Google Merchant Center.",
-    step2: "Získate zoznam zamietnutých položiek, chýbajúcich atribútov (GTIN/EAN) a konkrétne návrhy úprav titulkov produktov na zvýšenie zobrazení."
+    step1: 'Po úhrade zadáte URL vášho e-shopu a ID účtu Google Merchant Center pre overenie diagnostických dát.',
+    step2: 'Do 48 hodín dostanete audit chýb vo feede, zamietnutých produktov a návrh úprav pre zvýšenie viditeľnosti.'
   },
   'ga4-tracking': {
-    step1: "Zadáte URL vášho webu a udelíte prístup iba na zobrazenie do služby Google Analytics 4.",
-    step2: "Dostanete audit presnosti nákupných udalostí, strát merania vplyvom cookie lišty a nesúladu dát voči backendu."
+    step1: 'Po úhrade zadáte vaše GA4 Measurement ID a webovú adresu pre kontrolu e-commerce udalosťí.',
+    step2: 'Do 48 hodín dostanete správu s odhalenými chybami v meraní, nesúladom tržieb a návodom na opravu GTM.'
   },
   'checkout-friction': {
-    step1: "Zadáte URL vášho obchodu a vyplníte 2-minútový dotazník k platobným metódam, dopravcom a e-shopovému systému.",
-    step2: "Dostanete rozbor problematických miest košíka, bariér na mobilných zariadeniach a 48-hodinový akčný plán na zvýšenie konverzie."
+    step1: 'Po úhrade zadáte URL vášho nákupného košíka a prípadné špecifiká nákupného procesu.',
+    step2: 'Do 48 hodín dostanete video a PDF analýzu prekážok v košíku s odporúčaniami pre zvýšenie konverzného pomeru.'
   },
-  'seo-technical': {
-    step1: "Zadáte URL vášho e-shopu. Nevyžadujú sa žiadne citlivé prístupy do administrácie.",
-    step2: "Do 48 hodín dostanete 3-stranový PDF report: odhalené technické a štrukturálne prekážky indexácie, zrozumiteľne vysvetlené termíny a akčný plán pre vývojárov."
+  'seo-aeo': {
+    step1: 'Po úhrade zadáte doménu vášho e-shopu a hlavné kategórie produktov.',
+    step2: 'Do 48 hodín dostanete technický SEO/AEO audit, kontrolu indexácie pre AI vyhľadávače a zoznam kritických chýb.'
   }
 };
 
-options.forEach(option => {
-  option.addEventListener('click', () => {
-    options.forEach(opt => opt.classList.remove('selected'));
-    option.classList.add('selected');
-    const radio = option.querySelector('input[type="radio"]');
+const options = document.querySelectorAll('.service-option');
+const checkoutBtn = document.getElementById('checkoutBtn');
+const step1Text = document.getElementById('step1Text');
+const step2Text = document.getElementById('step2Text');
+
+options.forEach(opt => {
+  opt.addEventListener('click', () => {
+    options.forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    const radio = opt.querySelector('input[type="radio"]');
     radio.checked = true;
+    
     const val = radio.value;
-    ctaButton.href = `${baseUrl}?client_reference_id=${val}`;
-    if (serviceData[val]) {
-      step1Text.textContent = serviceData[val].step1;
-      step2Text.textContent = serviceData[val].step2;
-    }
+    step1Text.textContent = onboardingSteps[val].step1;
+    step2Text.textContent = onboardingSteps[val].step2;
   });
 });
 
-// Google Ads Wasted Spend Scanner Engine
-const dropzone = document.getElementById('scannerDropzone');
-const fileInput = document.getElementById('scannerFileInput');
-const resultsBox = document.getElementById('scannerResults');
-const badgeBar = document.getElementById('scannerBadgeBar');
-const scannerDetails = document.getElementById('scannerDetails');
-
-dropzone.addEventListener('click', () => fileInput.click());
-dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
-dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
-dropzone.addEventListener('drop', (e) => {
-  e.preventDefault();
-  dropzone.classList.remove('dragover');
-  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-});
-fileInput.addEventListener('change', (e) => {
-  if (e.target.files.length) handleFile(e.target.files[0]);
+checkoutBtn.addEventListener('click', () => {
+  const selectedRadio = document.querySelector('input[name="audit_choice"]:checked');
+  if (selectedRadio) {
+    const val = selectedRadio.value;
+    window.location.href = stripeLinks[val];
+  }
 });
 
-function handleFile(file) {
-  if (!file.name.toLowerCase().endsWith('.csv')) {
-    alert('Prosím nahrajte súbor vo formáte .csv z Google Ads.');
-    return;
-  }
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    parseGoogleAdsCsv(e.target.result);
-  };
-  reader.readAsText(file);
-}
+// CSV Wasted Spend Scanner Engine
+document.addEventListener('DOMContentLoaded', () => {
+  const dropzone = document.getElementById('scannerDropzone');
+  const fileInput = document.getElementById('scannerFileInput');
+  const resultsDiv = document.getElementById('scannerResults');
 
-function parseGoogleAdsCsv(text) {
-  const lines = text.split(/\r\n|\n/);
-  let headerIndex = -1;
-  let headers = [];
-  let delimiter = ',';
+  if (!dropzone || !fileInput) return;
 
-  for (let i = 0; i < Math.min(lines.length, 10); i++) {
-    const line = lines[i];
-    if (line.includes(';') && (line.toLowerCase().includes('search term') || line.toLowerCase().includes('dopyt') || line.toLowerCase().includes('suchbegriff'))) {
-      delimiter = ';';
-      headers = parseCsvLine(line, delimiter);
-      headerIndex = i;
-      break;
-    } else if (line.includes(',') && (line.toLowerCase().includes('search term') || line.toLowerCase().includes('dopyt') || line.toLowerCase().includes('suchbegriff'))) {
-      delimiter = ',';
-      headers = parseCsvLine(line, delimiter);
-      headerIndex = i;
-      break;
-    }
-  }
+  dropzone.addEventListener('click', () => fileInput.click());
 
-  if (headerIndex === -1) {
-    alert('V súbore sa nenašla štandardná hlavička prehľadu vyhľadávacích dopytov Google Ads. Uistite sa, že ide o CSV z Google Ads.');
-    return;
-  }
-
-  let termIdx = -1, costIdx = -1, convIdx = -1, clicksIdx = -1;
-  headers.forEach((h, idx) => {
-    const col = h.trim().toLowerCase();
-    if (col.includes('search term') || col.includes('vyhľadávací dopyt') || col.includes('suchbegriff')) termIdx = idx;
-    if (col === 'cost' || col === 'cena' || col === 'kosten') costIdx = idx;
-    if (col === 'conversions' || col === 'konverzie' || col === 'konv.') convIdx = idx;
-    if (col === 'clicks' || col === 'kliknutia' || col === 'klicks') clicksIdx = idx;
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('dragover');
   });
 
-  if (termIdx === -1 || costIdx === -1) {
-    alert('V CSV súbore chýba stĺpec s vyhľadávacím dopytom alebo cenou.');
-    return;
-  }
+  dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
 
-  let totalSpend = 0;
-  let wastedSpend = 0;
-  let wastedCount = 0;
-  let wastedRows = [];
-
-  for (let i = headerIndex + 1; i < lines.length; i++) {
-    const rawLine = lines[i].trim();
-    if (!rawLine || rawLine.startsWith('--') || rawLine.toLowerCase().startsWith('total') || rawLine.toLowerCase().startsWith('spolu')) continue;
-    const cols = parseCsvLine(rawLine, delimiter);
-    if (cols.length <= costIdx || cols.length <= termIdx) continue;
-    const term = cols[termIdx].trim();
-    if (!term) continue;
-    const cost = cleanNumber(cols[costIdx]);
-    const conv = convIdx !== -1 ? cleanNumber(cols[convIdx]) : 0;
-    const clicks = clicksIdx !== -1 ? parseInt(cleanNumber(cols[clicksIdx])) : 0;
-
-    totalSpend += cost;
-    if (cost > 0 && conv === 0) {
-      wastedSpend += cost;
-      wastedCount++;
-      wastedRows.push({ term, cost, clicks });
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files.length > 0) {
+      handleFile(e.dataTransfer.files[0]);
     }
-  }
-
-  wastedRows.sort((a, b) => b.cost - a.cost);
-
-  if (scannerDetails) scannerDetails.open = true;
-  badgeBar.style.background = '#dcfce7';
-  badgeBar.style.borderColor = '#bbf7d0';
-  badgeBar.style.color = '#166534';
-  badgeBar.innerHTML = '<span>&#9989; <strong>Vaša živá analýza:</strong> Výsledky vypočítané priamo z vášho CSV</span>';
-
-  document.getElementById('resTotalSpend').textContent = totalSpend.toFixed(2) + ' €';
-  document.getElementById('resWastedSpend').textContent = wastedSpend.toFixed(2) + ' €';
-  const percent = totalSpend > 0 ? ((wastedSpend / totalSpend) * 100).toFixed(1) : 0;
-  document.getElementById('resWastedPercent').textContent = `(${percent}% rozpočtu)`;
-  document.getElementById('resWastedCount').textContent = wastedCount;
-
-  const tbody = document.querySelector('#resTopTable tbody');
-  tbody.innerHTML = '';
-  wastedRows.slice(0, 5).forEach(r => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td><strong>${escapeHtml(r.term)}</strong></td><td>${r.clicks}</td><td>${r.cost.toFixed(2)} €</td>`;
-    tbody.appendChild(tr);
   });
 
-  resultsBox.scrollIntoView({ behavior: 'smooth' });
-}
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+      handleFile(e.target.files[0]);
+    }
+  });
 
-function parseCsvLine(line, delimiter) {
-  const values = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-    if (char === '"' || char === "'") {
-      inQuotes = !inQuotes;
-    } else if (char === delimiter && !inQuotes) {
-      values.push(current);
-      current = '';
+  function handleFile(file) {
+    if (!file.name.endsWith('.csv')) {
+      alert('Prosím, nahrajte platný CSV súbor.');
+      return;
+    }
+
+    document.getElementById('resFilename').textContent = file.name;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      processCSV(e.target.result);
+    };
+    reader.readAsText(file);
+  }
+
+  function processCSV(text) {
+    const lines = text.split(/\r\n|\n/);
+    if (lines.length < 2) {
+      alert('CSV súbor je prázdny alebo má neplatný formát.');
+      return;
+    }
+
+    let headerIdx = -1;
+    let termCol = -1;
+    let clicksCol = -1;
+    let costCol = -1;
+    let convCol = -1;
+
+    for (let i = 0; i < Math.min(lines.length, 20); i++) {
+      const row = parseCSVRow(lines[i]);
+      for (let j = 0; j < row.length; j++) {
+        const val = row[j].toLowerCase().trim();
+        if (val.includes('search term') || val.includes('vyhľadávací dopyt') || val.includes('dopyt')) termCol = j;
+        if (val.includes('clicks') || val.includes('kliknutia')) clicksCol = j;
+        if (val.includes('cost') || val.includes('cena') || val.includes('náklady')) costCol = j;
+        if (val.includes('conversions') || val.includes('konverzie')) convCol = j;
+      }
+      if (termCol !== -1 && costCol !== -1) {
+        headerIdx = i;
+        break;
+      }
+    }
+
+    if (headerIdx === -1 || termCol === -1 || costCol === -1) {
+      alert('Nepodarilo sa automaticky rozpoznať stĺpce CSV. Uistite sa, že nahrávate štandardný export z Google Ads.');
+      return;
+    }
+
+    let totalTerms = 0;
+    let zeroConvTerms = 0;
+    let wastedSpend = 0;
+    const wastedList = [];
+
+    for (let i = headerIdx + 1; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      const row = parseCSVRow(lines[i]);
+      if (row.length <= Math.max(termCol, costCol)) continue;
+
+      const term = row[termCol].trim();
+      if (!term || term.startsWith('Total') || term.startsWith('Spolu')) continue;
+
+      const clicks = clicksCol !== -1 ? parseInt(row[clicksCol].replace(/\s/g, ''), 10) || 0 : 0;
+      const costStr = row[costCol].replace(/[^\d.,]/g, '').replace(',', '.');
+      const cost = parseFloat(costStr) || 0;
+      const convStr = convCol !== -1 ? row[convCol].replace(/[^\d.,]/g, '').replace(',', '.') : '0';
+      const conv = parseFloat(convStr) || 0;
+
+      totalTerms++;
+
+      if (conv === 0 && cost > 0) {
+        zeroConvTerms++;
+        wastedSpend += cost;
+        wastedList.push({ term, clicks, cost });
+      }
+    }
+
+    wastedList.sort((a, b) => b.cost - a.cost);
+
+    document.getElementById('resTotalTerms').textContent = totalTerms.toLocaleString('sk-SK');
+    document.getElementById('resZeroConvTerms').textContent = zeroConvTerms.toLocaleString('sk-SK');
+    const pct = totalTerms > 0 ? Math.round((zeroConvTerms / totalTerms) * 100) : 0;
+    document.getElementById('resZeroConvPct').textContent = `${pct}% dopytov`;
+    document.getElementById('resWastedSpend').textContent = wastedSpend.toLocaleString('sk-SK', { style: 'currency', currency: 'EUR' });
+
+    const tbody = document.getElementById('resTopWastedBody');
+    tbody.innerHTML = '';
+    const top5 = wastedList.slice(0, 5);
+    if (top5.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Nenašli sa žiadne preplytvané dopyty. Váš účet funguje výborne!</td></tr>';
     } else {
-      current += char;
+      top5.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td><strong>${escapeHtml(item.term)}</strong></td><td>${item.clicks}</td><td>${item.cost.toLocaleString('sk-SK', { style: 'currency', currency: 'EUR' })}</td>`;
+        tbody.appendChild(tr);
+      });
     }
+
+    resultsDiv.style.display = 'block';
+    resultsDiv.scrollIntoView({ behavior: 'smooth' });
   }
-  values.push(current);
-  return values.map(v => v.replace(/^["']|["']$/g, '').trim());
-}
 
-function cleanNumber(val) {
-  if (!val) return 0;
-  const cleaned = val.replace(/[€\$Kč\s]/g, '').replace(',', '.');
-  const num = parseFloat(cleaned);
-  return isNaN(num) ? 0 : num;
-}
+  function parseCSVRow(rowText) {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < rowText.length; i++) {
+      const char = rowText[i];
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if ((char === ',' || char === ';') && !inQuotes) {
+        result.push(current);
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current);
+    return result;
+  }
 
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
+  function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+});
 </script>
+
 </body>
 </html>
