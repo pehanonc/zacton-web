@@ -239,6 +239,57 @@ footer a:hover { text-decoration: underline; }
   h1 { font-size: 1.85rem; }
   .pricing-card, .scanner-box { padding: 24px; }
 }
+  /* Floating Sticky CTA Bar */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+  padding: 12px 20px;
+  z-index: 9999;
+  transition: bottom 0.3s ease-in-out;
+}
+.sticky-cta-bar.visible {
+  bottom: 0;
+}
+.sticky-cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.sticky-cta-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+.sticky-cta-text span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+.sticky-cta-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sticky-cta-button:hover {
+  background-color: #1d4ed8;
+}
+@media (max-width: 640px) {
+  .sticky-cta-text { display: none; }
+  .sticky-cta-button { width: 100%; text-align: center; padding: 12px 16px; }
+}
 </style>
 
 <!-- Microsoft Clarity (Cookieless) -->
@@ -412,11 +463,6 @@ footer a:hover { text-decoration: underline; }
 <div class="step-item">
 <div class="step-number">2</div>
 <div id="step2Text">Do 48 hodín dostanete e-mailom štruktúrovaný PDF report: identifikované úniky rozpočtu a export vylučujúcich kľúčových slov.</div>
-</div>
-</div>
-
-<div class="sample-link-wrapper">
-<a href="/sample-audit.html" class="sample-link">Pozrieť vzorový report z auditu (PDF ukážka) &rarr;</a>
 </div>
 </div>
 
@@ -687,7 +733,42 @@ document.addEventListener('DOMContentLoaded', () => {
     return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
   }
 });
-</script>
+  // Floating Sticky Checkout Trigger & Routing
+document.addEventListener('DOMContentLoaded', () => {
+  const stickyBar = document.getElementById('stickyCtaBar');
+  const stickyBtn = document.getElementById('stickyCheckoutBtn');
+  const pricingCard = document.querySelector('.pricing-card');
 
+  if (pricingCard && stickyBar) {
+    window.addEventListener('scroll', () => {
+      const cardRect = pricingCard.getBoundingClientRect();
+      if (cardRect.bottom < 0) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    });
+  }
+
+  if (stickyBtn) {
+    stickyBtn.addEventListener('click', () => {
+      const selectedRadio = document.querySelector('input[name="audit_choice"]:checked');
+      if (selectedRadio && stripeLinks[selectedRadio.value]) {
+        window.location.href = stripeLinks[selectedRadio.value];
+      }
+    });
+  }
+});
+</script>
+<!-- Floating Sticky Checkout CTA Bar -->
+<div id="stickyCtaBar" class="sticky-cta-bar">
+  <div class="sticky-cta-content">
+    <div class="sticky-cta-text">
+      <strong>Diagnostický audit e-shopu (95 €)</strong>
+      <span>Fixný rozsah. Doručenie do 48 hodín.</span>
+    </div>
+    <button id="stickyCheckoutBtn" class="sticky-cta-button">Objednať audit (95 €)</button>
+  </div>
+</div>
 </body>
 </html>
