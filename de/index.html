@@ -219,7 +219,7 @@
       <div class="scanner-cta">
         <div class="scanner-cta-title">Sparen Sie dieses Geld sofort und reinvestieren Sie in profitable Keywords.</div>
         <p style="font-size: 0.85rem; color: #475569;">Im Rahmen unseres Einzelaudits prüfen wir Ihre Struktur, identifizieren Kanibalisierungen und exportieren auszuschließende Keywords.</p>
-        <a href="https://buy.stripe.com/5kQca1f2005dtXqeeW?client_reference_id=google-ads" class="scanner-order-btn">Google Ads Audit bestellen (95 €) &rarr;</a>
+<a href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02" class="scanner-order-btn">Google Ads Audit für 95 € starten &rarr;</a>
       </div>
     </div>
   </div>
@@ -272,7 +272,7 @@
       </label>
     </div>
 
-    <button id="checkoutBtn" class="cta-button">Diagnose-Audit bestellen (95 €)</button>
+<a id="checkoutBtn" href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02" class="cta-button">Diagnostisches Audit bestellen (95 €)</a>
     <a href="/sample-audit.html" target="_blank" class="sample-audit-cta-btn">Muster-Auditbericht ansehen (PDF-Vorschau) &rarr;</a>
 
     <div class="onboarding-steps">
@@ -339,28 +339,36 @@
       <strong>E-Commerce Diagnose-Audit (95 €)</strong>
       <span>Fester Umfang. Lieferung innerhalb von 48 Stunden.</span>
     </div>
-    <button id="stickyCheckoutBtn" class="sticky-cta-button">Audit bestellen (95 €)</button>
+<a id="stickyCheckoutBtn" href="https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02" class="sticky-cta-button">Audit bestellen (95 €)</a>
   </div>
 </div>
 
 <script>
   const stripeLinks = {
-    'google-ads': 'https://buy.stripe.com/5kQca1f2005dtXqeeW?client_reference_id=google-ads',
-    'merchant-center': 'https://buy.stripe.com/142142g6405dXqag00?client_reference_id=merchant-center',
-    'ga4-tracking': 'https://buy.stripe.com/bIYb5X09bfOX5vG4gR?client_reference_id=ga4-tracking',
-    'checkout-friction': 'https://buy.stripe.com/bIYb5Xg644lt7DO001?client_reference_id=checkout-friction',
-    'seo-aeo': 'https://buy.stripe.com/5kQcXf09bfOX5vG9AD?client_reference_id=seo-aeo'
+  'google-ads': 'https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02',
+  'merchant-center': 'https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02',
+  'ga4-tracking': 'https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02',
+  'checkout-friction': 'https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02',
+  'seo-aeo': 'https://buy.stripe.com/5kQ3co2FU21Bgucag89ws02'
   };
 
   const checkoutBtn = document.getElementById('checkoutBtn');
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-      const selectedRadio = document.querySelector('input[name="audit_choice"]:checked');
-      if (selectedRadio && stripeLinks[selectedRadio.value]) {
-        window.location.href = stripeLinks[selectedRadio.value];
-      }
-    });
+const stickyBtn = document.getElementById('stickyCheckoutBtn');
+
+function redirectToStripe(e) {
+  if (e) e.preventDefault();
+  const selectedRadio = document.querySelector('input[name="audit_choice"]:checked');
+  if (selectedRadio && stripeLinks[selectedRadio.value]) {
+    window.location.href = stripeLinks[selectedRadio.value];
   }
+}
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener('click', redirectToStripe);
+}
+if (stickyBtn) {
+  stickyBtn.addEventListener('click', redirectToStripe);
+}
 
   const dropZone = document.getElementById('dropZone');
   const fileInput = document.getElementById('fileInput');
