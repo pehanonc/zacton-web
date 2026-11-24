@@ -232,7 +232,7 @@
       <div class="scanner-cta">
         <div class="scanner-cta-title">Tieto peniaze viete okamžite ušetriť a investovať do ziskových fráz.</div>
         <p style="font-size: 0.85rem; color: #475569;">V rámci jednorazového auditu preveríme celú štruktúru účtu, identifikujeme skrytú kanibalizáciu a pripravíme export vylučujúcich kľúčových slov.</p>
-        <a href="https://buy.stripe.com/5kQca1f2005dtXqeeW?client_reference_id=google-ads" class="scanner-order-btn">Začať audit Google Ads za 95 € &rarr;</a>
+        <a href="https://buy.stripe.com/5kQ3ca2FU28fgnag85ws02" class="scanner-order-btn">Začať audit Google Ads za 95 €</a>
       </div>
     </div>
   </div>
@@ -286,7 +286,7 @@
       </label>
     </div>
 
-    <button id="checkoutBtn" class="cta-button">Objednať diagnostický audit (95 €)</button>
+<a id="checkoutBtn" href="https://buy.stripe.com/5kQ3ca2FU28fgnag85ws02" class="cta-button">Objednať diagnostický audit (95 €)</a>
     <a href="/sample-audit.html" target="_blank" class="sample-audit-cta-btn">Pozrieť vzorový report z auditu (PDF ukážka) &rarr;</a>
 
     <div class="onboarding-steps">
@@ -362,22 +362,30 @@
 <script>
   // 1. Stripe Payment Links Routing
   const stripeLinks = {
-    'google-ads': 'https://buy.stripe.com/5kQca1f2005dtXqeeW?client_reference_id=google-ads',
-    'merchant-center': 'https://buy.stripe.com/142142g6405dXqag00?client_reference_id=merchant-center',
-    'ga4-tracking': 'https://buy.stripe.com/bIYb5X09bfOX5vG4gR?client_reference_id=ga4-tracking',
-    'checkout-friction': 'https://buy.stripe.com/bIYb5Xg644lt7DO001?client_reference_id=checkout-friction',
-    'seo-aeo': 'https://buy.stripe.com/5kQcXf09bfOX5vG9AD?client_reference_id=seo-aeo'
-  };
+  'google-ads': 'https://buy.stripe.com/5kQ3ca2FU28fgnag85ws02',
+  'merchant-center': 'https://buy.stripe.com/28E142esSdcXgnag85ws03',
+  'ga4-tracking': 'https://buy.stripe.com/bIY9ACboG007ab6093ws04',
+  'checkout-friction': 'https://buy.stripe.com/00gbIK2FU14b972g85ws05',
+  'seo-aeo': 'https://buy.stripe.com/9AQcMMfwW7sz83S7brws06'
+};
 
   const checkoutBtn = document.getElementById('checkoutBtn');
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-      const selectedRadio = document.querySelector('input[name="audit_choice"]:checked');
-      if (selectedRadio && stripeLinks[selectedRadio.value]) {
-        window.location.href = stripeLinks[selectedRadio.value];
-      }
-    });
+const stickyBtn = document.getElementById('stickyCheckoutBtn');
+
+function redirectToStripe(e) {
+  if (e) e.preventDefault();
+  const selectedRadio = document.querySelector('input[name="audit_choice"]:checked');
+  if (selectedRadio && stripeLinks[selectedRadio.value]) {
+    window.location.href = stripeLinks[selectedRadio.value];
   }
+}
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener('click', redirectToStripe);
+}
+if (stickyBtn) {
+  stickyBtn.addEventListener('click', redirectToStripe);
+}
 
   // 2. Interactive Scanner Script
   const dropZone = document.getElementById('dropZone');
